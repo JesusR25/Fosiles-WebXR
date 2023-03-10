@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Animales Terrestres</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.js"></script>
+    </head>
+    <body>
+        <a-scene vr-mode-ui="enabled: false" loading-screen="enabled:false">
+            <a-assets>
+                <a-asset-item id="allo" src="../assets/Animales/Terrestres/allosaurus.glb"></a-asset-item>
+                <a-asset-item id="pte" src="../assets/Animales/Terrestres/flying_pterodactyl.glb"></a-asset-item>
+                <a-asset-item id="kit" src="../assets/Animales/Terrestres/kitchiwan_mammoth_femur_vcu_3d_3631.glb"></a-asset-item>
+                <a-asset-item id="mam" src="../assets/Animales/Terrestres/mammoth.glb"></a-asset-item>
+                <a-asset-item id="mut" src="../assets/Animales/Terrestres/mamut.glb"></a-asset-item>
+                <a-asset-item id="per" src="../assets/Animales/Terrestres/perezoso.glb"></a-asset-item>
+            </a-assets>
+
+            <!-- Modelo listo, tal vez agregar animacion de rotacion -->
+            <a-entity id="allosaurus" visible="false" position="0 0 -4" rotation="0 90 0" scale="0.1 0.1 0.1" gltf-model="#allo" animation-mixer></a-entity>
+            <!-- Modelo listo, encontrar animacion correspondiente -->
+            <a-entity id="pterodactyl" visible="false" position="0 0 -4" rotation="0 90 0" scale="5 5 5" gltf-model="#pte" animation-mixer></a-entity>
+            <!-- Modelo no aparece -->
+            <a-entity id="kitchiwan" visible="false" position="0 0 -4" rotation="0 0 0" scale="1 1 1" gltf-model="#kit"></a-entity>
+            <!-- Modelo se mira oscuro -->
+            <a-entity id="mammoth" visible="false" position="0 0 -80" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#mam" animation-mixer></a-entity>
+            <!-- No probado, son varios mamuts -->
+            <a-entity id="mammoth" visible="false" position="0 0 -80" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#mut"></a-entity>
+            <!-- Listo, solo acomodarlo -->
+            <a-entity id="peresozo" visible="true" position="-2 -1 -4" rotation="0 0 0" scale="1 1 1" gltf-model="#per"></a-entity>
+            
+            <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Humanos</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.js"></script>
+    </head>
+    <body>
+        <a-scene vr-mode-ui="enabled: false" loading-screen="enabled:false">
+            <a-assets>
+                <a-asset-item id="parant" src="../assets/Humanos/paranthropus.glb"></a-asset-item>
+                <a-asset-item id="autra" src="../assets/Humanos/autralopithecus_africanus.glb"></a-asset-item>
+                <a-asset-item id="homoerec" src="../assets/Humanos/homo_erectus_skull.glb"></a-asset-item>
+                <a-asset-item id="homohabi" src="../assets/Humanos/homo_habilis_cranium.glb"></a-asset-item>
+                <a-asset-item id="homonean" src="../assets/Humanos/homo_neanderthalensis.glb"></a-asset-item>
+                <a-asset-item id="homosapi" src="../assets/Humanos/homo_sapiens.glb"></a-asset-item>
+            </a-assets>
+
+            <!-- Modelo volteado -->
+            <a-entity id="pa" visible="false" position="0 0 -4" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#parant"></a-entity>
+            <!-- Modelo Listo -->
+            <a-entity id="aut" visible="false" position="0 0 -4" rotation="0 0 0" scale="0.020 0.020 0.0270" gltf-model="#autra"></a-entity>
+            <!-- Modelo Listo -->
+            <a-entity id="hoer" visible="false" position="0 0 -4" rotation="0 0 0" scale="1.5 1.5 1.5" gltf-model="#homoerec"></a-entity>
+            <!-- Modelo no aparece -->
+            <a-entity id="hoha" visible="false" position="0 0 -4" rotation="0 0 0" scale="1 1 1" gltf-model="#homohabi"></a-entity>
+            <!-- Muy chico -->
+            <a-entity id="hosa" visible="true" position="0 0 -4" rotation="0 0 0" scale="3 3 3" gltf-model="#homosapi"></a-entity>
+            <a-entity camera></a-entity>
+        </a-scene>
+    </body>
+</html>
