@@ -8,7 +8,7 @@
         <script type="text/javascript" src="../js/marcadores/Humanos.js"></script>
         <link rel="stylesheet" src="../css/style.css">
     </head>
-    <body>
+    <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
         <div class="qrscanner" id="scanner"></div>
         <a-scene vr-mode-ui="enabled: false" loading-screen="enabled:false">
             <a-assets>
@@ -29,9 +29,9 @@
             <!-- Modelo no aparece -->
             <a-entity id="hoha" visible="false" position="0 0 -4" rotation="0 0 0" scale="1 1 1" gltf-model="#homohabi"></a-entity>
             <!-- Muy chico -->
-            <a-entity id="hosa" visible="true" position="0 0 -4" rotation="0 0 0" scale="3 3 3" gltf-model="#homosapi"></a-entity>
+            <a-entity id="hosa" visible="false" position="0 0 -4" rotation="0 0 0" scale="3 3 3" gltf-model="#homosapi"></a-entity>
             <!-- Muy chico -->
-            <a-entity id="hone" visible="true" position="0 0 -4" rotation="0 0 0" scale="3 3 3" gltf-model="#homonean"></a-entity>
+            <a-entity id="hone" visible="false" position="0 0 -4" rotation="0 0 0" scale="3 3 3" gltf-model="#homonean"></a-entity>
             <a-entity camera></a-entity>
         </a-scene>
     </body>
