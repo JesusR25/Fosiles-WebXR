@@ -1,13 +1,24 @@
 <html>
     <head>
         <title>Humanos</title>
-        <link rel="stylesheet" src="../css/style.css">
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
         <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.js"></script>
         <script type="text/javascript" src="../js/jsqrscanner.nocache.js"></script>
         <script type="text/javascript" src="../js/marcadores/Humanos.js"></script>
     </head>
+    <style>
+        .qrscanner video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    height: auto;
+    width: auto;
+}
+    </style>
     <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
         <div class="qrscanner" id="scanner"></div>
         <a-scene vr-mode-ui="enabled: false" loading-screen="enabled:false">
