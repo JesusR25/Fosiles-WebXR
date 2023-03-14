@@ -248,3 +248,89 @@ AFRAME.registerComponent("controller", {
         
     }
 })
+
+//Controlador para autra
+AFRAME.registerComponent("conas", {
+    init: function () {
+        // track markerFound/markerLost
+        // grab the model reference
+        document.querySelector("#aut").addEventListener("model-loaded", evt => {
+            this.mesh = evt.detail.model
+        })
+        // hammerjs input helper
+        const hammertime = new Hammer(document.body);
+
+        // scale
+        // scale is tricky, because it resets
+        var currentScale = 1;
+        hammertime.get('pinch').set({ enable: true });
+        hammertime.on("pinchstart", (ev) => {
+            currentScale = this.mesh.scale.x;
+        })
+        hammertime.on("pinchmove", (ev) => {
+            if (!Austra) return;
+            this.mesh.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
+        });
+
+        // rotation
+        // pan left/right for rotation
+        this.isPanning = false;
+        var xrot = false;
+        hammertime.on("panleft", () => {
+            if (!Austra) return;
+            this.isPanning = true
+            this.mesh.rotation.y -= 4 * Math.PI / 360;
+        })
+
+        hammertime.on("panright", () => {
+            if (!Austra) return;
+            this.isPanning = true
+            this.mesh.rotation.y += 4 * Math.PI / 360;
+        })
+
+        hammertime.on("panup", () => {
+            if (!Austra) return;
+            xrot = true;
+            this.mesh.rotation.x -= 4 * Math.PI / 360;
+        })
+
+        hammertime.on("pandown", () => {
+            if (!Austra) return;
+            xrot = true;
+            this.mesh.rotation.x += 4 * Math.PI / 360;
+        })
+
+
+        hammertime.on("panend", () => this.isPanning = false, xrot = false)
+        hammertime.on("pancancel", () => this.isPanning = false, xrot = false)
+
+        hammertime.on("swipeleft", ({ velocity }) => {
+            if (!Austra) return;
+            this.swipeVelocity = velocity
+        })
+        hammertime.on("swiperight", ({ velocity }) => {
+            if (!Austra) return;
+            this.swipeVelocity = velocity
+        })
+        hammertime.on("swipeup", ({ velocity }) => {
+            if (!Austra) return;
+            this.swipeVelocity = velocity
+        })
+        hammertime.on("swipedown", ({ velocity }) => {
+            if (!Austra) return;
+            this.swipeVelocity = velocity
+        })
+    },
+    tick: function () {
+        if (!(Austra && this.swipeVelocity && !this.isPanning)){
+            return;
+        }else{
+            this.mesh.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
+            //this.mesh.rotation.x += this.swipeVelocity * 4 * Math.PI / 360;
+            this.swipeVelocity *= 0.93;
+            if (Math.abs(this.swipeVelocity) <= 0.1) this.swipeVelocity = 0;
+        }
+        
+        
+    }
+})
