@@ -4,8 +4,12 @@
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
         <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.js"></script>
+        <script type="text/javascript" src="../js/jsqrscanner.nocache.js"></script>
+        <script type="text/javascript" src="../js/marcadores/Humanos.js"></script>
+        <link rel="stylesheet" src="../css/style.css">
     </head>
     <body>
+        <div class="qrscanner" id="scanner"></div>
         <a-scene vr-mode-ui="enabled: false" loading-screen="enabled:false">
             <a-assets>
                 <a-asset-item id="parant" src="../assets/Humanos/paranthropus.glb"></a-asset-item>
@@ -26,6 +30,8 @@
             <a-entity id="hoha" visible="false" position="0 0 -4" rotation="0 0 0" scale="1 1 1" gltf-model="#homohabi"></a-entity>
             <!-- Muy chico -->
             <a-entity id="hosa" visible="true" position="0 0 -4" rotation="0 0 0" scale="3 3 3" gltf-model="#homosapi"></a-entity>
+            <!-- Muy chico -->
+            <a-entity id="hone" visible="true" position="0 0 -4" rotation="0 0 0" scale="3 3 3" gltf-model="#homonean"></a-entity>
             <a-entity camera></a-entity>
         </a-scene>
     </body>
