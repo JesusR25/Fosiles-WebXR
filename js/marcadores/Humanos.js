@@ -9,7 +9,7 @@ function onQRCodeScanned(scannedText)
         case 'Homo Habilis':
             Habilis();
           break;
-        case 'Homo Neanderthalesis':
+        case 'Homo Neanderthalensis':
             Neanderthalesis();
           break;
         case 'Homo Erectus':
