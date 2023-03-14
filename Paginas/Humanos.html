@@ -12,7 +12,7 @@
     </head>
     <body>
         <div class="qrscanner" id="scanner"></div>
-        <a-scene vr-mode-ui="enabled: false" loading-screen="enabled:false" controller>
+        <a-scene vr-mode-ui="enabled: false" loading-screen="enabled:false">
             <a-assets>
                 <a-asset-item id="parant" src="../assets/Humanos/paranthropus.glb"></a-asset-item>
                 <a-asset-item id="autra" src="../assets/Humanos/autralopithecus_africanus.glb"></a-asset-item>
@@ -33,7 +33,7 @@
             <!-- Muy chico -->
             <a-entity id="hosa" visible="false" position="0 0 -4" rotation="0 0 0" scale="3 3 3" gltf-model="#homosapi"></a-entity>
             <!-- Muy chico -->
-            <a-entity id="hone" visible="false" position="0 0 -4" rotation="0 0 0" scale="0.3 0.3 0.3" gltf-model="#homonean"></a-entity>
+            <a-entity id="hone" visible="false" position="0 0 -4" rotation="0 0 0" scale="0.3 0.3 0.3" gltf-model="#homonean" controller></a-entity>
             <a-entity camera></a-entity>
         </a-scene>
     </body>
