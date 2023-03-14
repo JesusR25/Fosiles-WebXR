@@ -182,7 +182,7 @@ AFRAME.registerComponent("controller", {
             currentScale = this.mesh.scale.x;
         })
         hammertime.on("pinchmove", (ev) => {
-            if (Paran) return;
+            if (!Paran) return;
             this.mesh.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
         });
 
