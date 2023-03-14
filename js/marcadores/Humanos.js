@@ -1,5 +1,11 @@
+let Austra = false;
+let Habi = false;
+let Nean = false;
+let Erec = false;
+let Sapi = false;
+let Paran = false;
 
-
+7
 function onQRCodeScanned(scannedText)
 {
     switch (scannedText) {
@@ -75,6 +81,12 @@ function Australopithecus(){
     document.querySelector("#hoha").setAttribute("visible", false);
     document.querySelector("#hosa").setAttribute("visible", false);
     document.querySelector("#hone").setAttribute("visible", false);
+    Austra = true;
+    Sapi = false;
+    Nean = false;
+    Habi = false;
+    Erec = false;
+    Paran = false;
 }
 
 function Habilis(){
@@ -84,6 +96,12 @@ function Habilis(){
     document.querySelector("#hoha").setAttribute("visible", true);
     document.querySelector("#hosa").setAttribute("visible", false);
     document.querySelector("#hone").setAttribute("visible", false);
+    Austra = false;
+    Sapi = false;
+    Nean = false;
+    Habi = true;
+    Erec = false;
+    Paran = false;
 }
 
 function Neanderthalesis(){
@@ -93,6 +111,12 @@ function Neanderthalesis(){
     document.querySelector("#hoha").setAttribute("visible", false);
     document.querySelector("#hosa").setAttribute("visible", false);
     document.querySelector("#hone").setAttribute("visible", true);
+    Austra = false;
+    Sapi = false;
+    Nean = true;
+    Habi = false;
+    Erec = false;
+    Paran = false;
 }
 
 function Herectus(){
@@ -102,6 +126,12 @@ function Herectus(){
     document.querySelector("#hoha").setAttribute("visible", false);
     document.querySelector("#hosa").setAttribute("visible", false);
     document.querySelector("#hone").setAttribute("visible", false);
+    Austra = false;
+    Sapi = false;
+    Nean = false;
+    Habi = false;
+    Erec = true;
+    Paran = false;
 }
 
 function Sapiens(){
@@ -111,6 +141,12 @@ function Sapiens(){
     document.querySelector("#hoha").setAttribute("visible", false);
     document.querySelector("#hosa").setAttribute("visible", true);
     document.querySelector("#hone").setAttribute("visible", false);
+    Austra = false;
+    Sapi = true;
+    Nean = false;
+    Habi = false;
+    Erec = false;
+    Paran = false;
 }
 
 function Paranthropus(){
@@ -120,11 +156,16 @@ function Paranthropus(){
     document.querySelector("#hoha").setAttribute("visible", false);
     document.querySelector("#hosa").setAttribute("visible", false);
     document.querySelector("#hone").setAttribute("visible", false);
+    Austra = false;
+    Sapi = false;
+    Nean = false;
+    Habi = false;
+    Erec = false;
+    Paran = true;
 }
 
 AFRAME.registerComponent("controller", {
     init: function () {
-        this.modelVisible = true;
         // track markerFound/markerLost
         // grab the model reference
         document.querySelector("#pa").addEventListener("model-loaded", evt => {
@@ -141,7 +182,7 @@ AFRAME.registerComponent("controller", {
             currentScale = this.mesh.scale.x;
         })
         hammertime.on("pinchmove", (ev) => {
-            if (!this.modelVisible) return;
+            if (Paran) return;
             this.mesh.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
         });
 
@@ -150,25 +191,25 @@ AFRAME.registerComponent("controller", {
         this.isPanning = false;
         var xrot = false;
         hammertime.on("panleft", () => {
-            if (!this.modelVisible) return;
+            if (!Paran) return;
             this.isPanning = true
             this.mesh.rotation.y -= 4 * Math.PI / 360;
         })
 
         hammertime.on("panright", () => {
-            if (!this.modelVisible) return;
+            if (!Paran) return;
             this.isPanning = true
             this.mesh.rotation.y += 4 * Math.PI / 360;
         })
 
         hammertime.on("panup", () => {
-            if (!this.modelVisible) return;
+            if (!Paran) return;
             xrot = true;
             this.mesh.rotation.x -= 4 * Math.PI / 360;
         })
 
         hammertime.on("pandown", () => {
-            if (!this.modelVisible) return;
+            if (!Paran) return;
             xrot = true;
             this.mesh.rotation.x += 4 * Math.PI / 360;
         })
@@ -178,24 +219,24 @@ AFRAME.registerComponent("controller", {
         hammertime.on("pancancel", () => this.isPanning = false, xrot = false)
 
         hammertime.on("swipeleft", ({ velocity }) => {
-            if (!this.modelVisible) return;
+            if (!Paran) return;
             this.swipeVelocity = velocity
         })
         hammertime.on("swiperight", ({ velocity }) => {
-            if (!this.modelVisible) return;
+            if (!Paran) return;
             this.swipeVelocity = velocity
         })
         hammertime.on("swipeup", ({ velocity }) => {
-            if (!this.modelVisible) return;
+            if (!Paran) return;
             this.swipeVelocity = velocity
         })
         hammertime.on("swipedown", ({ velocity }) => {
-            if (!this.modelVisible) return;
+            if (!Paran) return;
             this.swipeVelocity = velocity
         })
     },
     tick: function () {
-        if (!(this.modelVisible && this.swipeVelocity && !this.isPanning)){
+        if (!(Paran && this.swipeVelocity && !this.isPanning)){
             return;
         }else{
             this.mesh.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
