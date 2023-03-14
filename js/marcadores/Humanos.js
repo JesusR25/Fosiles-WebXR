@@ -127,7 +127,7 @@ AFRAME.registerComponent("controller", {
         this.modelVisible = true;
         // track markerFound/markerLost
         // grab the model reference
-        document.querySelector("#hone").addEventListener("model-loaded", evt => {
+        document.querySelector("#pa").addEventListener("model-loaded", evt => {
             this.mesh = evt.detail.model
         })
         // hammerjs input helper
