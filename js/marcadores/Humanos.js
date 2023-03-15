@@ -81,6 +81,10 @@ function Australopithecus(){
     document.querySelector("#hoha").setAttribute("visible", false);
     document.querySelector("#hosa").setAttribute("visible", false);
     document.querySelector("#hone").setAttribute("visible", false);
+    //Mostrar imagen
+    document.getElementById("imagenes").removeAttribute('src');
+    document.getElementById("inf").src="../../assets/Fichas/Humanos/Australopithecus.jpg";
+    document.getElementById("imagenes").style.display = "block";
     Austra = true;
     Sapi = false;
     Nean = false;
@@ -96,6 +100,10 @@ function Habilis(){
     document.querySelector("#hoha").setAttribute("visible", true);
     document.querySelector("#hosa").setAttribute("visible", false);
     document.querySelector("#hone").setAttribute("visible", false);
+    //Mostrar imagen
+    document.getElementById("imagenes").removeAttribute('src');
+    document.getElementById("inf").src="../../assets/Fichas/Humanos/Homo_Habilis.jpg";
+    document.getElementById("imagenes").style.display = "block";
     Austra = false;
     Sapi = false;
     Nean = false;
@@ -111,6 +119,10 @@ function Neanderthalesis(){
     document.querySelector("#hoha").setAttribute("visible", false);
     document.querySelector("#hosa").setAttribute("visible", false);
     document.querySelector("#hone").setAttribute("visible", true);
+    //Mostrar imagen
+    document.getElementById("imagenes").removeAttribute('src');
+    document.getElementById("inf").src="../../assets/Fichas/Humanos/Neanderthal.jpg";
+    document.getElementById("imagenes").style.display = "block";
     Austra = false;
     Sapi = false;
     Nean = true;
@@ -126,6 +138,10 @@ function Herectus(){
     document.querySelector("#hoha").setAttribute("visible", false);
     document.querySelector("#hosa").setAttribute("visible", false);
     document.querySelector("#hone").setAttribute("visible", false);
+    //Mostrar imagen
+    document.getElementById("imagenes").removeAttribute('src');
+    document.getElementById("inf").src="../../assets/Fichas/Humanos/Homo_Erectus.jpg";
+    document.getElementById("imagenes").style.display = "block";
     Austra = false;
     Sapi = false;
     Nean = false;
@@ -141,6 +157,10 @@ function Sapiens(){
     document.querySelector("#hoha").setAttribute("visible", false);
     document.querySelector("#hosa").setAttribute("visible", true);
     document.querySelector("#hone").setAttribute("visible", false);
+    //Mostrar imagen
+    document.getElementById("imagenes").removeAttribute('src');
+    document.getElementById("inf").src="../../assets/Fichas/Humanos/Homo_Sapiens.jpg";
+    document.getElementById("imagenes").style.display = "block";
     Austra = false;
     Sapi = true;
     Nean = false;
@@ -156,6 +176,10 @@ function Paranthropus(){
     document.querySelector("#hoha").setAttribute("visible", false);
     document.querySelector("#hosa").setAttribute("visible", false);
     document.querySelector("#hone").setAttribute("visible", false);
+    //Mostrar imagen
+    document.getElementById("imagenes").removeAttribute('src');
+    document.getElementById("inf").src="../../assets/Fichas/Humanos/Paranthropus.jpg";
+    document.getElementById("imagenes").style.display = "block";
     Austra = false;
     Sapi = false;
     Nean = false;
