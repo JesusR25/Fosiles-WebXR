@@ -5,7 +5,7 @@ let Erec = false;
 let Sapi = false;
 let Paran = false;
 
-7
+
 function onQRCodeScanned(scannedText)
 {
     alert(scannedText);
