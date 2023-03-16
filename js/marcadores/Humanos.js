@@ -8,6 +8,7 @@ let Paran = false;
 7
 function onQRCodeScanned(scannedText)
 {
+    alert(scannedText);
     switch (scannedText) {
         case 'Australopithecus':
             Australopithecus();
