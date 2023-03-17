@@ -107,7 +107,7 @@ function Trilobite(){
     document.querySelector("#trilobite").setAttribute("visible", true);
     //Mostrar imagen
     document.getElementById("imagenes").removeAttribute('src');
-    document.getElementById("inf").src="../../assets/Fichas/Otros/Trilobite";
+    document.getElementById("inf").src="../../assets/Fichas/Otros/Trilobite.jpg";
     document.getElementById("imagenes").style.display = "block";
 
     ammo = false;
