@@ -72,6 +72,9 @@ function Belemnite(){
     document.querySelector("#fosil").setAttribute("visible", false);
     document.querySelector("#trilobite").setAttribute("visible", false);
     //Mostrar imagen
+    if (document.getElementById('ch').checked) {
+        alert('checkbox1 esta seleccionado');
+    }
     document.getElementById("imagenes").removeAttribute('src');
     document.getElementById("inf").src="../../assets/Fichas/Otros/Belemnite.jpg";
     document.getElementById("imagenes").style.display = "block";
