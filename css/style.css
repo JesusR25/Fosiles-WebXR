@@ -65,17 +65,19 @@ body{
 
 .container {
     top: 93%;
+    left: 3%;
     z-index: 2;
     display: block;
     position: relative;
     padding-left: 35px;
     margin-bottom: 12px;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 20px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    font-weight: bold;
   }
   
   /* Hide the browser's default checkbox */
