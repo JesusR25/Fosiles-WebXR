@@ -7,7 +7,7 @@ function onQRCodeScanned(scannedText)
 {
     alert(scannedText);
     switch (scannedText) {
-        case 'Belemnite':
+        case 'Belemnites':
             Belemnite();
           break;
         case 'Trilobite':
