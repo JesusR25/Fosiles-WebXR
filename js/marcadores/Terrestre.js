@@ -394,7 +394,7 @@ AFRAME.registerComponent("pere", {
     init: function () {
         // track markerFound/markerLost
         // grab the model reference
-        document.querySelector("#allosaurus").addEventListener("model-loaded", evt => {
+        document.querySelector("#perezoso").addEventListener("model-loaded", evt => {
             this.mesh = evt.detail.model
         })
         // hammerjs input helper
