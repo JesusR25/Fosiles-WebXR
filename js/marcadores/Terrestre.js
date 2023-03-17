@@ -221,7 +221,7 @@ AFRAME.registerComponent("pet", {
     init: function () {
         // track markerFound/markerLost
         // grab the model reference
-        document.querySelector("#mammoth").addEventListener("model-loaded", evt => {
+        document.querySelector("#pterodactyl").addEventListener("model-loaded", evt => {
             this.mesh = evt.detail.model
         })
         // hammerjs input helper
@@ -307,7 +307,7 @@ AFRAME.registerComponent("allo", {
     init: function () {
         // track markerFound/markerLost
         // grab the model reference
-        document.querySelector("#mammoth").addEventListener("model-loaded", evt => {
+        document.querySelector("#allosaurus").addEventListener("model-loaded", evt => {
             this.mesh = evt.detail.model
         })
         // hammerjs input helper
@@ -394,7 +394,7 @@ AFRAME.registerComponent("pere", {
     init: function () {
         // track markerFound/markerLost
         // grab the model reference
-        document.querySelector("#mammoth").addEventListener("model-loaded", evt => {
+        document.querySelector("#allosaurus").addEventListener("model-loaded", evt => {
             this.mesh = evt.detail.model
         })
         // hammerjs input helper
