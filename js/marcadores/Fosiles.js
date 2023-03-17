@@ -132,3 +132,347 @@ function Fosil(){
     fos = true;
     tri = false;
 }
+
+//Controlador para belemnites
+AFRAME.registerComponent("bele", {
+    init: function () {
+        // track markerFound/markerLost
+        // grab the model reference
+        document.querySelector("#belemnites").addEventListener("model-loaded", evt => {
+            this.mesh = evt.detail.model
+        })
+        // hammerjs input helper
+        const hammertime = new Hammer(document.body);
+
+        // scale
+        // scale is tricky, because it resets
+        var currentScale = 1;
+        hammertime.get('pinch').set({ enable: true });
+        hammertime.on("pinchstart", (ev) => {
+            currentScale = this.mesh.scale.x;
+        })
+        hammertime.on("pinchmove", (ev) => {
+            if (!bele) return;
+            this.mesh.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
+        });
+
+        // rotation
+        // pan left/right for rotation
+        this.isPanning = false;
+        var xrot = false;
+        hammertime.on("panleft", () => {
+            if (!bele) return;
+            this.isPanning = true
+            this.mesh.rotation.y -= 4 * Math.PI / 360;
+        })
+
+        hammertime.on("panright", () => {
+            if (!bele) return;
+            this.isPanning = true
+            this.mesh.rotation.y += 4 * Math.PI / 360;
+        })
+
+        hammertime.on("panup", () => {
+            if (!bele) return;
+            xrot = true;
+            this.mesh.rotation.x -= 4 * Math.PI / 360;
+        })
+
+        hammertime.on("pandown", () => {
+            if (!bele) return;
+            xrot = true;
+            this.mesh.rotation.x += 4 * Math.PI / 360;
+        })
+
+
+        hammertime.on("panend", () => this.isPanning = false, xrot = false)
+        hammertime.on("pancancel", () => this.isPanning = false, xrot = false)
+
+        hammertime.on("swipeleft", ({ velocity }) => {
+            if (!bele) return;
+            this.swipeVelocity = velocity
+        })
+        hammertime.on("swiperight", ({ velocity }) => {
+            if (!bele) return;
+            this.swipeVelocity = velocity
+        })
+        hammertime.on("swipeup", ({ velocity }) => {
+            if (!bele) return;
+            this.swipeVelocity = velocity
+        })
+        hammertime.on("swipedown", ({ velocity }) => {
+            if (!bele) return;
+            this.swipeVelocity = velocity
+        })
+    },
+    tick: function () {
+        if (!(bele && this.swipeVelocity && !this.isPanning)){
+            return;
+        }else{
+            this.mesh.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
+            //this.mesh.rotation.x += this.swipeVelocity * 4 * Math.PI / 360;
+            this.swipeVelocity *= 0.93;
+            if (Math.abs(this.swipeVelocity) <= 0.1) this.swipeVelocity = 0;
+        }
+        
+        
+    }
+})
+
+//Controlador para trilobite
+AFRAME.registerComponent("tri", {
+    init: function () {
+        // track markerFound/markerLost
+        // grab the model reference
+        document.querySelector("#trilobite").addEventListener("model-loaded", evt => {
+            this.mesh = evt.detail.model
+        })
+        // hammerjs input helper
+        const hammertime = new Hammer(document.body);
+
+        // scale
+        // scale is tricky, because it resets
+        var currentScale = 1;
+        hammertime.get('pinch').set({ enable: true });
+        hammertime.on("pinchstart", (ev) => {
+            currentScale = this.mesh.scale.x;
+        })
+        hammertime.on("pinchmove", (ev) => {
+            if (!tri) return;
+            this.mesh.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
+        });
+
+        // rotation
+        // pan left/right for rotation
+        this.isPanning = false;
+        var xrot = false;
+        hammertime.on("panleft", () => {
+            if (!tri) return;
+            this.isPanning = true
+            this.mesh.rotation.y -= 4 * Math.PI / 360;
+        })
+
+        hammertime.on("panright", () => {
+            if (!tri) return;
+            this.isPanning = true
+            this.mesh.rotation.y += 4 * Math.PI / 360;
+        })
+
+        hammertime.on("panup", () => {
+            if (!tri) return;
+            xrot = true;
+            this.mesh.rotation.x -= 4 * Math.PI / 360;
+        })
+
+        hammertime.on("pandown", () => {
+            if (!tri) return;
+            xrot = true;
+            this.mesh.rotation.x += 4 * Math.PI / 360;
+        })
+
+
+        hammertime.on("panend", () => this.isPanning = false, xrot = false)
+        hammertime.on("pancancel", () => this.isPanning = false, xrot = false)
+
+        hammertime.on("swipeleft", ({ velocity }) => {
+            if (!tri) return;
+            this.swipeVelocity = velocity
+        })
+        hammertime.on("swiperight", ({ velocity }) => {
+            if (!tri) return;
+            this.swipeVelocity = velocity
+        })
+        hammertime.on("swipeup", ({ velocity }) => {
+            if (!tri) return;
+            this.swipeVelocity = velocity
+        })
+        hammertime.on("swipedown", ({ velocity }) => {
+            if (!tri) return;
+            this.swipeVelocity = velocity
+        })
+    },
+    tick: function () {
+        if (!(tri && this.swipeVelocity && !this.isPanning)){
+            return;
+        }else{
+            this.mesh.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
+            //this.mesh.rotation.x += this.swipeVelocity * 4 * Math.PI / 360;
+            this.swipeVelocity *= 0.93;
+            if (Math.abs(this.swipeVelocity) <= 0.1) this.swipeVelocity = 0;
+        }
+        
+        
+    }
+})
+
+//Controlador para Ammonite
+AFRAME.registerComponent("amm", {
+    init: function () {
+        // track markerFound/markerLost
+        // grab the model reference
+        document.querySelector("#ammonite").addEventListener("model-loaded", evt => {
+            this.mesh = evt.detail.model
+        })
+        // hammerjs input helper
+        const hammertime = new Hammer(document.body);
+
+        // scale
+        // scale is tricky, because it resets
+        var currentScale = 1;
+        hammertime.get('pinch').set({ enable: true });
+        hammertime.on("pinchstart", (ev) => {
+            currentScale = this.mesh.scale.x;
+        })
+        hammertime.on("pinchmove", (ev) => {
+            if (!ammo) return;
+            this.mesh.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
+        });
+
+        // rotation
+        // pan left/right for rotation
+        this.isPanning = false;
+        var xrot = false;
+        hammertime.on("panleft", () => {
+            if (!ammo) return;
+            this.isPanning = true
+            this.mesh.rotation.y -= 4 * Math.PI / 360;
+        })
+
+        hammertime.on("panright", () => {
+            if (!ammo) return;
+            this.isPanning = true
+            this.mesh.rotation.y += 4 * Math.PI / 360;
+        })
+
+        hammertime.on("panup", () => {
+            if (!ammo) return;
+            xrot = true;
+            this.mesh.rotation.x -= 4 * Math.PI / 360;
+        })
+
+        hammertime.on("pandown", () => {
+            if (!ammo) return;
+            xrot = true;
+            this.mesh.rotation.x += 4 * Math.PI / 360;
+        })
+
+
+        hammertime.on("panend", () => this.isPanning = false, xrot = false)
+        hammertime.on("pancancel", () => this.isPanning = false, xrot = false)
+
+        hammertime.on("swipeleft", ({ velocity }) => {
+            if (!ammo) return;
+            this.swipeVelocity = velocity
+        })
+        hammertime.on("swiperight", ({ velocity }) => {
+            if (!ammo) return;
+            this.swipeVelocity = velocity
+        })
+        hammertime.on("swipeup", ({ velocity }) => {
+            if (!ammo) return;
+            this.swipeVelocity = velocity
+        })
+        hammertime.on("swipedown", ({ velocity }) => {
+            if (!ammo) return;
+            this.swipeVelocity = velocity
+        })
+    },
+    tick: function () {
+        if (!(ammo && this.swipeVelocity && !this.isPanning)){
+            return;
+        }else{
+            this.mesh.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
+            //this.mesh.rotation.x += this.swipeVelocity * 4 * Math.PI / 360;
+            this.swipeVelocity *= 0.93;
+            if (Math.abs(this.swipeVelocity) <= 0.1) this.swipeVelocity = 0;
+        }
+        
+        
+    }
+})
+
+//Controlador para Fosil
+AFRAME.registerComponent("fos", {
+    init: function () {
+        // track markerFound/markerLost
+        // grab the model reference
+        document.querySelector("#fosil").addEventListener("model-loaded", evt => {
+            this.mesh = evt.detail.model
+        })
+        // hammerjs input helper
+        const hammertime = new Hammer(document.body);
+
+        // scale
+        // scale is tricky, because it resets
+        var currentScale = 1;
+        hammertime.get('pinch').set({ enable: true });
+        hammertime.on("pinchstart", (ev) => {
+            currentScale = this.mesh.scale.x;
+        })
+        hammertime.on("pinchmove", (ev) => {
+            if (!fos) return;
+            this.mesh.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
+        });
+
+        // rotation
+        // pan left/right for rotation
+        this.isPanning = false;
+        var xrot = false;
+        hammertime.on("panleft", () => {
+            if (!fos) return;
+            this.isPanning = true
+            this.mesh.rotation.y -= 4 * Math.PI / 360;
+        })
+
+        hammertime.on("panright", () => {
+            if (!fos) return;
+            this.isPanning = true
+            this.mesh.rotation.y += 4 * Math.PI / 360;
+        })
+
+        hammertime.on("panup", () => {
+            if (!fos) return;
+            xrot = true;
+            this.mesh.rotation.x -= 4 * Math.PI / 360;
+        })
+
+        hammertime.on("pandown", () => {
+            if (!fos) return;
+            xrot = true;
+            this.mesh.rotation.x += 4 * Math.PI / 360;
+        })
+
+
+        hammertime.on("panend", () => this.isPanning = false, xrot = false)
+        hammertime.on("pancancel", () => this.isPanning = false, xrot = false)
+
+        hammertime.on("swipeleft", ({ velocity }) => {
+            if (!fos) return;
+            this.swipeVelocity = velocity
+        })
+        hammertime.on("swiperight", ({ velocity }) => {
+            if (!fos) return;
+            this.swipeVelocity = velocity
+        })
+        hammertime.on("swipeup", ({ velocity }) => {
+            if (!fos) return;
+            this.swipeVelocity = velocity
+        })
+        hammertime.on("swipedown", ({ velocity }) => {
+            if (!fos) return;
+            this.swipeVelocity = velocity
+        })
+    },
+    tick: function () {
+        if (!(fos && this.swipeVelocity && !this.isPanning)){
+            return;
+        }else{
+            this.mesh.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
+            //this.mesh.rotation.x += this.swipeVelocity * 4 * Math.PI / 360;
+            this.swipeVelocity *= 0.93;
+            if (Math.abs(this.swipeVelocity) <= 0.1) this.swipeVelocity = 0;
+        }
+        
+        
+    }
+})
