@@ -2,7 +2,6 @@ let ammo = false;
 let bele = false;
 let fos = false;
 let tri = false;
-let cb = true;
 
 function onQRCodeScanned(scannedText)
 {
@@ -73,8 +72,8 @@ function Belemnite(){
     document.querySelector("#fosil").setAttribute("visible", false);
     document.querySelector("#trilobite").setAttribute("visible", false);
     //Mostrar imagen
-    document.getElementById("imagenes").removeAttribute('src');
-    if (cb == true) {
+    document.getElementById("inf").removeAttribute('src');
+    if (document.getElementById('ch').checked) {
         document.getElementById("inf").src="../../assets/Fichas/Otros/Belemnite.jpg";
         document.getElementById("imagenes").style.display = "block";
     }
@@ -92,8 +91,8 @@ function Ammonite(){
     document.querySelector("#fosil").setAttribute("visible", false);
     document.querySelector("#trilobite").setAttribute("visible", false);
     //Mostrar imagen
-    document.getElementById("imagenes").removeAttribute('src');
-    if (cb == true) {
+    document.getElementById("inf").removeAttribute('src');
+    if (document.getElementById('ch').checked) {
         document.getElementById("inf").src="../../assets/Fichas/Otros/Ammonite.jpg";
         document.getElementById("imagenes").style.display = "block";
     }
@@ -111,8 +110,8 @@ function Trilobite(){
     document.querySelector("#fosil").setAttribute("visible", false);
     document.querySelector("#trilobite").setAttribute("visible", true);
     //Mostrar imagen
-    document.getElementById("imagenes").removeAttribute('src');
-    if (cb == true) {
+    document.getElementById("inf").removeAttribute('src');
+    if (document.getElementById('ch').checked) {
         document.getElementById("inf").src="../../assets/Fichas/Otros/Trilobite.jpg";
         document.getElementById("imagenes").style.display = "block";
     }
@@ -130,8 +129,8 @@ function Fosil(){
     document.querySelector("#fosil").setAttribute("visible", true);
     document.querySelector("#trilobite").setAttribute("visible", false);
     //Mostrar imagen
-    document.getElementById("imagenes").removeAttribute('src');
-    if (cb == true) {
+    document.getElementById("inf").removeAttribute('src');
+    if (document.getElementById('ch').checked) {
         document.getElementById("inf").src="../../assets/Fichas/Otros/Fosil_Vegetal.jpg";
         document.getElementById("imagenes").style.display = "block";
     }
@@ -140,14 +139,6 @@ function Fosil(){
     bele = false;
     fos = true;
     tri = false;
-}
-
-function cambio(checkbox){
-    if(checkbox.checked){
-        cb = true;
-    }else{
-        cb = false;
-    }
 }
 
 //Controlador para belemnites
