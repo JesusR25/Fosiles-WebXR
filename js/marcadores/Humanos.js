@@ -83,7 +83,7 @@ function Australopithecus(){
     document.querySelector("#hosa").setAttribute("visible", false);
     document.querySelector("#hone").setAttribute("visible", false);
     //Mostrar imagen
-    document.getElementById("imagenes").removeAttribute('src');
+    document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
         document.getElementById("inf").src="../../assets/Fichas/Humanos/Australopithecus.jpg";
         document.getElementById("imagenes").style.display = "block";
@@ -104,7 +104,7 @@ function Habilis(){
     document.querySelector("#hosa").setAttribute("visible", false);
     document.querySelector("#hone").setAttribute("visible", false);
     //Mostrar imagen
-    document.getElementById("imagenes").removeAttribute('src');
+    document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
         document.getElementById("inf").src="../../assets/Fichas/Humanos/Homo_Habilis.jpg";
         document.getElementById("imagenes").style.display = "block";
@@ -125,7 +125,7 @@ function Neanderthalesis(){
     document.querySelector("#hosa").setAttribute("visible", false);
     document.querySelector("#hone").setAttribute("visible", true);
     //Mostrar imagen
-    document.getElementById("imagenes").removeAttribute('src');
+    document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
         document.getElementById("inf").src="../../assets/Fichas/Humanos/Neanderthal.jpg";
         document.getElementById("imagenes").style.display = "block";
@@ -146,7 +146,7 @@ function Herectus(){
     document.querySelector("#hosa").setAttribute("visible", false);
     document.querySelector("#hone").setAttribute("visible", false);
     //Mostrar imagen
-    document.getElementById("imagenes").removeAttribute('src');
+    document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
         document.getElementById("inf").src="../../assets/Fichas/Humanos/Homo_Erectus.jpg";
         document.getElementById("imagenes").style.display = "block";
@@ -167,7 +167,7 @@ function Sapiens(){
     document.querySelector("#hosa").setAttribute("visible", true);
     document.querySelector("#hone").setAttribute("visible", false);
     //Mostrar imagen
-    document.getElementById("imagenes").removeAttribute('src');
+    document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
         document.getElementById("inf").src="../../assets/Fichas/Humanos/Homo_Sapiens.jpg";
         document.getElementById("imagenes").style.display = "block";
@@ -188,7 +188,7 @@ function Paranthropus(){
     document.querySelector("#hosa").setAttribute("visible", false);
     document.querySelector("#hone").setAttribute("visible", false);
     //Mostrar imagen
-    document.getElementById("imagenes").removeAttribute('src');
+    document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
         document.getElementById("inf").src="../../assets/Fichas/Humanos/Paranthropus.jpg";
         document.getElementById("imagenes").style.display = "block";

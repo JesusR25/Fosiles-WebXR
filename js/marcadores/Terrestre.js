@@ -73,7 +73,7 @@ function Pterodactylus(){
     document.querySelector("#mammoth").setAttribute("visible", false);
 
     //Mostrar imagen
-    document.getElementById("imagenes").removeAttribute('src');
+    document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
         document.getElementById("inf").src="../../assets/Fichas/Terrestres/Pterodactylus.jpg";
         document.getElementById("imagenes").style.display = "block";
@@ -91,7 +91,7 @@ function Mammuth(){
     document.querySelector("#mammoth").setAttribute("visible", true);
 
     //Mostrar imagen
-    document.getElementById("imagenes").removeAttribute('src');
+    document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
         document.getElementById("inf").src="../../assets/Fichas/Terrestres/Mammut.jpg";
         document.getElementById("imagenes").style.display = "block";
@@ -109,7 +109,7 @@ function Allosaurus(){
     document.querySelector("#mammoth").setAttribute("visible", false);
 
     //Mostrar imagen
-    document.getElementById("imagenes").removeAttribute('src');
+    document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
         document.getElementById("inf").src="../../assets/Fichas/Terrestres/Allosaurus.jpg";
         document.getElementById("imagenes").style.display = "block";
@@ -127,7 +127,7 @@ function Perezoso(){
     document.querySelector("#mammoth").setAttribute("visible", false);
 
     //Mostrar imagen
-    document.getElementById("imagenes").removeAttribute('src');
+    document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
         document.getElementById("inf").src="../../assets/Fichas/Terrestres/Perezoso.jpg";
         document.getElementById("imagenes").style.display = "block";
