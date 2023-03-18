@@ -72,12 +72,11 @@ function Belemnite(){
     document.querySelector("#fosil").setAttribute("visible", false);
     document.querySelector("#trilobite").setAttribute("visible", false);
     //Mostrar imagen
-    if (document.getElementById('ch').checked) {
-        alert('checkbox1 esta seleccionado');
-    }
     document.getElementById("imagenes").removeAttribute('src');
-    document.getElementById("inf").src="../../assets/Fichas/Otros/Belemnite.jpg";
-    document.getElementById("imagenes").style.display = "block";
+    if (document.getElementById('ch').checked) {
+        document.getElementById("inf").src="../../assets/Fichas/Otros/Belemnite.jpg";
+        document.getElementById("imagenes").style.display = "block";
+    }
 
     ammo = false;
     bele = true;
@@ -93,8 +92,10 @@ function Ammonite(){
     document.querySelector("#trilobite").setAttribute("visible", false);
     //Mostrar imagen
     document.getElementById("imagenes").removeAttribute('src');
-    document.getElementById("inf").src="../../assets/Fichas/Otros/Ammonite.jpg";
-    document.getElementById("imagenes").style.display = "block";
+    if (document.getElementById('ch').checked) {
+        document.getElementById("inf").src="../../assets/Fichas/Otros/Ammonite.jpg";
+        document.getElementById("imagenes").style.display = "block";
+    }
 
     ammo = true;
     bele = false;
@@ -110,8 +111,10 @@ function Trilobite(){
     document.querySelector("#trilobite").setAttribute("visible", true);
     //Mostrar imagen
     document.getElementById("imagenes").removeAttribute('src');
-    document.getElementById("inf").src="../../assets/Fichas/Otros/Trilobite.jpg";
-    document.getElementById("imagenes").style.display = "block";
+    if (document.getElementById('ch').checked) {
+        document.getElementById("inf").src="../../assets/Fichas/Otros/Trilobite.jpg";
+        document.getElementById("imagenes").style.display = "block";
+    }
 
     ammo = false;
     bele = false;
@@ -127,8 +130,10 @@ function Fosil(){
     document.querySelector("#trilobite").setAttribute("visible", false);
     //Mostrar imagen
     document.getElementById("imagenes").removeAttribute('src');
-    document.getElementById("inf").src="../../assets/Fichas/Otros/Fosil_Vegetal.jpg";
-    document.getElementById("imagenes").style.display = "block";
+    if (document.getElementById('ch').checked) {
+        document.getElementById("inf").src="../../assets/Fichas/Otros/Fosil_Vegetal.jpg";
+        document.getElementById("imagenes").style.display = "block";
+    }
 
     ammo = false;
     bele = false;

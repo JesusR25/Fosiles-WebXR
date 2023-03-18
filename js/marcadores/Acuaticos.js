@@ -77,8 +77,10 @@ function Megalodon(){
   document.querySelector("#mesasa").setAttribute("visible", false);
   //Mostrar imagen
   document.getElementById("imagenes").removeAttribute('src');
-  document.getElementById("inf").src="../../assets/Fichas/Acuaticos/Megalodon.jpg";
-  document.getElementById("imagenes").style.display = "block";
+    if (document.getElementById('ch').checked) {
+        document.getElementById("inf").src="../../assets/Fichas/Acuaticos/Megalodon.jpg";
+        document.getElementById("imagenes").style.display = "block";
+    }
   balle = false;
   cela = false;
   tibu = false;
@@ -94,8 +96,10 @@ function Mosasaurus(){
   document.querySelector("#mesasa").setAttribute("visible", true);
   //Mostrar imagen
   document.getElementById("imagenes").removeAttribute('src');
-  document.getElementById("inf").src="../../assets/Fichas/Acuaticos/Mosasaurus.jpg";
-  document.getElementById("imagenes").style.display = "block";
+  if (document.getElementById('ch').checked) {
+    document.getElementById("inf").src="../../assets/Fichas/Acuaticos/Mosasaurus.jpg";
+    document.getElementById("imagenes").style.display = "block";
+  }
   balle = false;
   cela = false;
   tibu = false;
@@ -111,8 +115,10 @@ function Ballena(){
   document.querySelector("#mesasa").setAttribute("visible", false);
   //Mostrar imagen
   document.getElementById("imagenes").removeAttribute('src');
-  document.getElementById("inf").src="../../assets/Fichas/Acuaticos/Ballena.jpg";
-  document.getElementById("imagenes").style.display = "block";
+  if (document.getElementById('ch').checked) {
+    document.getElementById("inf").src="../../assets/Fichas/Acuaticos/Ballena.jpg";
+    document.getElementById("imagenes").style.display = "block";
+  }
   balle = true;
   cela = false;
   tibu = false;
@@ -128,8 +134,10 @@ function Tiburon(){
   document.querySelector("#mesasa").setAttribute("visible", false);
   //Mostrar imagen
   document.getElementById("imagenes").removeAttribute('src');
-  document.getElementById("inf").src="../../assets/Fichas/Acuaticos/Tiburon.jpg";
-  document.getElementById("imagenes").style.display = "block";
+  if (document.getElementById('ch').checked) {
+    document.getElementById("inf").src="../../assets/Fichas/Acuaticos/Tiburon.jpg";
+    document.getElementById("imagenes").style.display = "block";
+  }
   balle = false;
   cela = false;
   tibu = true;
@@ -145,8 +153,10 @@ function Celacanto(){
   document.querySelector("#mesasa").setAttribute("visible", false);
   //Mostrar imagen
   document.getElementById("imagenes").removeAttribute('src');
-  document.getElementById("inf").src="../../assets/Fichas/Acuaticos/Celacanto.jpg";
-  document.getElementById("imagenes").style.display = "block";
+  if (document.getElementById('ch').checked) {
+    document.getElementById("inf").src="../../assets/Fichas/Acuaticos/Celacanto.jpg";
+    document.getElementById("imagenes").style.display = "block";
+  }
   balle = false;
   cela = true;
   tibu = false;

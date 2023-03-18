@@ -74,8 +74,10 @@ function Pterodactylus(){
 
     //Mostrar imagen
     document.getElementById("imagenes").removeAttribute('src');
-    document.getElementById("inf").src="../../assets/Fichas/Terrestres/Pterodactylus.jpg";
-    document.getElementById("imagenes").style.display = "block";
+    if (document.getElementById('ch').checked) {
+        document.getElementById("inf").src="../../assets/Fichas/Terrestres/Pterodactylus.jpg";
+        document.getElementById("imagenes").style.display = "block";
+    }
     mamu = false;
     pte = true;
     allo = false;
@@ -90,8 +92,10 @@ function Mammuth(){
 
     //Mostrar imagen
     document.getElementById("imagenes").removeAttribute('src');
-    document.getElementById("inf").src="../../assets/Fichas/Terrestres/Mammut.jpg";
-    document.getElementById("imagenes").style.display = "block";
+    if (document.getElementById('ch').checked) {
+        document.getElementById("inf").src="../../assets/Fichas/Terrestres/Mammut.jpg";
+        document.getElementById("imagenes").style.display = "block";
+    }
     mamu = true;
     pte = false;
     allo = false;
@@ -106,8 +110,10 @@ function Allosaurus(){
 
     //Mostrar imagen
     document.getElementById("imagenes").removeAttribute('src');
-    document.getElementById("inf").src="../../assets/Fichas/Terrestres/Allosaurus.jpg";
-    document.getElementById("imagenes").style.display = "block";
+    if (document.getElementById('ch').checked) {
+        document.getElementById("inf").src="../../assets/Fichas/Terrestres/Allosaurus.jpg";
+        document.getElementById("imagenes").style.display = "block";
+    }
     mamu = false;
     pte = false;
     allo = true;
@@ -122,8 +128,10 @@ function Perezoso(){
 
     //Mostrar imagen
     document.getElementById("imagenes").removeAttribute('src');
-    document.getElementById("inf").src="../../assets/Fichas/Terrestres/Perezoso.jpg";
-    document.getElementById("imagenes").style.display = "block";
+    if (document.getElementById('ch').checked) {
+        document.getElementById("inf").src="../../assets/Fichas/Terrestres/Perezoso.jpg";
+        document.getElementById("imagenes").style.display = "block";
+    }
     mamu = false;
     pte = false;
     allo = false;
