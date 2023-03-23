@@ -726,6 +726,7 @@ function ocultar(){
 
 function readDeviceOrientation() {
     if (Math.abs(window.orientation) === 90 && cel == true) {
+        alert("Volteoo");
         //Landscape
         document.getElementById("inf").style.marginRight = "7%";
         document.getElementById("inf").style.width = "30%";
