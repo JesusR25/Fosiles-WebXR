@@ -484,3 +484,7 @@ AFRAME.registerComponent("fos", {
         
     }
 })
+
+function volver(){
+    window.history.back();
+}

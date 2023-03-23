@@ -715,3 +715,7 @@ AFRAME.registerComponent("neander", {
         
     }
 })
+
+function volver(){
+    window.history.back();
+}

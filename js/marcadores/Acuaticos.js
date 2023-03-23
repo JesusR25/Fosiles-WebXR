@@ -593,3 +593,7 @@ AFRAME.registerComponent("cela", {
       
   }
 })
+
+function volver(){
+    window.history.back();
+}

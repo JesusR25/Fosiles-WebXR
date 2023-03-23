@@ -482,3 +482,7 @@ AFRAME.registerComponent("pere", {
         
     }
 })
+
+function volver(){
+    window.history.back();
+}
