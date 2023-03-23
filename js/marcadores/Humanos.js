@@ -723,3 +723,13 @@ function volver(){
 function ocultar(){
     document.getElementById('imagenes').style.display = "none";
 }
+
+function readDeviceOrientation() {
+    if (Math.abs(window.orientation) === 90 && cel == true) {
+        //Landscape
+        document.getElementById("inf").style.marginRight = "7%";
+    } else {
+        //Portrait
+    }
+}
+window.onorientationchange = readDeviceOrientation;
