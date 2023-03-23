@@ -5,6 +5,8 @@ let Erec = false;
 let Sapi = false;
 let Paran = false;
 
+window.onorientationchange = readDeviceOrientation();
+
 
 function onQRCodeScanned(scannedText)
 {
@@ -734,4 +736,3 @@ function readDeviceOrientation() {
         //Portrait
     }
 }
-window.onorientationchange = readDeviceOrientation;
