@@ -5,6 +5,7 @@ let Erec = false;
 let Sapi = false;
 let Paran = false;
 
+
 function onQRCodeScanned(scannedText)
 {
     alert(scannedText);
@@ -724,7 +725,7 @@ function ocultar(){
 }
 
 function readDeviceOrientation() {
-    if (Math.abs(window.orientation) === 90 && cel == true) {
+    if (Math.abs(window.orientation) === 90) {
         alert("Volteoo");
         //Landscape
         document.getElementById("inf").style.marginRight = "7%";
@@ -733,3 +734,4 @@ function readDeviceOrientation() {
         //Portrait
     }
 }
+window.onorientationchange = readDeviceOrientation();
