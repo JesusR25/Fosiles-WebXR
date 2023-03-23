@@ -488,3 +488,7 @@ AFRAME.registerComponent("fos", {
 function volver(){
     window.history.back();
 }
+
+function ocultar(){
+    document.getElementById('imagenes').style.display = "none";
+}

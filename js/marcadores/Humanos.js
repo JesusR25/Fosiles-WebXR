@@ -719,3 +719,7 @@ AFRAME.registerComponent("neander", {
 function volver(){
     window.history.back();
 }
+
+function ocultar(){
+    document.getElementById('imagenes').style.display = "none";
+}

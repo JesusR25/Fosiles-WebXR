@@ -597,3 +597,7 @@ AFRAME.registerComponent("cela", {
 function volver(){
     window.history.back();
 }
+
+function ocultar(){
+    document.getElementById('imagenes').style.display = "none";
+}
