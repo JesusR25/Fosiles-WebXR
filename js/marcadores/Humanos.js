@@ -734,4 +734,3 @@ function readDeviceOrientation() {
         //Portrait
     }
 }
-window.onorientationchange = readDeviceOrientation();
