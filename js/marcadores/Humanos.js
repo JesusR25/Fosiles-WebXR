@@ -729,7 +729,7 @@ function readDeviceOrientation() {
         //Landscape
         document.getElementById("inf").style.marginLeft = "3%";
         document.getElementById("inf").style.width = "23%";
-        document.getElementById("inf").style.height = "50%";
+        document.getElementById("inf").style.height = "70%";
         document.getElementById("inf").style.marginTop = "3%";
     } else {
         //Portrait
