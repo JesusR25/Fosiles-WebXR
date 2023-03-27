@@ -728,7 +728,7 @@ function readDeviceOrientation() {
     if (Math.abs(window.orientation) === 90) {
         //Landscape
         document.getElementById("inf").style.marginLeft = "3%";
-        document.getElementById("inf").style.width = "25%";
+        document.getElementById("inf").style.width = "23%";
         document.getElementById("inf").style.marginTop = "3%";
     } else {
         //Portrait
