@@ -498,7 +498,7 @@ function readDeviceOrientation() {
         document.getElementById("inf").style.width = "23%";
         document.getElementById("inf").style.marginTop = "3%";
         //Cambio modelos
-        document.querySelector("#ammonite").setAttribute("scale", "0.6 0.6 0.6");
+        document.querySelector("#ammonite").setAttribute("scale", "1 1 1");
     } else {
         document.getElementById("inf").style.marginLeft = "20%";
         document.getElementById("inf").style.width = "56%";
