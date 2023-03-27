@@ -730,7 +730,7 @@ function readDeviceOrientation() {
         //Landscape
         document.getElementById("inf").style.marginRight = "7%";
         document.getElementById("inf").style.width = "30%";
-        document.getElementById("inf").style.top = "5%";
+        document.getElementById("inf").style.marginTop = "5%";
     } else {
         //Portrait
         alert("Nads");
