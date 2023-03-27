@@ -33,9 +33,10 @@ body{
 }
 
 @media screen and (max-width: 640px) {
-    div.container {
-        width: 96%;
-        max-width: 960px;
+    .contim{
+      z-index: 999; 
+      position: fixed; 
+      display: none;
     }
 
     img {

@@ -726,14 +726,13 @@ function ocultar(){
 
 function readDeviceOrientation() {
     if (Math.abs(window.orientation) === 90) {
-        alert("Volteoo");
         //Landscape
         document.getElementById("inf").style.marginRight = "3%";
-        document.getElementById("inf").style.width = "30%";
+        document.getElementById("inf").style.width = "25%";
         document.getElementById("inf").style.marginTop = "3%";
+        alert("No hubo error");
     } else {
         //Portrait
-        alert("Nads");
     }
 }
 screen.orientation.addEventListener("change", readDeviceOrientation);
