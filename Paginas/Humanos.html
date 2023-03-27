@@ -10,21 +10,6 @@
         <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
     </head>
 
-    <script>
-        function readDeviceOrientation() {
-    if (Math.abs(window.orientation) === 90) {
-        alert("Volteoo");
-        //Landscape
-        document.getElementById("inf").style.marginRight = "7%";
-        document.getElementById("inf").style.width = "30%";
-    } else {
-        //Portrait
-        alert("Nads");
-    }
-}
-        screen.orientation.addEventListener("change", readDeviceOrientation);
-    </script>
-
     <body>
         <label class="container">Información
             <input type="checkbox" checked="checked" id="ch">
