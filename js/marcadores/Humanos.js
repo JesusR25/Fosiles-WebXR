@@ -731,7 +731,9 @@ function readDeviceOrientation() {
         document.getElementById("inf").style.width = "23%";
         document.getElementById("inf").style.marginTop = "3%";
     } else {
-        //Portrait
+        document.getElementById("inf").style.marginLeft = "20%";
+        document.getElementById("inf").style.width = "56%";
+        document.getElementById("inf").style.marginTop = "15%";
     }
 }
 screen.orientation.addEventListener("change", readDeviceOrientation);
