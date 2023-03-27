@@ -727,10 +727,9 @@ function ocultar(){
 function readDeviceOrientation() {
     if (Math.abs(window.orientation) === 90) {
         //Landscape
-        document.getElementById("inf").style.marginRight = "3%";
-        document.getElementById("inf").style.width = "25%";
-        document.getElementById("inf").style.marginTop = "3%";
-        alert("No hubo error");
+        document.getElementById("inf").style.marginRight = "0%";
+        document.getElementById("inf").style.width = "50%";
+        document.getElementById("inf").style.marginTop = "0%";
     } else {
         //Portrait
     }
