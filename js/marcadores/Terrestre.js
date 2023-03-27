@@ -497,10 +497,14 @@ function readDeviceOrientation() {
         document.getElementById("inf").style.marginLeft = "3%";
         document.getElementById("inf").style.width = "23%";
         document.getElementById("inf").style.marginTop = "3%";
+        //Cambio modelos
+        document.querySelector("#ammonite").setAttribute("scale", "0.6 0.6 0.6");
     } else {
         document.getElementById("inf").style.marginLeft = "20%";
         document.getElementById("inf").style.width = "56%";
         document.getElementById("inf").style.marginTop = "15%";
+        //Cambio modelos
+        document.querySelector("#ammonite").setAttribute("scale", "0.3 0.3 0.3");
     }
 }
 screen.orientation.addEventListener("change", readDeviceOrientation);
