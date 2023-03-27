@@ -493,6 +493,7 @@ function ocultar(){
 
 function readDeviceOrientation() {
     if (Math.abs(window.orientation) === 90) {
+        alert("Giro");
         //Landscape
         document.getElementById("inf").style.marginLeft = "3%";
         document.getElementById("inf").style.width = "23%";
@@ -504,7 +505,7 @@ function readDeviceOrientation() {
         document.getElementById("inf").style.width = "56%";
         document.getElementById("inf").style.marginTop = "15%";
         //Cambio modelos
-        document.querySelector("#ammonite").setAttribute("scale", "0.3 0.3 0.3");
+        document.querySelector("#ammonite").setAttribute("scale", "3 3 3");
     }
 }
 screen.orientation.addEventListener("change", readDeviceOrientation);
