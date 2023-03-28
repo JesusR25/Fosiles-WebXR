@@ -498,8 +498,12 @@ function readDeviceOrientation() {
         document.getElementById("inf").style.width = "23%";
         document.getElementById("inf").style.marginTop = "3%";
         //Cambio modelos
+        //Allosaurus
         document.querySelector("#allosaurus").setAttribute("scale", "1 1 1");
         document.querySelector("#allosaurus").setAttribute("position", "0.4 0 -4");
+        //Pterodactyl
+        document.querySelector("#pterodactyl").setAttribute("scale", "8 8 8");
+        document.querySelector("#pterodactyl").setAttribute("position", "0.7 0 -4");
     } else {
         document.getElementById("inf").style.marginLeft = "20%";
         document.getElementById("inf").style.width = "56%";
@@ -508,6 +512,9 @@ function readDeviceOrientation() {
         //Allosaurus
         document.querySelector("#allosaurus").setAttribute("scale", "0.4 0.4 0.4");
         document.querySelector("#allosaurus").setAttribute("position", "0 -1.2 -4");
+        //Pterodactyl
+        document.querySelector("#pterodactyl").setAttribute("scale", "5 5 5");
+        document.querySelector("#pterodactyl").setAttribute("position", "0 -2 -4");
     }
 }
 screen.orientation.addEventListener("change", readDeviceOrientation);
