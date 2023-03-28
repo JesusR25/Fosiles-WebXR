@@ -500,13 +500,13 @@ function readDeviceOrientation() {
         document.getElementById("inf").style.marginTop = "3%";
         //Cambio modelos
         alert("Hola");
-        document.querySelector("#ammonite").setAttribute("scale", "3 3 3");
+        document.querySelector("#allosaurus").setAttribute("scale", "2 2 2");
     } else {
         document.getElementById("inf").style.marginLeft = "20%";
         document.getElementById("inf").style.width = "56%";
         document.getElementById("inf").style.marginTop = "15%";
         //Cambio modelos
-        document.querySelector("#ammonite").setAttribute("scale", "3 3 3");
+        document.querySelector("#allosaurus").setAttribute("scale", "0.4 0.4 0.4");
     }
 }
 screen.orientation.addEventListener("change", readDeviceOrientation);
