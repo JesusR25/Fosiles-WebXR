@@ -493,19 +493,18 @@ function ocultar(){
 
 function readDeviceOrientation() {
     if (Math.abs(window.orientation) === 90) {
-        alert("Giro");
         //Landscape
         document.getElementById("inf").style.marginLeft = "3%";
         document.getElementById("inf").style.width = "23%";
         document.getElementById("inf").style.marginTop = "3%";
         //Cambio modelos
-        alert("Hola");
-        document.querySelector("#allosaurus").setAttribute("scale", "2 2 2");
+        document.querySelector("#allosaurus").setAttribute("scale", "1.5 1.5 1.5");
     } else {
         document.getElementById("inf").style.marginLeft = "20%";
         document.getElementById("inf").style.width = "56%";
         document.getElementById("inf").style.marginTop = "15%";
         //Cambio modelos
+        //Allosaurus
         document.querySelector("#allosaurus").setAttribute("scale", "0.4 0.4 0.4");
     }
 }
