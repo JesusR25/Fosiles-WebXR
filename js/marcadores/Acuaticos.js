@@ -611,7 +611,7 @@ function readDeviceOrientation() {
         //Cambio modelos
         //Ballena
         document.querySelector("#ballena").setAttribute("scale", "0.30 0.30 0.30");
-        document.querySelector("#ballena").setAttribute("position", "5 -1 -4");
+        document.querySelector("#ballena").setAttribute("position", "2 -1 -4");
         //Celacanto
         document.querySelector("#celacanto").setAttribute("scale", "0.6 0.6 0.6");
         document.querySelector("#celacanto").setAttribute("position", "1 -1 -4");
