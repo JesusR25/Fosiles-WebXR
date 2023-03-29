@@ -521,7 +521,7 @@ function readDeviceOrientation() {
         document.querySelector("#allosaurus").setAttribute("position", "0 -1.7 -4");
         //Pterodactyl
         document.querySelector("#pterodactyl").setAttribute("scale", "5 5 5");
-        document.querySelector("#pterodactyl").setAttribute("position", "0 -2 -4");
+        document.querySelector("#pterodactyl").setAttribute("position", "0 -4 -4");
         //Mammoth
         document.querySelector("#mammoth").setAttribute("scale", "0.010 0.010 0.010");
         document.querySelector("#mammoth").setAttribute("position", "0 -2 -4");
