@@ -611,13 +611,13 @@ function readDeviceOrientation() {
         //Cambio modelos
         //Ballena
         document.querySelector("#ballena").setAttribute("scale", "0.30 0.30 0.30");
-        document.querySelector("#ballena").setAttribute("position", "0.3 -1 -4");
+        document.querySelector("#ballena").setAttribute("position", "5 -1 -4");
         //Celacanto
         document.querySelector("#celacanto").setAttribute("scale", "0.6 0.6 0.6");
         document.querySelector("#celacanto").setAttribute("position", "1 -1 -4");
         //Tiburon
         document.querySelector("#tiburon").setAttribute("scale", "0.6 0.6 0.6");
-        document.querySelector("#tiburon").setAttribute("position", "2 -100 -450");
+        document.querySelector("#tiburon").setAttribute("position", "5 -100 -450");
         //Megadolon
         document.querySelector("#megadolon").setAttribute("scale", "1 1 1");
         document.querySelector("#megadolon").setAttribute("position", "0 -2 -4");
