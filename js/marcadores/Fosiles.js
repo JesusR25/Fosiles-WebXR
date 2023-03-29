@@ -500,17 +500,17 @@ function readDeviceOrientation() {
         document.getElementById("inf").style.width = "23%";
         document.getElementById("inf").style.marginTop = "3%";
         //Ammonite
-        document.querySelector("#ammonite").setAttribute("scale", "0.3 0.3 0.3");
-        document.querySelector("#ammonite").setAttribute("position", "0 -1 -4");
+        document.querySelector("#ammonite").setAttribute("scale", "1 1 1");
+        document.querySelector("#ammonite").setAttribute("position", "0.5 -1 -4");
         //Belemnites
-        document.querySelector("#belemnites").setAttribute("scale", "50 50 50");
-        document.querySelector("#belemnites").setAttribute("position", "0 -1 -4");
+        document.querySelector("#belemnites").setAttribute("scale", "70 70 70");
+        document.querySelector("#belemnites").setAttribute("position", "0.5 -1 -4");
         //Fosil
-        document.querySelector("#fosil").setAttribute("scale", "0.4 0.4 0.4");
-        document.querySelector("#fosil").setAttribute("position", "0 -1.3 -4");
+        document.querySelector("#fosil").setAttribute("scale", "0.7 0.7 0.7");
+        document.querySelector("#fosil").setAttribute("position", "0.5 -1.3 -4");
         //Trilobite
-        document.querySelector("#trilobite").setAttribute("scale", "1 1 1");
-        document.querySelector("#trilobite").setAttribute("position", "0 -1.3 -4");
+        document.querySelector("#trilobite").setAttribute("scale", "2 2 2");
+        document.querySelector("#trilobite").setAttribute("position", "0.5 -1.3 -4");
     } else {
         document.getElementById("inf").style.marginLeft = "20%";
         document.getElementById("inf").style.width = "56%";
