@@ -501,16 +501,16 @@ function readDeviceOrientation() {
         //Cambio modelos
         //Allosaurus
         document.querySelector("#allosaurus").setAttribute("scale", "1 1 1");
-        document.querySelector("#allosaurus").setAttribute("position", "0.4 0 -4");
+        document.querySelector("#allosaurus").setAttribute("position", "0.7 0 -4");
         //Pterodactyl
         document.querySelector("#pterodactyl").setAttribute("scale", "8 8 8");
-        document.querySelector("#pterodactyl").setAttribute("position", "0.7 0 -4");
+        document.querySelector("#pterodactyl").setAttribute("position", "0.7 -0.5 -4");
         //Mammoth
-        document.querySelector("#mammoth").setAttribute("scale", "0.020 0.020 0.020");
-        document.querySelector("#mammoth").setAttribute("position", "0 -2 -4");
+        document.querySelector("#mammoth").setAttribute("scale", "0.050 0.050 0.050");
+        document.querySelector("#mammoth").setAttribute("position", "0.4 -2 -4");
         //Perezoso
-        document.querySelector("#perezoso").setAttribute("scale", "0.8 0.8 0.8");
-        document.querySelector("#perezoso").setAttribute("position", "-1.5 -2 -4");
+        document.querySelector("#perezoso").setAttribute("scale", "0.9 0.9 0.9");
+        document.querySelector("#perezoso").setAttribute("position", "-0.6 -1.5 -4");
     } else {
         document.getElementById("inf").style.marginLeft = "20%";
         document.getElementById("inf").style.width = "56%";
