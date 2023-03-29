@@ -499,10 +499,34 @@ function readDeviceOrientation() {
         document.getElementById("inf").style.marginLeft = "3%";
         document.getElementById("inf").style.width = "23%";
         document.getElementById("inf").style.marginTop = "3%";
+        //Ammonite
+        document.querySelector("#ammonite").setAttribute("scale", "0.3 0.3 0.3");
+        document.querySelector("#ammonite").setAttribute("position", "0 -1 -4");
+        //Belemnites
+        document.querySelector("#belemnites").setAttribute("scale", "50 50 50");
+        document.querySelector("#belemnites").setAttribute("position", "0 -1 -4");
+        //Fosil
+        document.querySelector("#fosil").setAttribute("scale", "0.4 0.4 0.4");
+        document.querySelector("#fosil").setAttribute("position", "0 -1.3 -4");
+        //Trilobite
+        document.querySelector("#trilobite").setAttribute("scale", "1 1 1");
+        document.querySelector("#trilobite").setAttribute("position", "0 -1.3 -4");
     } else {
         document.getElementById("inf").style.marginLeft = "20%";
         document.getElementById("inf").style.width = "56%";
         document.getElementById("inf").style.marginTop = "15%";
+        //Ammonite
+        document.querySelector("#ammonite").setAttribute("scale", "0.3 0.3 0.3");
+        document.querySelector("#ammonite").setAttribute("position", "0 -1 -4");
+        //Belemnites
+        document.querySelector("#belemnites").setAttribute("scale", "50 50 50");
+        document.querySelector("#belemnites").setAttribute("position", "0 -1 -4");
+        //Fosil
+        document.querySelector("#fosil").setAttribute("scale", "0.4 0.4 0.4");
+        document.querySelector("#fosil").setAttribute("position", "0 -1.3 -4");
+        //Trilobite
+        document.querySelector("#trilobite").setAttribute("scale", "1 1 1");
+        document.querySelector("#trilobite").setAttribute("position", "0 -1.3 -4");
     }
 }
 screen.orientation.addEventListener("change", readDeviceOrientation);

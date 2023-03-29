@@ -730,10 +730,48 @@ function readDeviceOrientation() {
         document.getElementById("inf").style.marginLeft = "3%";
         document.getElementById("inf").style.width = "23%";
         document.getElementById("inf").style.marginTop = "3%";
+        //Cambio de modelos
+        //Pa
+        document.querySelector("#pa").setAttribute("scale", "0.3 0.3 0.3");
+        document.querySelector("#pa").setAttribute("position", "0 -1 -4");
+        //Aut
+        document.querySelector("#aut").setAttribute("scale", "0.012 0.012 0.012");
+        document.querySelector("#aut").setAttribute("position", "0 -1.3 -4");
+        //Hoer
+        document.querySelector("#hoer").setAttribute("scale", "0.3 0.3 0.3");
+        document.querySelector("#hoer").setAttribute("position", "0 -1 -4");
+        //Hoha
+        document.querySelector("#hoha").setAttribute("scale", "1 1 1");
+        document.querySelector("#hoha").setAttribute("position", "0 -1 -4");
+        //Hosa
+        document.querySelector("#hosa").setAttribute("scale", "2 2 2");
+        document.querySelector("#hosa").setAttribute("position", "0 -1 -4");
+        //Hone
+        document.querySelector("#hone").setAttribute("scale", "0.1 0.1 0.1");
+        document.querySelector("#hone").setAttribute("position", "0 -2 -4");
     } else {
         document.getElementById("inf").style.marginLeft = "20%";
         document.getElementById("inf").style.width = "56%";
         document.getElementById("inf").style.marginTop = "15%";
+        //Cambio de modelos
+        //Pa
+        document.querySelector("#pa").setAttribute("scale", "0.3 0.3 0.3");
+        document.querySelector("#pa").setAttribute("position", "0 -1 -4");
+        //Aut
+        document.querySelector("#aut").setAttribute("scale", "0.012 0.012 0.012");
+        document.querySelector("#aut").setAttribute("position", "0 -1.3 -4");
+        //Hoer
+        document.querySelector("#hoer").setAttribute("scale", "0.3 0.3 0.3");
+        document.querySelector("#hoer").setAttribute("position", "0 -1 -4");
+        //Hoha
+        document.querySelector("#hoha").setAttribute("scale", "1 1 1");
+        document.querySelector("#hoha").setAttribute("position", "0 -1 -4");
+        //Hosa
+        document.querySelector("#hosa").setAttribute("scale", "2 2 2");
+        document.querySelector("#hosa").setAttribute("position", "0 -1 -4");
+        //Hone
+        document.querySelector("#hone").setAttribute("scale", "0.1 0.1 0.1");
+        document.querySelector("#hone").setAttribute("position", "0 -2 -4");
     }
 }
 screen.orientation.addEventListener("change", readDeviceOrientation);

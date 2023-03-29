@@ -491,6 +491,7 @@ function ocultar(){
     document.getElementById('imagenes').style.display = "none";
 }
 
+
 function readDeviceOrientation() {
     if (Math.abs(window.orientation) === 90) {
         //Landscape
@@ -504,6 +505,12 @@ function readDeviceOrientation() {
         //Pterodactyl
         document.querySelector("#pterodactyl").setAttribute("scale", "8 8 8");
         document.querySelector("#pterodactyl").setAttribute("position", "0.7 0 -4");
+        //Mammoth
+        document.querySelector("#mammoth").setAttribute("scale", "0.020 0.020 0.020");
+        document.querySelector("#mammoth").setAttribute("position", "0 -2 -4");
+        //Perezoso
+        document.querySelector("#perezoso").setAttribute("scale", "0.8 0.8 0.8");
+        document.querySelector("#perezoso").setAttribute("position", "-1.5 -2 -4");
     } else {
         document.getElementById("inf").style.marginLeft = "20%";
         document.getElementById("inf").style.width = "56%";
@@ -515,6 +522,12 @@ function readDeviceOrientation() {
         //Pterodactyl
         document.querySelector("#pterodactyl").setAttribute("scale", "5 5 5");
         document.querySelector("#pterodactyl").setAttribute("position", "0 -2 -4");
+        //Mammoth
+        document.querySelector("#mammoth").setAttribute("scale", "0.010 0.010 0.010");
+        document.querySelector("#mammoth").setAttribute("position", "0 -2 -4");
+        //Perezoso
+        document.querySelector("#perezoso").setAttribute("scale", "0.8 0.8 0.8");
+        document.querySelector("#perezoso").setAttribute("position", "-1.5 -2 -4");
     }
 }
 screen.orientation.addEventListener("change", readDeviceOrientation);

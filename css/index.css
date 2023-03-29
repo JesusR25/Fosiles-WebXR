@@ -46,8 +46,9 @@ body {
     height: 100%;
     position: absolute;
     padding: 90px 70px 50px 70px;
-    background: rgba(40, 57, 101, .9);
+    backdrop-filter: blur(15px);
   }
+  
   
   .login-html .sign-in-htm,
   .login-html .sign-up-htm {
