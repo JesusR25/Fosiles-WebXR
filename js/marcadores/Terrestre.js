@@ -506,10 +506,10 @@ function readDeviceOrientation() {
         document.querySelector("#pterodactyl").setAttribute("scale", "8 8 8");
         document.querySelector("#pterodactyl").setAttribute("position", "0.7 -0.5 -4");
         //Mammoth
-        document.querySelector("#mammoth").setAttribute("scale", "0.050 0.050 0.050");
+        document.querySelector("#mammoth").setAttribute("scale", "0.040 0.040 0.040");
         document.querySelector("#mammoth").setAttribute("position", "0.4 -2 -4");
         //Perezoso
-        document.querySelector("#perezoso").setAttribute("scale", "0.9 0.9 0.9");
+        document.querySelector("#perezoso").setAttribute("scale", "1.2 1.2 1.2");
         document.querySelector("#perezoso").setAttribute("position", "-0.6 -1.5 -4");
     } else {
         document.getElementById("inf").style.marginLeft = "20%";
