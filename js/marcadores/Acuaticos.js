@@ -610,20 +610,20 @@ function readDeviceOrientation() {
         document.getElementById("inf").style.marginTop = "3%";
         //Cambio modelos
         //Ballena
-        document.querySelector("#ballena").setAttribute("scale", "0.15 0.15 0.15");
-        document.querySelector("#ballena").setAttribute("position", "-0.5 -1.5 -4");
+        document.querySelector("#ballena").setAttribute("scale", "0.40 0.40 0.40");
+        document.querySelector("#ballena").setAttribute("position", "-1 -1.5 -4");
         //Celacanto
-        document.querySelector("#celacanto").setAttribute("scale", "0.3 0.3 0.3");
-        document.querySelector("#celacanto").setAttribute("position", "0 -1.2 -4");
+        document.querySelector("#celacanto").setAttribute("scale", "0.6 0.6 0.6");
+        document.querySelector("#celacanto").setAttribute("position", "1 -1.2 -4");
         //Tiburon
-        document.querySelector("#tiburon").setAttribute("scale", "0.3 0.3 0.3");
-        document.querySelector("#tiburon").setAttribute("position", "-0.5 -100 -450");
+        document.querySelector("#tiburon").setAttribute("scale", "0.6 0.6 0.6");
+        document.querySelector("#tiburon").setAttribute("position", "1 -100 -450");
         //Megadolon
         document.querySelector("#megadolon").setAttribute("scale", "1 1 1");
         document.querySelector("#megadolon").setAttribute("position", "0 -2 -4");
         //Mesasa
-        document.querySelector("#mesasa").setAttribute("scale", "0.050 0.050 0.050");
-        document.querySelector("#mesasa").setAttribute("position", "-3 -2.5 -15");
+        document.querySelector("#mesasa").setAttribute("scale", "0.080 0.080 0.080");
+        document.querySelector("#mesasa").setAttribute("position", "0 -2.5 -15");
     } else {
         document.getElementById("inf").style.marginLeft = "20%";
         document.getElementById("inf").style.width = "56%";
