@@ -613,7 +613,7 @@ function readDeviceOrientation() {
         document.querySelector("#ballena").setAttribute("scale", "0.30 0.30 0.30");
         document.querySelector("#ballena").setAttribute("position", "2 -1 -4");
         //Celacanto
-        document.querySelector("#celacanto").setAttribute("scale", "0.6 0.6 0.6");
+        document.querySelector("#celacanto").setAttribute("scale", "0.5 0.5 0.5");
         document.querySelector("#celacanto").setAttribute("position", "1 -1 -4");
         //Tiburon
         document.querySelector("#tiburon").setAttribute("scale", "0.6 0.6 0.6");
