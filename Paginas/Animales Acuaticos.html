@@ -23,12 +23,12 @@
                 <a-asset-item id="blue" src="../assets/Animales/Acuaticos/blue_whale.glb"></a-asset-item>
                 <a-asset-item id="cela" src="../assets/Animales/Acuaticos/Celacanto.glb"></a-asset-item>
                 <a-asset-item id="great" src="../assets/Animales/Acuaticos/great_white_shark.glb"></a-asset-item>
-                <a-asset-item id="mega" src="../assets/Animales/Acuaticos/megalodon.glb"></a-asset-item>
+                <a-asset-item id="mega" src="../assets/Animales/Acuaticos/megalodon_animated_2.glb"></a-asset-item>
                 <a-asset-item id="mosa" src="../assets/Animales/Acuaticos/mosasaurus.glb"></a-asset-item>
                 <a-asset-item id="prue" src="../assets/Animales/Acuaticos/modif.glb"></a-asset-item>
             </a-assets>
 
-            <a-light type="ambient" intensity="3.0" ></a-light>
+            
             
             <!-- Modelo muy oscuro -->
             <a-entity id="ballena" visible="false" position="-0.5 -1.5 -4" rotation="0 90 0" scale="0.15 0.15 0.15" gltf-model="#blue" animation-mixer></a-entity>
@@ -37,7 +37,7 @@
             <!-- Listo -->
             <a-entity id="tiburon" visible="false" position="-0.5 -100 -450" rotation="0 90 0" scale="0.3 0.3 0.3" gltf-model="#great" animation-mixer ></a-entity>
             <!-- Modelo muy oscuro -->
-            <a-entity id="megadolon" visible="false" position="0 -2 -4" rotation="0 0 0" scale="1 1 1" gltf-model="#prue" animation-mixer ></a-entity>
+            <a-entity id="megadolon" visible="false" position="0 -2.4 -4" rotation="0 90 0" scale="1 1 1" gltf-model="#mega" animation-mixer="clip: swimming_skeletal.3" ></a-entity>
             <!-- Modelo muy oscuro -->
             <a-entity id="mesasa" visible="false" position="-3 -2.5 -15" rotation="0 90 0" scale="0.050 0.050 0.050" gltf-model="#mosa" animation-mixer ></a-entity>
            

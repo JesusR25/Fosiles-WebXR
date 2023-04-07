@@ -72,7 +72,7 @@ body {
   .login-html .tab,
   .login-form .group .label,
   .login-form .group .button {
-    text-transform: uppercase;
+    text-transform: none;
   }
   
   .login-html .tab {
