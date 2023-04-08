@@ -3,6 +3,8 @@ let bele = false;
 let fos = false;
 let tri = false;
 
+let modammo;
+
 function onQRCodeScanned(scannedText)
 {
     alert(scannedText);
@@ -71,6 +73,7 @@ function Belemnite(){
     document.querySelector("#belemnites").setAttribute("visible", true);
     document.querySelector("#fosil").setAttribute("visible", false);
     document.querySelector("#trilobite").setAttribute("visible", false);
+    modammo.scale.x = 1;
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
@@ -147,6 +150,7 @@ AFRAME.registerComponent("bele", {
         // track markerFound/markerLost
         // grab the model reference
         document.querySelector("#belemnites").addEventListener("model-loaded", evt => {
+            modammo = evt.detail.model
             this.mesh = evt.detail.model
         })
         // hammerjs input helper
@@ -157,11 +161,11 @@ AFRAME.registerComponent("bele", {
         var currentScale = 1;
         hammertime.get('pinch').set({ enable: true });
         hammertime.on("pinchstart", (ev) => {
-            currentScale = this.mesh.scale.x;
+            currentScale = modammo.scale.x;
         })
         hammertime.on("pinchmove", (ev) => {
             if (!bele) return;
-            this.mesh.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
+            modammo.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
         });
 
         // rotation
@@ -171,25 +175,25 @@ AFRAME.registerComponent("bele", {
         hammertime.on("panleft", () => {
             if (!bele) return;
             this.isPanning = true
-            this.mesh.rotation.y -= 4 * Math.PI / 360;
+            modammo.rotation.y -= 4 * Math.PI / 360;
         })
 
         hammertime.on("panright", () => {
             if (!bele) return;
             this.isPanning = true
-            this.mesh.rotation.y += 4 * Math.PI / 360;
+            modammo.rotation.y += 4 * Math.PI / 360;
         })
 
         hammertime.on("panup", () => {
             if (!bele) return;
             xrot = true;
-            this.mesh.rotation.x -= 4 * Math.PI / 360;
+            modammo.rotation.x -= 4 * Math.PI / 360;
         })
 
         hammertime.on("pandown", () => {
             if (!bele) return;
             xrot = true;
-            this.mesh.rotation.x += 4 * Math.PI / 360;
+            modammo.rotation.x += 4 * Math.PI / 360;
         })
 
 
@@ -217,7 +221,7 @@ AFRAME.registerComponent("bele", {
         if (!(bele && this.swipeVelocity && !this.isPanning)){
             return;
         }else{
-            this.mesh.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
+            modammo.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
             //this.mesh.rotation.x += this.swipeVelocity * 4 * Math.PI / 360;
             this.swipeVelocity *= 0.93;
             if (Math.abs(this.swipeVelocity) <= 0.1) this.swipeVelocity = 0;
