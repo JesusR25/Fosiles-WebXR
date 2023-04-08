@@ -73,7 +73,7 @@ function Belemnite(){
     document.querySelector("#belemnites").setAttribute("visible", true);
     document.querySelector("#fosil").setAttribute("visible", false);
     document.querySelector("#trilobite").setAttribute("visible", false);
-    modammo.scale.x = 1;
+    modammo.scale.multiplyScalar(0).addScalar(1);
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
