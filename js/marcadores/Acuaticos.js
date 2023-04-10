@@ -4,6 +4,12 @@ let tibu = false;
 let mega = false;
 let mesa = false;
 
+let modmega;
+let modmosa;
+let modballe;
+let modtibu;
+let modcela;
+
 function onQRCodeScanned(scannedText)
 {
     switch (scannedText) {
@@ -75,6 +81,7 @@ function Megalodon(){
   document.querySelector("#tiburon").setAttribute("visible", false);
   document.querySelector("#megadolon").setAttribute("visible", true);
   document.querySelector("#mesasa").setAttribute("visible", false);
+  modmega.scale.multiplyScalar(0).addScalar(1);
   //Mostrar imagen
   document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
@@ -94,6 +101,7 @@ function Mosasaurus(){
   document.querySelector("#tiburon").setAttribute("visible", false);
   document.querySelector("#megadolon").setAttribute("visible", false);
   document.querySelector("#mesasa").setAttribute("visible", true);
+  modmosa.scale.multiplyScalar(0).addScalar(1);
   //Mostrar imagen
   document.getElementById("inf").removeAttribute('src');
   if (document.getElementById('ch').checked) {
@@ -113,6 +121,7 @@ function Ballena(){
   document.querySelector("#tiburon").setAttribute("visible", false);
   document.querySelector("#megadolon").setAttribute("visible", false);
   document.querySelector("#mesasa").setAttribute("visible", false);
+  modballe.scale.multiplyScalar(0).addScalar(1);
   //Mostrar imagen
   document.getElementById("inf").removeAttribute('src');
   if (document.getElementById('ch').checked) {
@@ -132,6 +141,7 @@ function Tiburon(){
   document.querySelector("#tiburon").setAttribute("visible", true);
   document.querySelector("#megadolon").setAttribute("visible", false);
   document.querySelector("#mesasa").setAttribute("visible", false);
+  modtibu.scale.multiplyScalar(0).addScalar(1);
   //Mostrar imagen
   document.getElementById("inf").removeAttribute('src');
   if (document.getElementById('ch').checked) {
@@ -151,6 +161,7 @@ function Celacanto(){
   document.querySelector("#tiburon").setAttribute("visible", false);
   document.querySelector("#megadolon").setAttribute("visible", false);
   document.querySelector("#mesasa").setAttribute("visible", false);
+  modcela.scale.multiplyScalar(0).addScalar(1);
   //Mostrar imagen
   document.getElementById("inf").removeAttribute('src');
   if (document.getElementById('ch').checked) {
@@ -170,6 +181,7 @@ AFRAME.registerComponent("mega", {
       // track markerFound/markerLost
       // grab the model reference
       document.querySelector("#megadolon").addEventListener("model-loaded", evt => {
+        modmega = evt.detail.model;
           this.mesh = evt.detail.model
       })
       // hammerjs input helper
@@ -184,7 +196,7 @@ AFRAME.registerComponent("mega", {
       })
       hammertime.on("pinchmove", (ev) => {
           if (!mega) return;
-          this.mesh.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
+          modmega.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
       });
 
       // rotation
@@ -194,25 +206,25 @@ AFRAME.registerComponent("mega", {
       hammertime.on("panleft", () => {
           if (!mega) return;
           this.isPanning = true
-          this.mesh.rotation.y -= 4 * Math.PI / 360;
+          modmega.rotation.y -= 4 * Math.PI / 360;
       })
 
       hammertime.on("panright", () => {
           if (!mega) return;
           this.isPanning = true
-          this.mesh.rotation.y += 4 * Math.PI / 360;
+          modmega.rotation.y += 4 * Math.PI / 360;
       })
 
       hammertime.on("panup", () => {
           if (!mega) return;
           xrot = true;
-          this.mesh.rotation.x -= 4 * Math.PI / 360;
+          modmega.rotation.x -= 4 * Math.PI / 360;
       })
 
       hammertime.on("pandown", () => {
           if (!mega) return;
           xrot = true;
-          this.mesh.rotation.x += 4 * Math.PI / 360;
+          modmega.rotation.x += 4 * Math.PI / 360;
       })
 
 
@@ -240,7 +252,7 @@ AFRAME.registerComponent("mega", {
       if (!(mega && this.swipeVelocity && !this.isPanning)){
           return;
       }else{
-          this.mesh.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
+          modmega.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
           //this.mesh.rotation.x += this.swipeVelocity * 4 * Math.PI / 360;
           this.swipeVelocity *= 0.93;
           if (Math.abs(this.swipeVelocity) <= 0.1) this.swipeVelocity = 0;
@@ -256,6 +268,7 @@ AFRAME.registerComponent("mosa", {
       // track markerFound/markerLost
       // grab the model reference
       document.querySelector("#mesasa").addEventListener("model-loaded", evt => {
+        modmosa = evt.detail.model;
           this.mesh = evt.detail.model
       })
       // hammerjs input helper
@@ -266,11 +279,11 @@ AFRAME.registerComponent("mosa", {
       var currentScale = 1;
       hammertime.get('pinch').set({ enable: true });
       hammertime.on("pinchstart", (ev) => {
-          currentScale = this.mesh.scale.x;
+          currentScale = modmosa.scale.x;
       })
       hammertime.on("pinchmove", (ev) => {
           if (!mesa) return;
-          this.mesh.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
+          modmosa.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
       });
 
       // rotation
@@ -280,25 +293,25 @@ AFRAME.registerComponent("mosa", {
       hammertime.on("panleft", () => {
           if (!mesa) return;
           this.isPanning = true
-          this.mesh.rotation.y -= 4 * Math.PI / 360;
+          modmosa.rotation.y -= 4 * Math.PI / 360;
       })
 
       hammertime.on("panright", () => {
           if (!mesa) return;
           this.isPanning = true
-          this.mesh.rotation.y += 4 * Math.PI / 360;
+          modmosa.rotation.y += 4 * Math.PI / 360;
       })
 
       hammertime.on("panup", () => {
           if (!mesa) return;
           xrot = true;
-          this.mesh.rotation.x -= 4 * Math.PI / 360;
+          modmosa.rotation.x -= 4 * Math.PI / 360;
       })
 
       hammertime.on("pandown", () => {
           if (!mesa) return;
           xrot = true;
-          this.mesh.rotation.x += 4 * Math.PI / 360;
+          modmosa.rotation.x += 4 * Math.PI / 360;
       })
 
 
@@ -326,7 +339,7 @@ AFRAME.registerComponent("mosa", {
       if (!(mesa && this.swipeVelocity && !this.isPanning)){
           return;
       }else{
-          this.mesh.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
+          modmosa.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
           //this.mesh.rotation.x += this.swipeVelocity * 4 * Math.PI / 360;
           this.swipeVelocity *= 0.93;
           if (Math.abs(this.swipeVelocity) <= 0.1) this.swipeVelocity = 0;
@@ -342,6 +355,7 @@ AFRAME.registerComponent("ballena", {
       // track markerFound/markerLost
       // grab the model reference
       document.querySelector("#ballena").addEventListener("model-loaded", evt => {
+        modballe = evt.detail.model;
           this.mesh = evt.detail.model
       })
       // hammerjs input helper
@@ -352,11 +366,11 @@ AFRAME.registerComponent("ballena", {
       var currentScale = 1;
       hammertime.get('pinch').set({ enable: true });
       hammertime.on("pinchstart", (ev) => {
-          currentScale = this.mesh.scale.x;
+          currentScale = modballe.scale.x;
       })
       hammertime.on("pinchmove", (ev) => {
           if (!balle) return;
-          this.mesh.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
+          modballe.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
       });
 
       // rotation
@@ -366,25 +380,25 @@ AFRAME.registerComponent("ballena", {
       hammertime.on("panleft", () => {
           if (!balle) return;
           this.isPanning = true
-          this.mesh.rotation.y -= 4 * Math.PI / 360;
+          modballe.rotation.y -= 4 * Math.PI / 360;
       })
 
       hammertime.on("panright", () => {
           if (!balle) return;
           this.isPanning = true
-          this.mesh.rotation.y += 4 * Math.PI / 360;
+          modballe.rotation.y += 4 * Math.PI / 360;
       })
 
       hammertime.on("panup", () => {
           if (!balle) return;
           xrot = true;
-          this.mesh.rotation.x -= 4 * Math.PI / 360;
+          modballe.rotation.x -= 4 * Math.PI / 360;
       })
 
       hammertime.on("pandown", () => {
           if (!balle) return;
           xrot = true;
-          this.mesh.rotation.x += 4 * Math.PI / 360;
+          modballe.rotation.x += 4 * Math.PI / 360;
       })
 
 
@@ -412,7 +426,7 @@ AFRAME.registerComponent("ballena", {
       if (!(balle && this.swipeVelocity && !this.isPanning)){
           return;
       }else{
-          this.mesh.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
+          modballe.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
           //this.mesh.rotation.x += this.swipeVelocity * 4 * Math.PI / 360;
           this.swipeVelocity *= 0.93;
           if (Math.abs(this.swipeVelocity) <= 0.1) this.swipeVelocity = 0;
@@ -428,6 +442,7 @@ AFRAME.registerComponent("tibu", {
       // track markerFound/markerLost
       // grab the model reference
       document.querySelector("#tiburon").addEventListener("model-loaded", evt => {
+        modtibu = evt.detail.model;
           this.mesh = evt.detail.model
       })
       // hammerjs input helper
@@ -438,11 +453,11 @@ AFRAME.registerComponent("tibu", {
       var currentScale = 1;
       hammertime.get('pinch').set({ enable: true });
       hammertime.on("pinchstart", (ev) => {
-          currentScale = this.mesh.scale.x;
+          currentScale = modtibu.scale.x;
       })
       hammertime.on("pinchmove", (ev) => {
           if (!tibu) return;
-          this.mesh.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
+          modtibu.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
       });
 
       // rotation
@@ -452,25 +467,25 @@ AFRAME.registerComponent("tibu", {
       hammertime.on("panleft", () => {
           if (!tibu) return;
           this.isPanning = true
-          this.mesh.rotation.y -= 4 * Math.PI / 360;
+          modtibu.rotation.y -= 4 * Math.PI / 360;
       })
 
       hammertime.on("panright", () => {
           if (!tibu) return;
           this.isPanning = true
-          this.mesh.rotation.y += 4 * Math.PI / 360;
+          modtibu.rotation.y += 4 * Math.PI / 360;
       })
 
       hammertime.on("panup", () => {
           if (!tibu) return;
           xrot = true;
-          this.mesh.rotation.x -= 4 * Math.PI / 360;
+          modtibu.rotation.x -= 4 * Math.PI / 360;
       })
 
       hammertime.on("pandown", () => {
           if (!tibu) return;
           xrot = true;
-          this.mesh.rotation.x += 4 * Math.PI / 360;
+          modtibu.rotation.x += 4 * Math.PI / 360;
       })
 
 
@@ -498,7 +513,7 @@ AFRAME.registerComponent("tibu", {
       if (!(tibu && this.swipeVelocity && !this.isPanning)){
           return;
       }else{
-          this.mesh.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
+          modtibu.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
           //this.mesh.rotation.x += this.swipeVelocity * 4 * Math.PI / 360;
           this.swipeVelocity *= 0.93;
           if (Math.abs(this.swipeVelocity) <= 0.1) this.swipeVelocity = 0;
@@ -514,6 +529,7 @@ AFRAME.registerComponent("cela", {
       // track markerFound/markerLost
       // grab the model reference
       document.querySelector("#celacanto").addEventListener("model-loaded", evt => {
+        modcela = evt.detail.model;
           this.mesh = evt.detail.model
       })
       // hammerjs input helper
@@ -524,11 +540,11 @@ AFRAME.registerComponent("cela", {
       var currentScale = 1;
       hammertime.get('pinch').set({ enable: true });
       hammertime.on("pinchstart", (ev) => {
-          currentScale = this.mesh.scale.x;
+          currentScale = modcela.scale.x;
       })
       hammertime.on("pinchmove", (ev) => {
           if (!cela) return;
-          this.mesh.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
+          modcela.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
       });
 
       // rotation
@@ -538,25 +554,25 @@ AFRAME.registerComponent("cela", {
       hammertime.on("panleft", () => {
           if (!cela) return;
           this.isPanning = true
-          this.mesh.rotation.y -= 4 * Math.PI / 360;
+          modcela.rotation.y -= 4 * Math.PI / 360;
       })
 
       hammertime.on("panright", () => {
           if (!cela) return;
           this.isPanning = true
-          this.mesh.rotation.y += 4 * Math.PI / 360;
+          modcela.rotation.y += 4 * Math.PI / 360;
       })
 
       hammertime.on("panup", () => {
           if (!cela) return;
           xrot = true;
-          this.mesh.rotation.x -= 4 * Math.PI / 360;
+          modcela.rotation.x -= 4 * Math.PI / 360;
       })
 
       hammertime.on("pandown", () => {
           if (!cela) return;
           xrot = true;
-          this.mesh.rotation.x += 4 * Math.PI / 360;
+          modcela.rotation.x += 4 * Math.PI / 360;
       })
 
 
@@ -584,7 +600,7 @@ AFRAME.registerComponent("cela", {
       if (!(cela && this.swipeVelocity && !this.isPanning)){
           return;
       }else{
-          this.mesh.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
+          modcela.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
           //this.mesh.rotation.x += this.swipeVelocity * 4 * Math.PI / 360;
           this.swipeVelocity *= 0.93;
           if (Math.abs(this.swipeVelocity) <= 0.1) this.swipeVelocity = 0;

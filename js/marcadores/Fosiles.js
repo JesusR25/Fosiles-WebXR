@@ -4,6 +4,9 @@ let fos = false;
 let tri = false;
 
 let modammo;
+let modbelem;
+let modfosil;
+let modtrilo;
 
 function onQRCodeScanned(scannedText)
 {
@@ -93,6 +96,7 @@ function Ammonite(){
     document.querySelector("#belemnites").setAttribute("visible", false);
     document.querySelector("#fosil").setAttribute("visible", false);
     document.querySelector("#trilobite").setAttribute("visible", false);
+    modbelem.scale.multiplyScalar(0).addScalar(1);
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
@@ -112,6 +116,7 @@ function Trilobite(){
     document.querySelector("#belemnites").setAttribute("visible", false);
     document.querySelector("#fosil").setAttribute("visible", false);
     document.querySelector("#trilobite").setAttribute("visible", true);
+    modtrilo.scale.multiplyScalar(0).addScalar(1);
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
@@ -131,6 +136,7 @@ function Fosil(){
     document.querySelector("#belemnites").setAttribute("visible", false);
     document.querySelector("#fosil").setAttribute("visible", true);
     document.querySelector("#trilobite").setAttribute("visible", false);
+    modfosil.scale.multiplyScalar(0).addScalar(1);
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
@@ -237,6 +243,7 @@ AFRAME.registerComponent("tri", {
         // track markerFound/markerLost
         // grab the model reference
         document.querySelector("#trilobite").addEventListener("model-loaded", evt => {
+            modtrilo = evt.detail.model;
             this.mesh = evt.detail.model
         })
         // hammerjs input helper
@@ -247,11 +254,11 @@ AFRAME.registerComponent("tri", {
         var currentScale = 1;
         hammertime.get('pinch').set({ enable: true });
         hammertime.on("pinchstart", (ev) => {
-            currentScale = this.mesh.scale.x;
+            currentScale = modtrilo.scale.x;
         })
         hammertime.on("pinchmove", (ev) => {
             if (!tri) return;
-            this.mesh.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
+            modtrilo.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
         });
 
         // rotation
@@ -261,25 +268,25 @@ AFRAME.registerComponent("tri", {
         hammertime.on("panleft", () => {
             if (!tri) return;
             this.isPanning = true
-            this.mesh.rotation.y -= 4 * Math.PI / 360;
+            modtrilo.rotation.y -= 4 * Math.PI / 360;
         })
 
         hammertime.on("panright", () => {
             if (!tri) return;
             this.isPanning = true
-            this.mesh.rotation.y += 4 * Math.PI / 360;
+            modtrilo.rotation.y += 4 * Math.PI / 360;
         })
 
         hammertime.on("panup", () => {
             if (!tri) return;
             xrot = true;
-            this.mesh.rotation.x -= 4 * Math.PI / 360;
+            modtrilo.rotation.x -= 4 * Math.PI / 360;
         })
 
         hammertime.on("pandown", () => {
             if (!tri) return;
             xrot = true;
-            this.mesh.rotation.x += 4 * Math.PI / 360;
+            modtrilo.rotation.x += 4 * Math.PI / 360;
         })
 
 
@@ -307,7 +314,7 @@ AFRAME.registerComponent("tri", {
         if (!(tri && this.swipeVelocity && !this.isPanning)){
             return;
         }else{
-            this.mesh.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
+            modtrilo.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
             //this.mesh.rotation.x += this.swipeVelocity * 4 * Math.PI / 360;
             this.swipeVelocity *= 0.93;
             if (Math.abs(this.swipeVelocity) <= 0.1) this.swipeVelocity = 0;
@@ -323,6 +330,7 @@ AFRAME.registerComponent("amm", {
         // track markerFound/markerLost
         // grab the model reference
         document.querySelector("#ammonite").addEventListener("model-loaded", evt => {
+            modbelem = evt.detail.model
             this.mesh = evt.detail.model
         })
         // hammerjs input helper
@@ -333,11 +341,11 @@ AFRAME.registerComponent("amm", {
         var currentScale = 1;
         hammertime.get('pinch').set({ enable: true });
         hammertime.on("pinchstart", (ev) => {
-            currentScale = this.mesh.scale.x;
+            currentScale = modbelem.scale.x;
         })
         hammertime.on("pinchmove", (ev) => {
             if (!ammo) return;
-            this.mesh.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
+            modbelem.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
         });
 
         // rotation
@@ -347,25 +355,25 @@ AFRAME.registerComponent("amm", {
         hammertime.on("panleft", () => {
             if (!ammo) return;
             this.isPanning = true
-            this.mesh.rotation.y -= 4 * Math.PI / 360;
+            modbelem.rotation.y -= 4 * Math.PI / 360;
         })
 
         hammertime.on("panright", () => {
             if (!ammo) return;
             this.isPanning = true
-            this.mesh.rotation.y += 4 * Math.PI / 360;
+            modbelem.rotation.y += 4 * Math.PI / 360;
         })
 
         hammertime.on("panup", () => {
             if (!ammo) return;
             xrot = true;
-            this.mesh.rotation.x -= 4 * Math.PI / 360;
+            modbelem.rotation.x -= 4 * Math.PI / 360;
         })
 
         hammertime.on("pandown", () => {
             if (!ammo) return;
             xrot = true;
-            this.mesh.rotation.x += 4 * Math.PI / 360;
+            modbelem.rotation.x += 4 * Math.PI / 360;
         })
 
 
@@ -393,7 +401,7 @@ AFRAME.registerComponent("amm", {
         if (!(ammo && this.swipeVelocity && !this.isPanning)){
             return;
         }else{
-            this.mesh.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
+            modbelem.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
             //this.mesh.rotation.x += this.swipeVelocity * 4 * Math.PI / 360;
             this.swipeVelocity *= 0.93;
             if (Math.abs(this.swipeVelocity) <= 0.1) this.swipeVelocity = 0;
@@ -409,6 +417,7 @@ AFRAME.registerComponent("fos", {
         // track markerFound/markerLost
         // grab the model reference
         document.querySelector("#fosil").addEventListener("model-loaded", evt => {
+            modfosil = evt.detail.model;
             this.mesh = evt.detail.model
         })
         // hammerjs input helper
@@ -419,11 +428,11 @@ AFRAME.registerComponent("fos", {
         var currentScale = 1;
         hammertime.get('pinch').set({ enable: true });
         hammertime.on("pinchstart", (ev) => {
-            currentScale = this.mesh.scale.x;
+            currentScale = modfosil.scale.x;
         })
         hammertime.on("pinchmove", (ev) => {
             if (!fos) return;
-            this.mesh.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
+            modfosil.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
         });
 
         // rotation
@@ -433,25 +442,25 @@ AFRAME.registerComponent("fos", {
         hammertime.on("panleft", () => {
             if (!fos) return;
             this.isPanning = true
-            this.mesh.rotation.y -= 4 * Math.PI / 360;
+            modfosil.rotation.y -= 4 * Math.PI / 360;
         })
 
         hammertime.on("panright", () => {
             if (!fos) return;
             this.isPanning = true
-            this.mesh.rotation.y += 4 * Math.PI / 360;
+            modfosil.rotation.y += 4 * Math.PI / 360;
         })
 
         hammertime.on("panup", () => {
             if (!fos) return;
             xrot = true;
-            this.mesh.rotation.x -= 4 * Math.PI / 360;
+            modfosil.rotation.x -= 4 * Math.PI / 360;
         })
 
         hammertime.on("pandown", () => {
             if (!fos) return;
             xrot = true;
-            this.mesh.rotation.x += 4 * Math.PI / 360;
+            modfosil.rotation.x += 4 * Math.PI / 360;
         })
 
 
@@ -479,7 +488,7 @@ AFRAME.registerComponent("fos", {
         if (!(fos && this.swipeVelocity && !this.isPanning)){
             return;
         }else{
-            this.mesh.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
+            modfosil.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
             //this.mesh.rotation.x += this.swipeVelocity * 4 * Math.PI / 360;
             this.swipeVelocity *= 0.93;
             if (Math.abs(this.swipeVelocity) <= 0.1) this.swipeVelocity = 0;

@@ -3,6 +3,11 @@ let pte = false;
 let allo = false;
 let pere = false;
 
+let modmam;
+let modpte;
+let modallo;
+let modpere;
+
 function onQRCodeScanned(scannedText)
 {
     alert(scannedText);
@@ -71,7 +76,7 @@ function Pterodactylus(){
     document.querySelector("#pterodactyl").setAttribute("visible", true);
     document.querySelector("#perezoso").setAttribute("visible", false);
     document.querySelector("#mammoth").setAttribute("visible", false);
-
+    modpte.scale.multiplyScalar(0).addScalar(1);
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
@@ -89,7 +94,7 @@ function Mammuth(){
     document.querySelector("#pterodactyl").setAttribute("visible", false);
     document.querySelector("#perezoso").setAttribute("visible", false);
     document.querySelector("#mammoth").setAttribute("visible", true);
-
+    modmam.scale.multiplyScalar(0).addScalar(1);
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
@@ -107,7 +112,7 @@ function Allosaurus(){
     document.querySelector("#pterodactyl").setAttribute("visible", false);
     document.querySelector("#perezoso").setAttribute("visible", false);
     document.querySelector("#mammoth").setAttribute("visible", false);
-
+    modallo.scale.multiplyScalar(0).addScalar(1);
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
@@ -125,7 +130,7 @@ function Perezoso(){
     document.querySelector("#pterodactyl").setAttribute("visible", false);
     document.querySelector("#perezoso").setAttribute("visible", true);
     document.querySelector("#mammoth").setAttribute("visible", false);
-
+    modpere.scale.multiplyScalar(0).addScalar(1);
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
@@ -144,6 +149,7 @@ AFRAME.registerComponent("mam", {
         // track markerFound/markerLost
         // grab the model reference
         document.querySelector("#mammoth").addEventListener("model-loaded", evt => {
+            modmam = evt.detail.model;
             this.mesh = evt.detail.model
         })
         // hammerjs input helper
@@ -154,11 +160,11 @@ AFRAME.registerComponent("mam", {
         var currentScale = 1;
         hammertime.get('pinch').set({ enable: true });
         hammertime.on("pinchstart", (ev) => {
-            currentScale = this.mesh.scale.x;
+            currentScale = modmam.scale.x;
         })
         hammertime.on("pinchmove", (ev) => {
             if (!mamu) return;
-            this.mesh.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
+            modmam.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
         });
 
         // rotation
@@ -168,25 +174,25 @@ AFRAME.registerComponent("mam", {
         hammertime.on("panleft", () => {
             if (!mamu) return;
             this.isPanning = true
-            this.mesh.rotation.y -= 4 * Math.PI / 360;
+            modmam.rotation.y -= 4 * Math.PI / 360;
         })
 
         hammertime.on("panright", () => {
             if (!mamu) return;
             this.isPanning = true
-            this.mesh.rotation.y += 4 * Math.PI / 360;
+            modmam.rotation.y += 4 * Math.PI / 360;
         })
 
         hammertime.on("panup", () => {
             if (!mamu) return;
             xrot = true;
-            this.mesh.rotation.x -= 4 * Math.PI / 360;
+            modmam.rotation.x -= 4 * Math.PI / 360;
         })
 
         hammertime.on("pandown", () => {
             if (!mamu) return;
             xrot = true;
-            this.mesh.rotation.x += 4 * Math.PI / 360;
+            modmam.rotation.x += 4 * Math.PI / 360;
         })
 
 
@@ -214,7 +220,7 @@ AFRAME.registerComponent("mam", {
         if (!(mamu && this.swipeVelocity && !this.isPanning)){
             return;
         }else{
-            this.mesh.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
+            modmam.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
             //this.mesh.rotation.x += this.swipeVelocity * 4 * Math.PI / 360;
             this.swipeVelocity *= 0.93;
             if (Math.abs(this.swipeVelocity) <= 0.1) this.swipeVelocity = 0;
@@ -230,6 +236,7 @@ AFRAME.registerComponent("pet", {
         // track markerFound/markerLost
         // grab the model reference
         document.querySelector("#pterodactyl").addEventListener("model-loaded", evt => {
+            modpte = evt.detail.model;
             this.mesh = evt.detail.model
         })
         // hammerjs input helper
@@ -240,11 +247,11 @@ AFRAME.registerComponent("pet", {
         var currentScale = 1;
         hammertime.get('pinch').set({ enable: true });
         hammertime.on("pinchstart", (ev) => {
-            currentScale = this.mesh.scale.x;
+            currentScale = modpte.scale.x;
         })
         hammertime.on("pinchmove", (ev) => {
             if (!pte) return;
-            this.mesh.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
+            modpte.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
         });
 
         // rotation
@@ -254,25 +261,25 @@ AFRAME.registerComponent("pet", {
         hammertime.on("panleft", () => {
             if (!pte) return;
             this.isPanning = true
-            this.mesh.rotation.y -= 4 * Math.PI / 360;
+            modpte.rotation.y -= 4 * Math.PI / 360;
         })
 
         hammertime.on("panright", () => {
             if (!pte) return;
             this.isPanning = true
-            this.mesh.rotation.y += 4 * Math.PI / 360;
+            modpte.rotation.y += 4 * Math.PI / 360;
         })
 
         hammertime.on("panup", () => {
             if (!pte) return;
             xrot = true;
-            this.mesh.rotation.x -= 4 * Math.PI / 360;
+            modpte.rotation.x -= 4 * Math.PI / 360;
         })
 
         hammertime.on("pandown", () => {
             if (!pte) return;
             xrot = true;
-            this.mesh.rotation.x += 4 * Math.PI / 360;
+            modpte.rotation.x += 4 * Math.PI / 360;
         })
 
 
@@ -300,7 +307,7 @@ AFRAME.registerComponent("pet", {
         if (!(pte && this.swipeVelocity && !this.isPanning)){
             return;
         }else{
-            this.mesh.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
+            modpte.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
             //this.mesh.rotation.x += this.swipeVelocity * 4 * Math.PI / 360;
             this.swipeVelocity *= 0.93;
             if (Math.abs(this.swipeVelocity) <= 0.1) this.swipeVelocity = 0;
@@ -316,6 +323,7 @@ AFRAME.registerComponent("allo", {
         // track markerFound/markerLost
         // grab the model reference
         document.querySelector("#allosaurus").addEventListener("model-loaded", evt => {
+            modallo = evt.detail.model;
             this.mesh = evt.detail.model
         })
         // hammerjs input helper
@@ -326,11 +334,11 @@ AFRAME.registerComponent("allo", {
         var currentScale = 1;
         hammertime.get('pinch').set({ enable: true });
         hammertime.on("pinchstart", (ev) => {
-            currentScale = this.mesh.scale.x;
+            currentScale = modallo.scale.x;
         })
         hammertime.on("pinchmove", (ev) => {
             if (!allo) return;
-            this.mesh.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
+            modallo.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
         });
 
         // rotation
@@ -340,25 +348,25 @@ AFRAME.registerComponent("allo", {
         hammertime.on("panleft", () => {
             if (!allo) return;
             this.isPanning = true
-            this.mesh.rotation.y -= 4 * Math.PI / 360;
+            modallo.rotation.y -= 4 * Math.PI / 360;
         })
 
         hammertime.on("panright", () => {
             if (!allo) return;
             this.isPanning = true
-            this.mesh.rotation.y += 4 * Math.PI / 360;
+            modallo.rotation.y += 4 * Math.PI / 360;
         })
 
         hammertime.on("panup", () => {
             if (!allo) return;
             xrot = true;
-            this.mesh.rotation.x -= 4 * Math.PI / 360;
+            modallo.rotation.x -= 4 * Math.PI / 360;
         })
 
         hammertime.on("pandown", () => {
             if (!allo) return;
             xrot = true;
-            this.mesh.rotation.x += 4 * Math.PI / 360;
+            modallo.rotation.x += 4 * Math.PI / 360;
         })
 
 
@@ -386,7 +394,7 @@ AFRAME.registerComponent("allo", {
         if (!(allo && this.swipeVelocity && !this.isPanning)){
             return;
         }else{
-            this.mesh.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
+            modallo.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
             //this.mesh.rotation.x += this.swipeVelocity * 4 * Math.PI / 360;
             this.swipeVelocity *= 0.93;
             if (Math.abs(this.swipeVelocity) <= 0.1) this.swipeVelocity = 0;
@@ -403,6 +411,7 @@ AFRAME.registerComponent("pere", {
         // track markerFound/markerLost
         // grab the model reference
         document.querySelector("#perezoso").addEventListener("model-loaded", evt => {
+            modpere = evt.detail.model;
             this.mesh = evt.detail.model
         })
         // hammerjs input helper
@@ -413,11 +422,11 @@ AFRAME.registerComponent("pere", {
         var currentScale = 1;
         hammertime.get('pinch').set({ enable: true });
         hammertime.on("pinchstart", (ev) => {
-            currentScale = this.mesh.scale.x;
+            currentScale = modpere.scale.x;
         })
         hammertime.on("pinchmove", (ev) => {
             if (!pere) return;
-            this.mesh.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
+            modpere.scale.multiplyScalar(0).addScalar(ev.scale * currentScale);
         });
 
         // rotation
@@ -427,25 +436,25 @@ AFRAME.registerComponent("pere", {
         hammertime.on("panleft", () => {
             if (!pere) return;
             this.isPanning = true
-            this.mesh.rotation.y -= 4 * Math.PI / 360;
+            modpere.rotation.y -= 4 * Math.PI / 360;
         })
 
         hammertime.on("panright", () => {
             if (!pere) return;
             this.isPanning = true
-            this.mesh.rotation.y += 4 * Math.PI / 360;
+            modpere.rotation.y += 4 * Math.PI / 360;
         })
 
         hammertime.on("panup", () => {
             if (!pere) return;
             xrot = true;
-            this.mesh.rotation.x -= 4 * Math.PI / 360;
+            modpere.rotation.x -= 4 * Math.PI / 360;
         })
 
         hammertime.on("pandown", () => {
             if (!pere) return;
             xrot = true;
-            this.mesh.rotation.x += 4 * Math.PI / 360;
+            modpere.rotation.x += 4 * Math.PI / 360;
         })
 
 
@@ -473,7 +482,7 @@ AFRAME.registerComponent("pere", {
         if (!(pere && this.swipeVelocity && !this.isPanning)){
             return;
         }else{
-            this.mesh.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
+            modpere.rotation.y += this.swipeVelocity * 4 * Math.PI / 360;
             //this.mesh.rotation.x += this.swipeVelocity * 4 * Math.PI / 360;
             this.swipeVelocity *= 0.93;
             if (Math.abs(this.swipeVelocity) <= 0.1) this.swipeVelocity = 0;
