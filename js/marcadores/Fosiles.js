@@ -77,6 +77,8 @@ function Belemnite(){
     document.querySelector("#fosil").setAttribute("visible", false);
     document.querySelector("#trilobite").setAttribute("visible", false);
     modammo.scale.multiplyScalar(0).addScalar(1);
+    modammo.rotation.y = 0;
+    modammo.rotation.x = 0;
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
@@ -97,6 +99,8 @@ function Ammonite(){
     document.querySelector("#fosil").setAttribute("visible", false);
     document.querySelector("#trilobite").setAttribute("visible", false);
     modbelem.scale.multiplyScalar(0).addScalar(1);
+    modbelem.rotation.y = 0;
+    modbelem.rotation.x = 0;
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
@@ -117,6 +121,8 @@ function Trilobite(){
     document.querySelector("#fosil").setAttribute("visible", false);
     document.querySelector("#trilobite").setAttribute("visible", true);
     modtrilo.scale.multiplyScalar(0).addScalar(1);
+    modtrilo.rotation.y = 0;
+    modtrilo.rotation.x = 0;
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
@@ -137,6 +143,8 @@ function Fosil(){
     document.querySelector("#fosil").setAttribute("visible", true);
     document.querySelector("#trilobite").setAttribute("visible", false);
     modfosil.scale.multiplyScalar(0).addScalar(1);
+    modfosil.rotation.y = 0;
+    modfosil.rotation.x = 0;
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {

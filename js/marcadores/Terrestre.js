@@ -77,6 +77,8 @@ function Pterodactylus(){
     document.querySelector("#perezoso").setAttribute("visible", false);
     document.querySelector("#mammoth").setAttribute("visible", false);
     modpte.scale.multiplyScalar(0).addScalar(1);
+    modpte.rotation.y = 0;
+    modpte.rotation.x = 0;
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
@@ -95,6 +97,8 @@ function Mammuth(){
     document.querySelector("#perezoso").setAttribute("visible", false);
     document.querySelector("#mammoth").setAttribute("visible", true);
     modmam.scale.multiplyScalar(0).addScalar(1);
+    modmam.rotation.y = 0;
+    modmam.rotation.x = 0;
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
@@ -113,6 +117,8 @@ function Allosaurus(){
     document.querySelector("#perezoso").setAttribute("visible", false);
     document.querySelector("#mammoth").setAttribute("visible", false);
     modallo.scale.multiplyScalar(0).addScalar(1);
+    modallo.rotation.y = 0;
+    modallo.rotation.x = 0;
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
@@ -131,6 +137,8 @@ function Perezoso(){
     document.querySelector("#perezoso").setAttribute("visible", true);
     document.querySelector("#mammoth").setAttribute("visible", false);
     modpere.scale.multiplyScalar(0).addScalar(1);
+    modpere.rotation.y = 0;
+    modpere.rotation.x = 0;
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {

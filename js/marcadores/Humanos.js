@@ -89,6 +89,8 @@ function Australopithecus(){
     document.querySelector("#hosa").setAttribute("visible", false);
     document.querySelector("#hone").setAttribute("visible", false);
     modaustra.scale.multiplyScalar(0).addScalar(1);
+    modaustra.rotation.y = 0;
+    modaustra.rotation.x = 0;
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
@@ -111,6 +113,8 @@ function Habilis(){
     document.querySelector("#hosa").setAttribute("visible", false);
     document.querySelector("#hone").setAttribute("visible", false);
     modhabi.scale.multiplyScalar(0).addScalar(1);
+    modhabi.rotation.y = 0;
+    modhabi.rotation.x = 0;
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
@@ -133,6 +137,8 @@ function Neanderthalesis(){
     document.querySelector("#hosa").setAttribute("visible", false);
     document.querySelector("#hone").setAttribute("visible", true);
     modnean.scale.multiplyScalar(0).addScalar(1);
+    modnean.rotation.y = 0;
+    modnean.rotation.x = 0;
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
@@ -155,6 +161,8 @@ function Herectus(){
     document.querySelector("#hosa").setAttribute("visible", false);
     document.querySelector("#hone").setAttribute("visible", false);
     moderec.scale.multiplyScalar(0).addScalar(1);
+    moderec.rotation.y = 0;
+    moderec.rotation.x = 0;
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
@@ -177,6 +185,8 @@ function Sapiens(){
     document.querySelector("#hosa").setAttribute("visible", true);
     document.querySelector("#hone").setAttribute("visible", false);
     modsap.scale.multiplyScalar(0).addScalar(1);
+    modsap.rotation.y = 0;
+    modsap.rotation.x = 0;
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
@@ -199,6 +209,8 @@ function Paranthropus(){
     document.querySelector("#hosa").setAttribute("visible", false);
     document.querySelector("#hone").setAttribute("visible", false);
     modparan.scale.multiplyScalar(0).addScalar(1);
+    modparan.rotation.y = 0;
+    modparan.rotation.x = 0;
     //Mostrar imagen
     document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {

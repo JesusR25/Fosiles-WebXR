@@ -82,6 +82,9 @@ function Megalodon(){
   document.querySelector("#megadolon").setAttribute("visible", true);
   document.querySelector("#mesasa").setAttribute("visible", false);
   modmega.scale.multiplyScalar(0).addScalar(1);
+  modmega.rotation.y = 0;
+  modmega.rotation.x = 0;
+
   //Mostrar imagen
   document.getElementById("inf").removeAttribute('src');
     if (document.getElementById('ch').checked) {
@@ -102,6 +105,8 @@ function Mosasaurus(){
   document.querySelector("#megadolon").setAttribute("visible", false);
   document.querySelector("#mesasa").setAttribute("visible", true);
   modmosa.scale.multiplyScalar(0).addScalar(1);
+  modmosa.rotation.y = 0;
+  modmosa.rotation.x = 0;
   //Mostrar imagen
   document.getElementById("inf").removeAttribute('src');
   if (document.getElementById('ch').checked) {
@@ -122,6 +127,8 @@ function Ballena(){
   document.querySelector("#megadolon").setAttribute("visible", false);
   document.querySelector("#mesasa").setAttribute("visible", false);
   modballe.scale.multiplyScalar(0).addScalar(1);
+  modballe.rotation.y = 0;
+  modballe.rotation.x = 0;
   //Mostrar imagen
   document.getElementById("inf").removeAttribute('src');
   if (document.getElementById('ch').checked) {
@@ -142,6 +149,8 @@ function Tiburon(){
   document.querySelector("#megadolon").setAttribute("visible", false);
   document.querySelector("#mesasa").setAttribute("visible", false);
   modtibu.scale.multiplyScalar(0).addScalar(1);
+  modtibu.rotation.y = 0;
+  modtibu.rotation.x = 0;
   //Mostrar imagen
   document.getElementById("inf").removeAttribute('src');
   if (document.getElementById('ch').checked) {
@@ -162,6 +171,8 @@ function Celacanto(){
   document.querySelector("#megadolon").setAttribute("visible", false);
   document.querySelector("#mesasa").setAttribute("visible", false);
   modcela.scale.multiplyScalar(0).addScalar(1);
+  modcela.rotation.y = 0;
+  modcela.rotation.x = 0;
   //Mostrar imagen
   document.getElementById("inf").removeAttribute('src');
   if (document.getElementById('ch').checked) {
