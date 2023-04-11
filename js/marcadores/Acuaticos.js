@@ -652,7 +652,6 @@ function readDeviceOrientation() {
         document.querySelector("#mesasa").setAttribute("scale", "0.080 0.080 0.080");
         document.querySelector("#mesasa").setAttribute("position", "0.3 -2.5 -15");
     } else {
-        alert("Hola");
         document.getElementById("inf").style.marginLeft = "20%";
         document.getElementById("inf").style.width = "56%";
         document.getElementById("inf").style.marginTop = "15%";
