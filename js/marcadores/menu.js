@@ -74,3 +74,20 @@ function advertencia(){
       }
     })
   }
+
+  function Quiz(){
+    Swal.fire({
+      title: 'Quiz',
+      html: '•	En esta escena, deberás responder un examen que contempla los conocimientos adquiridos con el sitio web.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Aceptar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "/Paginas/Quiz.html";
+      }
+    })
+  }

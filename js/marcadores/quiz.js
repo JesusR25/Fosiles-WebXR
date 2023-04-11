@@ -75,7 +75,7 @@ const questions = [
         "Correcta": "Perezoso"
     },
     {
-        "question": "10.	Eran artrópodos que se parecían a los crustáceos modernos, pero con una estructura corporal distintiva. Tenían una cabeza, un tórax y un pigidio, y su cuerpo estaba cubierto por una concha dura que se ha conservado muy bien en el registro fósil.",
+        "question": "Eran artrópodos que se parecían a los crustáceos modernos, pero con una estructura corporal distintiva. Tenían una cabeza, un tórax y un pigidio, y su cuerpo estaba cubierto por una concha dura que se ha conservado muy bien en el registro fósil.",
         "answer1": "Trilobite",
         "answer2": "Ammonite",
         "answer3": "Fósil Vegetal",
@@ -109,7 +109,18 @@ const questions = [
   let correctas = 0;
   //Function to generate question 
   function generateQuestions (index) {
-    if (index == 0 || index == 7) {
+    if (index == 6) {
+        document.getElementById("cuarta").style.display = "none";
+        document.getElementById("tercera").style.display = "none";
+        //Seleccion pregunta
+        const question = questions[index];
+        //Agregar respuestas a botones
+        questionEl.innerHTML = `${index + 1}. ${question.question}`
+        option1.innerHTML = `${question.answer1}`
+        option2.innerHTML = `${question.answer2}`
+        valor1.setAttribute("value", question.answer1);
+        valor2.setAttribute("value", question.answer2);
+    }else{
         document.getElementById("cuarta").style.display = "block";
         document.getElementById("tercera").style.display = "block";
         //Seleccion pregunta
@@ -124,17 +135,6 @@ const questions = [
         valor2.setAttribute("value", question.answer2);
         valor3.setAttribute("value", question.answer3);
         valor4.setAttribute("value", question.answer4);
-    }else{
-        document.getElementById("cuarta").style.display = "none";
-        document.getElementById("tercera").style.display = "none";
-        //Seleccion pregunta
-        const question = questions[index];
-        //Agregar respuestas a botones
-        questionEl.innerHTML = `${index + 1}. ${question.question}`
-        option1.innerHTML = `${question.answer1}`
-        option2.innerHTML = `${question.answer2}`
-        valor1.setAttribute("value", question.answer1);
-        valor2.setAttribute("value", question.answer2);
     }
   }
   
