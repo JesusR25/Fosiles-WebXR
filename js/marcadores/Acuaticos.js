@@ -657,7 +657,7 @@ function readDeviceOrientation() {
         document.getElementById("inf").style.marginTop = "15%";
         //Cambio modelos
         //Ballena
-        document.querySelector("#ballena").setAttribute("scale", "0.15 0.15 0.15");
+        document.querySelector("#ballena").setAttribute("scale", "0.12 0.12 0.12");
         document.querySelector("#ballena").setAttribute("position", "-0.5 -1.5 -4");
         //Celacanto
         document.querySelector("#celacanto").setAttribute("scale", "0.3 0.3 0.3");
@@ -666,7 +666,7 @@ function readDeviceOrientation() {
         document.querySelector("#tiburon").setAttribute("scale", "0.3 0.3 0.3");
         document.querySelector("#tiburon").setAttribute("position", "-0.5 -100 -450");
         //Megadolon
-        document.querySelector("#megadolon").setAttribute("scale", "1 1 1");
+        document.querySelector("#megadolon").setAttribute("scale", "0.7 0.7 0.7");
         document.querySelector("#megadolon").setAttribute("position", "0 -2 -4");
         //Mesasa
         document.querySelector("#mesasa").setAttribute("scale", "0.050 0.050 0.050");
