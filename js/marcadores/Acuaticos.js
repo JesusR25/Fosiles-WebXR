@@ -658,19 +658,19 @@ function readDeviceOrientation() {
         //Cambio modelos
         //Ballena
         document.querySelector("#ballena").setAttribute("scale", "0.12 0.12 0.12");
-        document.querySelector("#ballena").setAttribute("position", "-0.5 -1.5 -4");
+        document.querySelector("#ballena").setAttribute("position", "-0.3 -1.5 -4");
         //Celacanto
         document.querySelector("#celacanto").setAttribute("scale", "0.3 0.3 0.3");
         document.querySelector("#celacanto").setAttribute("position", "0 -1.2 -4");
         //Tiburon
         document.querySelector("#tiburon").setAttribute("scale", "0.3 0.3 0.3");
-        document.querySelector("#tiburon").setAttribute("position", "-0.5 -100 -450");
+        document.querySelector("#tiburon").setAttribute("position", "-0.5 -130 -450");
         //Megadolon
         document.querySelector("#megadolon").setAttribute("scale", "0.7 0.7 0.7");
         document.querySelector("#megadolon").setAttribute("position", "0 -2 -4");
         //Mesasa
-        document.querySelector("#mesasa").setAttribute("scale", "0.050 0.050 0.050");
-        document.querySelector("#mesasa").setAttribute("position", "-3 -2.5 -15");
+        document.querySelector("#mesasa").setAttribute("scale", "0.040 0.040 0.040");
+        document.querySelector("#mesasa").setAttribute("position", "-3.2 -2.8 -15");
     }
 }
 screen.orientation.addEventListener("change", readDeviceOrientation);

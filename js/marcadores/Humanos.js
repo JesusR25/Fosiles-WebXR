@@ -786,7 +786,7 @@ function readDeviceOrientation() {
         //Cambio de modelos
         //Pa
         document.querySelector("#pa").setAttribute("scale", "0.3 0.3 0.3");
-        document.querySelector("#pa").setAttribute("position", "0 -1 -4");
+        document.querySelector("#pa").setAttribute("position", "0 -1.3 -4");
         //Aut
         document.querySelector("#aut").setAttribute("scale", "0.012 0.012 0.012");
         document.querySelector("#aut").setAttribute("position", "0 -1.3 -4");
@@ -800,7 +800,7 @@ function readDeviceOrientation() {
         document.querySelector("#hosa").setAttribute("scale", "2 2 2");
         document.querySelector("#hosa").setAttribute("position", "0 -1 -4");
         //Hone
-        document.querySelector("#hone").setAttribute("scale", "0.1 0.1 0.1");
+        document.querySelector("#hone").setAttribute("scale", "0.080 0.080 0.080");
         document.querySelector("#hone").setAttribute("position", "0 -2 -4");
     }
 }
