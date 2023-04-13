@@ -31,12 +31,13 @@ import {
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAoCQK1rZdXPeQhcc9RBxcdpeyHTZbIUno",
-  authDomain: "ccar-2a74c.firebaseapp.com",
-  projectId: "ccar-2a74c",
-  storageBucket: "ccar-2a74c.appspot.com",
-  messagingSenderId: "532265497230",
-  appId: "1:532265497230:web:9cd7e947b3c72a84498fdf",
+  apiKey: "AIzaSyBTVaTUAiviQ0ZIY8TaSjdK6GbmwzW1fQU",
+  authDomain: "fosiles-caa32.firebaseapp.com",
+  projectId: "fosiles-caa32",
+  storageBucket: "fosiles-caa32.appspot.com",
+  messagingSenderId: "299080086077",
+  appId: "1:299080086077:web:a034d936a2ed60df43b054",
+  measurementId: "G-FKT484MLRJ"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -151,7 +152,7 @@ export const loginWithEmail = (nombre, email, escolaridad, contra) => {
       }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
-          window.location.href = "Menu.html";
+          window.location.href = "/Paginas/Menu.html";
         }
       });
       // ...
@@ -196,7 +197,7 @@ function redirigir() {
       }).then((result) => {
         /* Read more about handling dismissals below */
         if (result.dismiss === Swal.DismissReason.timer) {
-          window.location.href = "Menu.html";
+          window.location.href = "/Paginas/Menu.html";
         }
       });
     }
