@@ -13,7 +13,8 @@ html {
     font-family: "Roboto", sans-serif;
     font-weight: 100;
     line-height: 1.7rem;
-    background: no-repeat linear-gradient(250deg, #b8864f, #d9ad84);
+    background: url(../assets/Imagenes/Fondo.jpg);
+    background-size: contain;
   }
   .quiz-container {
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
@@ -76,6 +77,9 @@ html {
   }
   button.next {
     background: #3c91e6;
+  }
+  button.menu {
+    background: #cccc00;
   }
   button.restart {
     background: #0cf574;

@@ -100,6 +100,7 @@ const questions = [
   const option4 = document.querySelector('.option4');
   const nextButton = document.querySelector('.next');
   const previousButton = document.querySelector('.previous');
+  const menu = document.querySelector('.menu');
   const restartButton = document.querySelector('.restart');
   const result = document.querySelector('.result');
   const valor1 = document.getElementById("opcion1");
@@ -246,10 +247,15 @@ const questions = [
       }
   
   }
+
+  function volver(){
+    window.location.href = "../Paginas/Menu.html";
+  }
   
   
   generateQuestions(currentQuestion);
   nextButton.addEventListener('click', loadNextQuestion);
   previousButton.addEventListener('click',loadPreviousQuestion);
+  menu.addEventListener('click',volver);
   result.addEventListener('click',restartQuiz);
   
