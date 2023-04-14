@@ -540,7 +540,7 @@ function readDeviceOrientation() {
         document.querySelector("#ammonite").setAttribute("scale", "0.3 0.3 0.3");
         document.querySelector("#ammonite").setAttribute("position", "0 -1 -4");
         //Belemnites
-        document.querySelector("#belemnites").setAttribute("scale", "40 40 40");
+        document.querySelector("#belemnites").setAttribute("scale", "33 33 33");
         document.querySelector("#belemnites").setAttribute("position", "0 -1 -4");
         //Fosil
         document.querySelector("#fosil").setAttribute("scale", "0.4 0.4 0.4");
