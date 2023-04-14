@@ -670,7 +670,7 @@ function readDeviceOrientation() {
         document.querySelector("#megadolon").setAttribute("position", "0 -2 -4");
         //Mesasa
         document.querySelector("#mesasa").setAttribute("scale", "0.037 0.037 0.037");
-        document.querySelector("#mesasa").setAttribute("position", "-1.3 -3 -15");
+        document.querySelector("#mesasa").setAttribute("position", "-1 -3 -15");
     }
 }
 screen.orientation.addEventListener("change", readDeviceOrientation);
