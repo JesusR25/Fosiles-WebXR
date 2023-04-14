@@ -1,6 +1,5 @@
 // QUESTIONS
-import {quiz} from './firebase.js'
-
+import {quiz} from '../firebase.js'
 
 const questions = [
     {
