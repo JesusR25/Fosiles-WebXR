@@ -747,7 +747,7 @@ AFRAME.registerComponent("neander", {
 })
 
 function volver(){
-    window.history.back();
+    window.location.href = "../Paginas/Menu.html";
 }
 
 function ocultar(){
@@ -800,8 +800,8 @@ function readDeviceOrientation() {
         document.querySelector("#hosa").setAttribute("scale", "2 2 2");
         document.querySelector("#hosa").setAttribute("position", "0 -1 -4");
         //Hone
-        document.querySelector("#hone").setAttribute("scale", "0.080 0.080 0.080");
-        document.querySelector("#hone").setAttribute("position", "0 -2 -4");
+        document.querySelector("#hone").setAttribute("scale", "0.050 0.050 0.050");
+        document.querySelector("#hone").setAttribute("position", "0 -1.5 -4");
     }
 }
 screen.orientation.addEventListener("change", readDeviceOrientation);

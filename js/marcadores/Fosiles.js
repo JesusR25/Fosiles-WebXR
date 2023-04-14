@@ -507,7 +507,7 @@ AFRAME.registerComponent("fos", {
 })
 
 function volver(){
-    window.history.back();
+    window.location.href = "../Paginas/Menu.html";
 }
 
 function ocultar(){
