@@ -183,7 +183,7 @@ const questions = [
         container.style.display = 'none';
         if(correctas <= 5){
           result.innerHTML =
-           `<h1 class="final-score">Calificación obtenida: ${correctas} de 10 </h1>
+           `<h1 class="final-score">Calificación: ${correctas} de 10 </h1>
            <div class="summary" style='display: flex;'>
               <h1>Mensaje</h1>
               <p>Te sugerimos ver de nueva cuenta los videos y vuelve a intentarlo.</p>
