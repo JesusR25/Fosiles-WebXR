@@ -6,6 +6,7 @@ html {
   *:after {
     box-sizing: inherit;
   }
+
   body {
     margin : 0px; 
     padding: 0;
@@ -31,7 +32,7 @@ html {
   .title {
     margin-top: 0;
     margin-bottom: 3rem;
-    color: #00000050;
+    color: #000;
     font-weight: 400;
     font-size: 2.5rem;
     text-align: center;
@@ -45,7 +46,7 @@ html {
   }
   .option {
     padding: 1rem;
-    color: #00000095;
+    color: #000;
     background: rgba(255, 255, 255, 0.1);
     width: 80%;
     border-radius: 5px;
@@ -108,7 +109,7 @@ html {
     height: 100vh;
   }
   .final-score {
-    color: #00000099;
+    color: #000;
     line-height: 100%;
     font-size: 50px;
   }
