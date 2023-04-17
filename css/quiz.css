@@ -84,7 +84,7 @@ html {
   }
   button.restart {
     background: #0cf574;
-    color: #00000050;
+    color: #ffffff;
     font-size: 2rem;
     margin-bottom: 1rem;
     transition: all 0.4s;
@@ -112,11 +112,12 @@ html {
     color: #000;
     line-height: 100%;
     font-size: 50px;
+    background-color: #3c91e6;
   }
   .summary {
     font-size: 1rem;
     text-shadow: 1px 1px #ffffff50;
-    color: #00000099;
+    color: #000;
     background: rgba(255, 255, 255, 0.4);
     border-radius: 5px;
     display: flex;
