@@ -82,6 +82,12 @@ function JsQRScannerReady()
 
 //Funciones para ocultar segun sea el marcador
 function Australopithecus(){
+    //Mostrar imagen
+    document.getElementById("inf").removeAttribute('src');
+    if (document.getElementById('ch').checked) {
+        document.getElementById("inf").src="../../assets/Fichas/Humanos/Australopithecus.jpg";
+        document.getElementById("imagenes").style.display = "block";
+    }
     document.querySelector("#pa").setAttribute("visible", false);
     document.querySelector("#aut").setAttribute("visible", true);
     document.querySelector("#hoer").setAttribute("visible", false);
@@ -91,12 +97,6 @@ function Australopithecus(){
     modaustra.scale.multiplyScalar(0).addScalar(1);
     modaustra.rotation.y = 0;
     modaustra.rotation.x = 0;
-    //Mostrar imagen
-    document.getElementById("inf").removeAttribute('src');
-    if (document.getElementById('ch').checked) {
-        document.getElementById("inf").src="../../assets/Fichas/Humanos/Australopithecus.jpg";
-        document.getElementById("imagenes").style.display = "block";
-    }
     Austra = true;
     Sapi = false;
     Nean = false;
@@ -106,6 +106,12 @@ function Australopithecus(){
 }
 
 function Habilis(){
+    //Mostrar imagen
+    document.getElementById("inf").removeAttribute('src');
+    if (document.getElementById('ch').checked) {
+        document.getElementById("inf").src="../../assets/Fichas/Humanos/Homo_Habilis.jpg";
+        document.getElementById("imagenes").style.display = "block";
+    }
     document.querySelector("#pa").setAttribute("visible", false);
     document.querySelector("#aut").setAttribute("visible", false);
     document.querySelector("#hoer").setAttribute("visible", false);
@@ -115,12 +121,6 @@ function Habilis(){
     modhabi.scale.multiplyScalar(0).addScalar(1);
     modhabi.rotation.y = 0;
     modhabi.rotation.x = 0;
-    //Mostrar imagen
-    document.getElementById("inf").removeAttribute('src');
-    if (document.getElementById('ch').checked) {
-        document.getElementById("inf").src="../../assets/Fichas/Humanos/Homo_Habilis.jpg";
-        document.getElementById("imagenes").style.display = "block";
-    }
     Austra = false;
     Sapi = false;
     Nean = false;
@@ -130,6 +130,12 @@ function Habilis(){
 }
 
 function Neanderthalesis(){
+    //Mostrar imagen
+    document.getElementById("inf").removeAttribute('src');
+    if (document.getElementById('ch').checked) {
+        document.getElementById("inf").src="../../assets/Fichas/Humanos/Neanderthal.jpg";
+        document.getElementById("imagenes").style.display = "block";
+    }
     document.querySelector("#pa").setAttribute("visible", false);
     document.querySelector("#aut").setAttribute("visible", false);
     document.querySelector("#hoer").setAttribute("visible", false);
@@ -139,12 +145,6 @@ function Neanderthalesis(){
     modnean.scale.multiplyScalar(0).addScalar(1);
     modnean.rotation.y = 0;
     modnean.rotation.x = 0;
-    //Mostrar imagen
-    document.getElementById("inf").removeAttribute('src');
-    if (document.getElementById('ch').checked) {
-        document.getElementById("inf").src="../../assets/Fichas/Humanos/Neanderthal.jpg";
-        document.getElementById("imagenes").style.display = "block";
-    }
     Austra = false;
     Sapi = false;
     Nean = true;
@@ -154,6 +154,12 @@ function Neanderthalesis(){
 }
 
 function Herectus(){
+    //Mostrar imagen
+    document.getElementById("inf").removeAttribute('src');
+    if (document.getElementById('ch').checked) {
+        document.getElementById("inf").src="../../assets/Fichas/Humanos/Homo_Erectus.jpg";
+        document.getElementById("imagenes").style.display = "block";
+    }
     document.querySelector("#pa").setAttribute("visible", false);
     document.querySelector("#aut").setAttribute("visible", false);
     document.querySelector("#hoer").setAttribute("visible", true);
@@ -163,12 +169,6 @@ function Herectus(){
     moderec.scale.multiplyScalar(0).addScalar(1);
     moderec.rotation.y = 0;
     moderec.rotation.x = 0;
-    //Mostrar imagen
-    document.getElementById("inf").removeAttribute('src');
-    if (document.getElementById('ch').checked) {
-        document.getElementById("inf").src="../../assets/Fichas/Humanos/Homo_Erectus.jpg";
-        document.getElementById("imagenes").style.display = "block";
-    }
     Austra = false;
     Sapi = false;
     Nean = false;
@@ -178,6 +178,12 @@ function Herectus(){
 }
 
 function Sapiens(){
+    //Mostrar imagen
+    document.getElementById("inf").removeAttribute('src');
+    if (document.getElementById('ch').checked) {
+        document.getElementById("inf").src="../../assets/Fichas/Humanos/Homo_Sapiens.jpg";
+        document.getElementById("imagenes").style.display = "block";
+    }
     document.querySelector("#pa").setAttribute("visible", false);
     document.querySelector("#aut").setAttribute("visible", false);
     document.querySelector("#hoer").setAttribute("visible", false);
@@ -187,12 +193,6 @@ function Sapiens(){
     modsap.scale.multiplyScalar(0).addScalar(1);
     modsap.rotation.y = 0;
     modsap.rotation.x = 0;
-    //Mostrar imagen
-    document.getElementById("inf").removeAttribute('src');
-    if (document.getElementById('ch').checked) {
-        document.getElementById("inf").src="../../assets/Fichas/Humanos/Homo_Sapiens.jpg";
-        document.getElementById("imagenes").style.display = "block";
-    }
     Austra = false;
     Sapi = true;
     Nean = false;
@@ -202,6 +202,12 @@ function Sapiens(){
 }
 
 function Paranthropus(){
+    //Mostrar imagen
+    document.getElementById("inf").removeAttribute('src');
+    if (document.getElementById('ch').checked) {
+        document.getElementById("inf").src="../../assets/Fichas/Humanos/Paranthropus.jpg";
+        document.getElementById("imagenes").style.display = "block";
+    }
     document.querySelector("#pa").setAttribute("visible", true);
     document.querySelector("#aut").setAttribute("visible", false);
     document.querySelector("#hoer").setAttribute("visible", false);
@@ -211,12 +217,6 @@ function Paranthropus(){
     modparan.scale.multiplyScalar(0).addScalar(1);
     modparan.rotation.y = 0;
     modparan.rotation.x = 0;
-    //Mostrar imagen
-    document.getElementById("inf").removeAttribute('src');
-    if (document.getElementById('ch').checked) {
-        document.getElementById("inf").src="../../assets/Fichas/Humanos/Paranthropus.jpg";
-        document.getElementById("imagenes").style.display = "block";
-    }
     Austra = false;
     Sapi = false;
     Nean = false;

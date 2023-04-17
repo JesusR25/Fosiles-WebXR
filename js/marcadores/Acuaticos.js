@@ -76,6 +76,12 @@ function JsQRScannerReady()
 }
 
 function Megalodon(){
+    //Mostrar imagen
+  document.getElementById("inf").removeAttribute('src');
+  if (document.getElementById('ch').checked) {
+      document.getElementById("inf").src="../../assets/Fichas/Acuaticos/Megalodon.jpg";
+      document.getElementById("imagenes").style.display = "block";
+  }
   document.querySelector("#ballena").setAttribute("visible", false);
   document.querySelector("#celacanto").setAttribute("visible", false);
   document.querySelector("#tiburon").setAttribute("visible", false);
@@ -84,13 +90,6 @@ function Megalodon(){
   modmega.scale.multiplyScalar(0).addScalar(1);
   modmega.rotation.y = 0;
   modmega.rotation.x = 0;
-
-  //Mostrar imagen
-  document.getElementById("inf").removeAttribute('src');
-    if (document.getElementById('ch').checked) {
-        document.getElementById("inf").src="../../assets/Fichas/Acuaticos/Megalodon.jpg";
-        document.getElementById("imagenes").style.display = "block";
-    }
   balle = false;
   cela = false;
   tibu = false;
@@ -99,6 +98,12 @@ function Megalodon(){
 }
 
 function Mosasaurus(){
+    //Mostrar imagen
+  document.getElementById("inf").removeAttribute('src');
+  if (document.getElementById('ch').checked) {
+    document.getElementById("inf").src="../../assets/Fichas/Acuaticos/Mosasaurus.jpg";
+    document.getElementById("imagenes").style.display = "block";
+  }
   document.querySelector("#ballena").setAttribute("visible", false);
   document.querySelector("#celacanto").setAttribute("visible", false);
   document.querySelector("#tiburon").setAttribute("visible", false);
@@ -107,12 +112,6 @@ function Mosasaurus(){
   modmosa.scale.multiplyScalar(0).addScalar(1);
   modmosa.rotation.y = 0;
   modmosa.rotation.x = 0;
-  //Mostrar imagen
-  document.getElementById("inf").removeAttribute('src');
-  if (document.getElementById('ch').checked) {
-    document.getElementById("inf").src="../../assets/Fichas/Acuaticos/Mosasaurus.jpg";
-    document.getElementById("imagenes").style.display = "block";
-  }
   balle = false;
   cela = false;
   tibu = false;
@@ -121,6 +120,11 @@ function Mosasaurus(){
 }
 
 function Ballena(){
+    document.getElementById("inf").removeAttribute('src');
+  if (document.getElementById('ch').checked) {
+    document.getElementById("inf").src="../../assets/Fichas/Acuaticos/Ballena.jpg";
+    document.getElementById("imagenes").style.display = "block";
+  }
   document.querySelector("#ballena").setAttribute("visible", true);
   document.querySelector("#celacanto").setAttribute("visible", false);
   document.querySelector("#tiburon").setAttribute("visible", false);
@@ -130,11 +134,6 @@ function Ballena(){
   modballe.rotation.y = 0;
   modballe.rotation.x = 0;
   //Mostrar imagen
-  document.getElementById("inf").removeAttribute('src');
-  if (document.getElementById('ch').checked) {
-    document.getElementById("inf").src="../../assets/Fichas/Acuaticos/Ballena.jpg";
-    document.getElementById("imagenes").style.display = "block";
-  }
   balle = true;
   cela = false;
   tibu = false;
@@ -143,6 +142,12 @@ function Ballena(){
 }
 
 function Tiburon(){
+    //Mostrar imagen
+  document.getElementById("inf").removeAttribute('src');
+  if (document.getElementById('ch').checked) {
+    document.getElementById("inf").src="../../assets/Fichas/Acuaticos/Tiburon.jpg";
+    document.getElementById("imagenes").style.display = "block";
+  }
   document.querySelector("#ballena").setAttribute("visible", false);
   document.querySelector("#celacanto").setAttribute("visible", false);
   document.querySelector("#tiburon").setAttribute("visible", true);
@@ -151,12 +156,6 @@ function Tiburon(){
   modtibu.scale.multiplyScalar(0).addScalar(1);
   modtibu.rotation.y = 0;
   modtibu.rotation.x = 0;
-  //Mostrar imagen
-  document.getElementById("inf").removeAttribute('src');
-  if (document.getElementById('ch').checked) {
-    document.getElementById("inf").src="../../assets/Fichas/Acuaticos/Tiburon.jpg";
-    document.getElementById("imagenes").style.display = "block";
-  }
   balle = false;
   cela = false;
   tibu = true;
@@ -165,6 +164,12 @@ function Tiburon(){
 }
 
 function Celacanto(){
+    //Mostrar imagen
+  document.getElementById("inf").removeAttribute('src');
+  if (document.getElementById('ch').checked) {
+    document.getElementById("inf").src="../../assets/Fichas/Acuaticos/Celacanto.jpg";
+    document.getElementById("imagenes").style.display = "block";
+  }
   document.querySelector("#ballena").setAttribute("visible", false);
   document.querySelector("#celacanto").setAttribute("visible", true);
   document.querySelector("#tiburon").setAttribute("visible", false);
@@ -173,12 +178,6 @@ function Celacanto(){
   modcela.scale.multiplyScalar(0).addScalar(1);
   modcela.rotation.y = 0;
   modcela.rotation.x = 0;
-  //Mostrar imagen
-  document.getElementById("inf").removeAttribute('src');
-  if (document.getElementById('ch').checked) {
-    document.getElementById("inf").src="../../assets/Fichas/Acuaticos/Celacanto.jpg";
-    document.getElementById("imagenes").style.display = "block";
-  }
   balle = false;
   cela = true;
   tibu = false;

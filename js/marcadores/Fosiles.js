@@ -72,6 +72,12 @@ function JsQRScannerReady()
 
 //Funciones para ocultar segun sea el marcador
 function Belemnite(){
+    //Mostrar imagen
+    document.getElementById("inf").removeAttribute('src');
+    if (document.getElementById('ch').checked) {
+        document.getElementById("inf").src="../../assets/Fichas/Otros/Belemnite.jpg";
+        document.getElementById("imagenes").style.display = "block";
+    }
     document.querySelector("#ammonite").setAttribute("visible", false);
     document.querySelector("#belemnites").setAttribute("visible", true);
     document.querySelector("#fosil").setAttribute("visible", false);
@@ -79,13 +85,6 @@ function Belemnite(){
     modammo.scale.multiplyScalar(0).addScalar(1);
     modammo.rotation.y = 0;
     modammo.rotation.x = 0;
-    //Mostrar imagen
-    document.getElementById("inf").removeAttribute('src');
-    if (document.getElementById('ch').checked) {
-        document.getElementById("inf").src="../../assets/Fichas/Otros/Belemnite.jpg";
-        document.getElementById("imagenes").style.display = "block";
-    }
-
     ammo = false;
     bele = true;
     fos = false;
@@ -94,6 +93,12 @@ function Belemnite(){
 
 //Funciones para ocultar segun sea el marcador
 function Ammonite(){
+    //Mostrar imagen
+    document.getElementById("inf").removeAttribute('src');
+    if (document.getElementById('ch').checked) {
+        document.getElementById("inf").src="../../assets/Fichas/Otros/Ammonite.jpg";
+        document.getElementById("imagenes").style.display = "block";
+    }
     document.querySelector("#ammonite").setAttribute("visible", true);
     document.querySelector("#belemnites").setAttribute("visible", false);
     document.querySelector("#fosil").setAttribute("visible", false);
@@ -101,13 +106,6 @@ function Ammonite(){
     modbelem.scale.multiplyScalar(0).addScalar(1);
     modbelem.rotation.y = 0;
     modbelem.rotation.x = 0;
-    //Mostrar imagen
-    document.getElementById("inf").removeAttribute('src');
-    if (document.getElementById('ch').checked) {
-        document.getElementById("inf").src="../../assets/Fichas/Otros/Ammonite.jpg";
-        document.getElementById("imagenes").style.display = "block";
-    }
-
     ammo = true;
     bele = false;
     fos = false;
@@ -116,6 +114,12 @@ function Ammonite(){
 
 //Funciones para ocultar segun sea el marcador
 function Trilobite(){
+    //Mostrar imagen
+    document.getElementById("inf").removeAttribute('src');
+    if (document.getElementById('ch').checked) {
+        document.getElementById("inf").src="../../assets/Fichas/Otros/Trilobite.jpg";
+        document.getElementById("imagenes").style.display = "block";
+    }
     document.querySelector("#ammonite").setAttribute("visible", false);
     document.querySelector("#belemnites").setAttribute("visible", false);
     document.querySelector("#fosil").setAttribute("visible", false);
@@ -123,13 +127,6 @@ function Trilobite(){
     modtrilo.scale.multiplyScalar(0).addScalar(1);
     modtrilo.rotation.y = 0;
     modtrilo.rotation.x = 0;
-    //Mostrar imagen
-    document.getElementById("inf").removeAttribute('src');
-    if (document.getElementById('ch').checked) {
-        document.getElementById("inf").src="../../assets/Fichas/Otros/Trilobite.jpg";
-        document.getElementById("imagenes").style.display = "block";
-    }
-
     ammo = false;
     bele = false;
     fos = false;
@@ -138,6 +135,12 @@ function Trilobite(){
 
 //Funciones para ocultar segun sea el marcador
 function Fosil(){
+    //Mostrar imagen
+    document.getElementById("inf").removeAttribute('src');
+    if (document.getElementById('ch').checked) {
+        document.getElementById("inf").src="../../assets/Fichas/Otros/Fosil_Vegetal.jpg";
+        document.getElementById("imagenes").style.display = "block";
+    }
     document.querySelector("#ammonite").setAttribute("visible", false);
     document.querySelector("#belemnites").setAttribute("visible", false);
     document.querySelector("#fosil").setAttribute("visible", true);
@@ -145,13 +148,6 @@ function Fosil(){
     modfosil.scale.multiplyScalar(0).addScalar(1);
     modfosil.rotation.y = 0;
     modfosil.rotation.x = 0;
-    //Mostrar imagen
-    document.getElementById("inf").removeAttribute('src');
-    if (document.getElementById('ch').checked) {
-        document.getElementById("inf").src="../../assets/Fichas/Otros/Fosil_Vegetal.jpg";
-        document.getElementById("imagenes").style.display = "block";
-    }
-
     ammo = false;
     bele = false;
     fos = true;
