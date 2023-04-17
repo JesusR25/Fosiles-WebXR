@@ -9,7 +9,17 @@
         <script type="text/javascript" src="../js/marcadores/Acuaticos.js"></script>
         <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
     </head>
-    <body onload="readDeviceOrientation();">
+    <script>
+        function sphereEventListener() {
+            celacanto.addEventListener('animationcomplete', function () {
+                celacanto.emit("normal");
+            });
+            celacanto.addEventListener('animationcomplete__2', function () {
+                celacanto.emit("zoom");
+            });
+        };
+    </script>
+    <body onload="readDeviceOrientation(); sphereEventListener();">
         <label class="container">Información
             <input type="checkbox" checked="checked" id="ch">
             <span class="checkmark"></span>
@@ -28,11 +38,10 @@
                 <a-asset-item id="prue" src="../assets/Animales/Acuaticos/modif.glb"></a-asset-item>
             </a-assets>
             
-            
             <!-- Modelo muy oscuro -->
             <a-entity id="ballena" visible="false"  position="-0.5 -1.5 -4" rotation="0 90 0" scale="1 1 1" gltf-model="#blue" animation-mixer></a-entity>
             <!-- Cara pixeleada -->
-            <a-entity id="celacanto" visible="false" position="0 -1.2 -4" rotation="0 45 0" scale="0.3 0.3 0.3" gltf-model="#cela" animation-mixer></a-entity>
+            <a-entity id="celacanto" visible="false" position="0 -1.2 -4" rotation="0 45 0" scale="0.3 0.3 0.3" gltf-model="#cela" animation="property: scale; to: 0.2 0.2 0.2; dur: 3000; easing: linear; startEvents: zoom;" animation__2="property: scale; to: 0.3 0.3 0.3; dur: 3000; easing: linear; startEvents: normal;"></a-entity>
             <!-- Listo -->
             <a-entity id="tiburon" visible="false" position="-0.5 -100 -450" rotation="0 90 0" scale="0.3 0.3 0.3" gltf-model="#great" animation-mixer ></a-entity>
             <!-- Modelo muy oscuro -->

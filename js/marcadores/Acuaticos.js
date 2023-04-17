@@ -178,6 +178,7 @@ function Celacanto(){
   modcela.scale.multiplyScalar(0).addScalar(1);
   modcela.rotation.y = 0;
   modcela.rotation.x = 0;
+  document.querySelector("#celacanto").emit("zoom");
   balle = false;
   cela = true;
   tibu = false;
