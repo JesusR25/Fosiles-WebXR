@@ -1,45 +1,51 @@
 <html>
   <head>
-    <title>Most Basic Super-Hands Example</title>
-    <link rel="stylesheet" href="../css/juego.css">
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-event-set-component@^5.0.0/dist/aframe-event-set-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-environment-component@1.3.2/dist/aframe-environment-component.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.misc.min.js"></script>
-    <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
+    <title>XRExtras: A-FRAME</title>
+
+    <!-- We've included a slightly modified version of A-Frame, which fixes some polish concerns -->
+    <script src="//cdn.8thwall.com/web/aframe/8frame-1.3.0.min.js"></script>
+
+    <!-- XR Extras - provides utilities like load screen, error handling, and gesture control helpers.
+         See https://github.com/8thwall/web/tree/master/xrextras/ -->
+    <script src="//cdn.8thwall.com/web/xrextras/xrextras.js"></script>
   </head>
-  
+
   <body>
-    <img>
-    <a-scene  avatar-recorder
-             touch-to-click-converter>
-      <a-assets>
-        <img id="skyTexture" src="../assets/Juego/fondo_2.jpg">
-        <a-mixin id="cube" geometry="primitive: box; width: 0.5; height: 0.5; depth: 0.5"
-                 hoverable grabbable stretchable draggable droppable
-                 shadow
-                 event-set__dragdrop="_event: drag-drop; geometry.primitive: sphere; geometry.radius: 0.25"
-                 event-set__hoveron="_event: hover-start; material.opacity: 0.7; transparent: true"
-                 event-set__hoveroff="_event: hover-end; material.opacity: 1; transparent: false"
-                 event-set__dragon="_event: dragover-start; material.wireframe: true"
-                 event-set__dragoff="_event: dragover-end; material.wireframe: false">
-        </a-mixin>
-      </a-assets>
-      <a-entity camera wasd-controls position="0 1 1"
-                capture-mouse
-                raycaster="objects: .cube" cursor="rayOrigin:mouse"
-                static-body="shape: sphere; sphereRadius: 0.001"
-                super-hands="colliderEvent: raycaster-intersection;
-                             colliderEventProperty: els;
-                             colliderEndEvent:raycaster-intersection-cleared;
-                             colliderEndEventProperty: clearedEls;">
+    <!-- Add the 'xrweb' attribute to your scene to make it an 8th Wall Web A-FRAME scene. -->
+    <a-scene>
+
+      <a-camera position="0 8 8"></a-camera>
+
+      <a-entity
+        light="type: directional; castShadow: true; intensity: 0.8; shadowCameraTop: 7;
+               shadowMapHeight: 1024; shadowMapWidth: 1024;"
+        position="1 4.3 2.5">
       </a-entity>
-      <a-entity class="cube" mixin="cube" position="0 1 -1.25" material="color: red"></a-entity>
-      <a-entity class="cube" mixin="cube" position="0 1.6 -1.5" material="color: red"></a-entity>
-      <a-entity class="cube" mixin="cube" position="-0.9 1 -0.9" material="color: blue"></a-entity>
-      <a-entity class="cube" mixin="cube" position="-1 1.6 -1" material="color: blue"></a-entity>
-      <a-entity class="cube" mixin="cube" position="0.9 1 -0.9" material="color: green"></a-entity>
-      <a-entity class="cube" mixin="cube" position="1 1.6 -1" material="color: green"></a-entity>
+
+      <a-entity
+        light="type: directional; castShadow: false; intensity: 0.5;" position="-0.8 3 1.85">
+      </a-entity>
+
+      <a-light type="ambient" intensity="1"></a-light>
+
+      <a-box
+        position="-1.7 0.5 -2" rotation="0 45 0" shadow
+        material="roughness: 0.8; metalness: 0.2; color: #00EDAF;">
+      </a-box>
+
+      <a-sphere
+        position="-1.175 1.25 -5.2" radius="1.25" shadow
+        material="roughness: 0.8; metalness: 0.2; color: #DD0065;">
+      </a-sphere>
+
+      <a-cylinder
+        position="2 0.75 -1.85" radius="0.5" height="1.5" shadow
+        material="roughness: 0.8; metalness: 0.2; color: #FCEE21;">
+      </a-cylinder>
+
+      <a-circle position="0 0 -4" rotation="-90 0 0" radius="4" shadow
+        material="roughness: 0.8; metalness: 0.5; color: #AD50FF">
+      </a-circle>
     </a-scene>
   </body>
 </html>
