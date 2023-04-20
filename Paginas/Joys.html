@@ -10,6 +10,8 @@
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.js"></script>
   <script src="https://rawcdn.githack.com/bobboteck/JoyStick/4486124c98fa04e30548eb5070591e1a42052749/joy.js"></script>
+  <script src="https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.1.2/dist/aframe-physics-system.min.js"></script>
+  <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
   <script>
     AFRAME.registerComponent("joystick-controls", {
       init: function () {
@@ -45,16 +47,25 @@
   </div>
 
   <a-scene renderer="colorManagement: true" vr-mode-ui="enabled: false" loading-screen="enabled:false">
-
     <a-assets timeout="30000">
       <a-asset-item id="great" src="../assets/Animales/Acuaticos/diferente.glb"></a-asset-item>
+      <a-asset-item id="pez" src="../assets/Juego/fish_swimming.glb"></a-asset-item>
   </a-assets>
-
-  <a-entity id="tiburon" visible="true" position="0 1 -2" rotation="0 90 0" scale="0.003 0.003 0.003" gltf-model="#great" joystick-controls animation-mixer="clip: rig|Swim"></a-entity>
-    <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4">
-    </a-plane>
+  <a-entity id="tiburon" visible="true" position="0 1 -500" rotation="0 -90 0" scale="1 1 1" gltf-model="#great" joystick-controls animation-mixer="clip: rig|Swim" cursor="fuse: true; fuseTimeout: 100" raycaster="objects: .meteor"></a-entity>
+  <a-entity id="pescado" class="meteor" shootable visible="true"  position="2 1 -2" rotation="0 0 0" scale="0.010 0.010 0.010" gltf-model="#pez" animation-mixer></a-entity>
     <a-entity camera position="0 1.5 0"></a-entity>
   </a-scene>
 </body>
 
+
+<script>
+  AFRAME.registerComponent('shootable', {
+            init: function () {
+              console.log("Hola");
+                this.el.addEventListener('click', () => {
+                 alert("Exito");
+                })
+            }
+        })
+</script>
 </html>
