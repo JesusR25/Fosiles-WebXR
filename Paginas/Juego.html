@@ -187,7 +187,7 @@
         <a-sky src="../assets/Juego/360-forward-hold-1-2.jpg" rotation="0 -130 0"></a-sky>
         <a-assets>
           <a-asset-item src="../assets/Juego/fish_swimming.glb" id="metemod"></a-asset-item>
-          <a-asset-item id="great" src="../assets/Animales/Acuaticos/great_white_shark.glb"></a-asset-item>
+          <a-asset-item id="great" src="../assets/Animales/Acuaticos/diferente.glb"></a-asset-item>
           
         </a-assets>
 
@@ -212,7 +212,7 @@
             <a-text value="0 pescados cazados" color="white" position="0 -0.1 -1" width="1" align="center"></a-text>
 
             <a-entity cursor="fuse: true; fuseTimeout: 100" position="0 0 -1" raycaster="objects: .meteor" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="shader: flat"></a-entity>
-            <a-entity id="tiburon" visible="true" position="-60 -50 -450" rotation="0 90 0" scale="0.3 0.3 0.3" gltf-model="#great" animation-mixer ></a-entity>
+            <a-entity id="tiburon" visible="true" position="-0.2 -0.1 -2" rotation="0 90 0" scale="0.001 0.001 0.001" gltf-model="#great" joystick-controls animation-mixer="clip: rig|Swim"></a-entity>
         </a-entity>
 
     </a-scene>
