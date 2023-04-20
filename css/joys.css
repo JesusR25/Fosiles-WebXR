@@ -3,6 +3,8 @@
 body {
     font-family: helvetica, arial, sans-serif;
     margin: 2em;
+    background-image: url(../assets/Juego/360-forward-hold-1-2.jpg);
+    background-size: cover;
   }
   
   h1 {

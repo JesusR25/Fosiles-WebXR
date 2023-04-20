@@ -1,67 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hello!</title>
-    <link rel="stylesheet" href="../css/joys.css" />
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://rawcdn.githack.com/bobboteck/JoyStick/4486124c98fa04e30548eb5070591e1a42052749/joy.js"></script>
-    <script>
-      AFRAME.registerComponent("joystick-controls", {
-        init: function() {
-          this.joystick = new JoyStick("joyDiv");
 
-          this.rot = this.el.getAttribute("rotation");
-          this.pos = this.el.getAttribute("position");
-        },
-        tick: function() {
-          if (!this.joystick) return;
-          // handle position
-          var speed = this.joystick.GetY() / 2000;
-          var offset = 90 * Math.PI / 180
-          this.pos.x += speed * Math.sin(this.rot.y * Math.PI / 180)
-          this.pos.y += speed * Math.cos(this.rot.y * Math.PI / 180)
-          this.el.setAttribute("position", this.pos);
-        }
-      });
-    </script>
-  </head>
-  <body>
-    <div id="joyContainer">
-      <div
-        id="joyDiv"
-        style="width:200px;height:200px;margin-bottom:20px; float: left"
-      ></div>
-      <p>
-        Up/Down - move, L/R - rotate
-      </p>
-    </div>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Minijuego</title>
+  <link rel="stylesheet" href="../css/joys.css" />
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.js"></script>
+  <script src="https://rawcdn.githack.com/bobboteck/JoyStick/4486124c98fa04e30548eb5070591e1a42052749/joy.js"></script>
+  <script>
+    AFRAME.registerComponent("joystick-controls", {
+      init: function () {
+        this.joystick = new JoyStick("joyDiv");
 
-    <a-scene>
-      <a-assets timeout="30000">
-        <a-asset-item id="ammo" src="../assets/Otros/ammonite_cephalopod.glb"></a-asset-item>
-    </a-assets>
-    <a-entity id="ammonite" visible="false" position="0 -1 -4" rotation="0 0 0" scale="0.3 0.3 0.3" gltf-model="#ammo"></a-entity>
-      <a-box position="0 0.5 -3" color="#9333FF" joystick-controls>
-      <a-box scale="0.1 0.1 1.2"></a-box>
+        this.rot = this.el.getAttribute("rotation");
+        this.pos = this.el.getAttribute("position");
+      },
+      tick: function () {
+        if (!this.joystick) return;
+        // handle rotation
+        //console.log(this.joystick.GetX());
+        //this.rot.y -= this.joystick.GetX() / 100;
+        this.rot.x += this.joystick.GetX() / 100;
+        //this.el.setAttribute("rotation", this.rot);
+        // handle position
+        var speed = this.joystick.GetY() / 2000;
+        var speed2 = this.joystick.GetX() / 2000;
+        var offset = (90 * Math.PI) / 180;
 
-      </a-box>
-      <a-plane
-        position="0 0 -4"
-        rotation="-90 0 0"
-        width="4"
-        height="4"
-        color="#7BC8A4"
-      >
-      </a-plane>
-      <a-sky color="#ECECEC"></a-sky>
-    </a-scene>
+        //console.log(this.rot.y);
+        this.pos.y += speed * Math.cos((0 * Math.PI) / 180);
+        this.pos.x += speed2 * Math.cos((0 * Math.PI) / 180);
+        this.el.setAttribute("position", this.pos);
+      },
+    });
+  </script>
+</head>
 
-  </body>
+<body>
+  <div id="joyContainer">
+    <div id="joyDiv" style="width: 200px; height: 200px; margin-bottom: 20px; float: left"></div>
+  </div>
+
+  <a-scene renderer="colorManagement: true" vr-mode-ui="enabled: false" loading-screen="enabled:false">
+
+    <a-assets timeout="30000">
+      <a-asset-item id="great" src="../assets/Animales/Acuaticos/diferente.glb"></a-asset-item>
+  </a-assets>
+
+  <a-entity id="tiburon" visible="true" position="0 1 -2" rotation="0 90 0" scale="0.003 0.003 0.003" gltf-model="#great" joystick-controls animation-mixer="clip: rig|Swim"></a-entity>
+    <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4">
+    </a-plane>
+  </a-scene>
+</body>
+
 </html>
-
-https://github.com/bobboteck/JoyStick
-https://stackoverflow.com/questions/64038183/rotating-a-entity-with-touch-joystick
-https://glitch.com/edit/#!/gftruj-aframe-joy?path=index.html%3A27%3A28
