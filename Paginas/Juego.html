@@ -204,6 +204,10 @@
                     console.log(this.el.getAttribute('id'));
                     if (this.el.getAttribute('id') == 'malo') {
                         vida++;
+                        this.el.parentNode.removeChild(this.el)
+                        if((vida > nivel)){
+                            
+                        }
                     } else {
                         let tibu = document.querySelector("#tiburon");
                         tibu.removeAttribute("animation-mixer");
@@ -220,23 +224,27 @@
                         nivel = nivel + 1;
                         segundonivel();
                         score = 0;
+                        vida = 0;
                     }
                     if (score == 12 && nivel == 2) {
                         tercernivel();
                         score = 0;
                         nivel++;
+                        vida = 0;
                     }
 
                     if (score == 16 && nivel == 3) {
                         cuartonivel();
                         score = 0;
                         nivel++;
+                        vida = 0;
                     }
 
                     if (score == 20 && nivel == 4) {
                         quintonivel();
                         score = 0;
                         nivel++;
+                        vida = 0;
                     }
 
                     if (score == 24 && nivel == 5) {
@@ -284,7 +292,7 @@
     <script type="module">
         import { marcador } from '../js/firebase.js'
         document.getElementById("btn7").addEventListener("click", (e) => {
-            window.history.back();
+            window.location.href = "/Paginas/Menu.html";
         });
         document.getElementById("btn8").addEventListener("click", (e) => {
             marcador();

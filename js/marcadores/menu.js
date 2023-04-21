@@ -91,3 +91,20 @@ function advertencia(){
       }
     })
   }
+
+  function Juego(){
+    Swal.fire({
+      title: 'Quiz',
+      html: '•	El objetivo es controlar a un tiburón por nedio del táctil del dispositivo móvil. Devera comer todos los peces en un lapso de tiempo.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Aceptar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "/Paginas/Juego.html";
+      }
+    })
+  }
