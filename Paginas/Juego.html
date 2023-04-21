@@ -6,9 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego de Pescados</title>
+    <link href="../css/juego.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/script.js" defer></script>
     <script type="module">
+        import { juego, marcador } from '../js/firebase.js'
         window.addEventListener('load', initScene)
 
         const meteors = [
@@ -21,39 +26,75 @@
         let tiempor;
 
         function initScene() {
-
+            let contador = 1;
             let orbits = document.querySelectorAll('.orbit')
 
             orbits.forEach(orbit => {
-
                 meteors.forEach(pos => {
+                    if (contador == 2) {
+                        meteor = document.createElement('a-entity')
+                        meteor.setAttribute('gltf-model', '#metemod');
+                        meteor.setAttribute('scale', '0.060 0.060 0.060');
+                        meteor.setAttribute('class', 'meteor')
+                        meteor.object3D.position.set(pos.x, pos.y, pos.z)
+                        meteor.setAttribute('shootable', '')
+                        meteor.setAttribute('animation-mixer', '')
+                        if (orbit.getAttribute('id') == 2) {
+                            console.log("Hola");
+                            meteor.setAttribute('rotation', '0 0 0');
+                        } else {
+                            meteor.setAttribute('rotation', '0 180 0');
+                        }
+                        orbit.appendChild(meteor)
+                        contador++;
+                    } else {
+                        meteor = document.createElement('a-entity')
+                        meteor.setAttribute('gltf-model', '#metemod');
+                        meteor.setAttribute('scale', '0.060 0.060 0.060');
+                        meteor.setAttribute('class', 'meteor')
+                        meteor.object3D.position.set(pos.x, pos.y, pos.z)
+                        if (orbit.getAttribute('id') == 2 && contador == 3) {
+                            meteor.setAttribute('rotation', '0 90 0');
+                        } else if (orbit.getAttribute('id') == 2 && contador == 4) {
+                            meteor.setAttribute('rotation', '0 -90 0');
+                        } else if (orbit.getAttribute('id') == 2 && contador == 5) {
+                            meteor.setAttribute('rotation', '0 0 0');
+                        } else if (contador == 4) {
+                            meteor.setAttribute('rotation', '0 90 0');
+                        } else if (contador == 5) {
+                            meteor.setAttribute('rotation', '0 180 0');
+                        } else if (contador == 3) {
+                            meteor.setAttribute('rotation', '0 -90 0');
+                        } else if (orbit.getAttribute('id') == 2) {
+                            meteor.setAttribute('rotation', '0 180 0');
+                        }
+                        meteor.setAttribute('shootable', '')
+                        meteor.setAttribute('animation-mixer', '')
 
-                    meteor = document.createElement('a-entity')
-                    meteor.setAttribute('gltf-model', '#metemod');
-                    meteor.setAttribute('scale', '0.060 0.060 0.060');
-                    meteor.setAttribute('class', 'meteor')
-                    meteor.object3D.position.set(pos.x, pos.y, pos.z)
-
-                    meteor.setAttribute('shootable', '')
-                    meteor.setAttribute('animation-mixer', '')
-
-                    orbit.appendChild(meteor)
+                        orbit.appendChild(meteor)
+                        contador++;
+                    }
                 })
+                contador = 1;
             })
             //playPause()
         }
 
         function segundonivel() {
+            var tiempo = document.getElementById('stopwatch').innerHTML;
+            playPause()
+            tiempor = obtener();
+            juego(nivel, tiempor);
             swal({
                 title: "¡Felicidades!",
-                text: "Has destruido los 8 meteoritos en un tiempo de " + tiempo + ". ¿Te gustaria continuar con el segundo nivel?",
+                text: "Has devorado todos los peces en un tiempo de " + tiempo + ". ¿Te gustaria continuar con el segundo nivel?",
                 icon: "success",
                 buttons: true,
                 dangerMode: true,
             })
                 .then((willDelete) => {
                     if (willDelete) {
-                        meteors.unshift({ x: 30, y: 0, z: 0 });
+                        meteors.push({ x: 30, y: 0, z: 0 });
                         initScene();
                         playPause()
                     } else {
@@ -62,17 +103,20 @@
                 });
         }
         function tercernivel() {
+            var tiempo = document.getElementById('stopwatch').innerHTML;
+            playPause()
+            tiempor = obtener();
             juego(nivel, tiempor);
             swal({
                 title: "¡Felicidades!",
-                text: "Has destruido los 12 meteoritos en un tiempo de " + tiempo + ". ¿Te gustaria continuar con el tercer nivel?",
+                text: "Has devorado todos los peces en un tiempo de " + tiempo + ". ¿Te gustaria continuar con el tercer nivel?",
                 icon: "success",
                 buttons: true,
                 dangerMode: true,
             })
                 .then((willDelete) => {
                     if (willDelete) {
-                        meteors.unshift({ x: -30, y: 0, z: 0 });
+                        meteors.push({ x: -30, y: 0, z: 0 });
                         initScene();
                     } else {
                         swal("¡Gracias por jugar!");
@@ -81,16 +125,20 @@
         }
 
         function cuartonivel() {
+            var tiempo = document.getElementById('stopwatch').innerHTML;
+            playPause()
+            tiempor = obtener();
+            juego(nivel, tiempor);
             swal({
                 title: "¡Felicidades!",
-                text: "Has destruido los 16 meteoritos en un tiempo de " + tiempo + ". ¿Te gustaria continuar con el tercer nivel?",
+                text: "Has devorado todos los peces en un tiempo de " + tiempo + ". ¿Te gustaria continuar con el tercer nivel?",
                 icon: "success",
                 buttons: true,
                 dangerMode: true,
             })
                 .then((willDelete) => {
                     if (willDelete) {
-                        meteors.unshift({ x: 20, y: 0, z: 20 });
+                        meteors.push({ x: 20, y: 0, z: 20 });
                         initScene();
                     } else {
                         swal("¡Gracias por jugar!");
@@ -99,16 +147,20 @@
         }
 
         function quintonivel() {
+            var tiempo = document.getElementById('stopwatch').innerHTML;
+            playPause()
+            tiempor = obtener();
+            juego(nivel, tiempor);
             swal({
                 title: "¡Felicidades!",
-                text: "Has destruido los 20 meteoritos en un tiempo de " + tiempo + ". ¿Te gustaria continuar con el tercer nivel?",
+                text: "Has devorado todos los peces en un tiempo de " + tiempo + ". ¿Te gustaria continuar con el tercer nivel?",
                 icon: "success",
                 buttons: true,
                 dangerMode: true,
             })
                 .then((willDelete) => {
                     if (willDelete) {
-                        meteors.unshift({ x: 20, y: 0, z: -20 },);
+                        meteors.push({ x: 20, y: 20, z: -20 },);
                         initScene();
                     } else {
                         swal("¡Gracias por jugar!");
@@ -117,21 +169,32 @@
         }
 
         function final() {
+            tiempor = document.getElementById('stopwatch').innerHTML;;
+            juego(nivel, tiempor);
             swal({
                 title: "¡Felicidades!",
-                text: "Has destruido los 24 meteoritos y has terminado el juego con un " + tiempo + ".",
+                text: "Has devorado todos los peces en un tiempo de y has terminado el juego con un " + tiempor + ".",
                 icon: "success",
                 button: "Entendido",
             });
-        
+
         }
 
         AFRAME.registerComponent('shootable', {
             init: function () {
                 this.el.addEventListener('click', () => {
+                    let tibu = document.querySelector("#tiburon");
+                    tibu.removeAttribute("animation-mixer");
+                    tibu.setAttribute("animation-mixer", "clip: rig|Bite1; loop: once;");
+                    tibu.addEventListener('animation-finished', function () {
+                        console.log("Adios");
+                        tibu.removeAttribute("animation-mixer");
+                        tibu.setAttribute("animation-mixer", "clip: rig|Swim");
+                    }, { once: true });
+
                     this.el.parentNode.removeChild(this.el)
 
-                    document.querySelector('[text]').setAttribute('value', `${++score} meteoritos cazados`)
+                    document.querySelector('[text]').setAttribute('value', `${++score} pescados devorados`)
                     if (score == 8 && nivel == 1) {
                         nivel = nivel + 1;
                         segundonivel();
@@ -167,7 +230,7 @@
         function iniciar() {
             swal({
                 title: "Instrucciones",
-                text: "Apunta hacia los asteriodes para destruirlos en el menor tiempo posible",
+                text: "Apunta hacia los pescados para devorarlos en el menor tiempo posible",
                 buttons: true,
                 dangerMode: true,
             })
@@ -183,36 +246,64 @@
 </head>
 
 <body onload="iniciar();">
-    <a-scene vr-mode-ui="enabled: false" loading-screen="enabled:false" >
+    <main>
+        <div class="circle">
+            <div id="stopwatch" class="stopwatch">00:00</div>
+            <div class="buttons">
+                <div class="stop" onclick="iniciar()"></div>
+                <div id="play-pause" class="paused" onclick="playPause()"></div>
+            </div>
+        </div>
+        <div id="seconds-sphere" class="seconds-sphere"></div>
+    </main>
+    <div id="botonesorigen" style='position: absolute; bottom: 2%; left: 1%; text-align: center; z-index: 1;'>
+        <button class="butt" id="btn7">Menu Principal</button>
+        <button class="butt" id="btn8">Puntuaciones</button>
+    </div>
+    <script type="module">
+        import { marcador } from '../js/firebase.js'
+        document.getElementById("btn7").addEventListener("click", (e) => {
+            window.history.back();
+        });
+        document.getElementById("btn8").addEventListener("click", (e) => {
+            marcador();
+        });
+    </script>
+    <a-scene vr-mode-ui="enabled: false" loading-screen="enabled:false">
         <a-sky src="../assets/Juego/360-forward-hold-1-2.jpg" rotation="0 -130 0"></a-sky>
         <a-assets>
-          <a-asset-item src="../assets/Juego/fish_swimming.glb" id="metemod"></a-asset-item>
-          <a-asset-item id="great" src="../assets/Animales/Acuaticos/diferente.glb"></a-asset-item>
-          
+            <a-asset-item src="../assets/Juego/fish_swimming.glb" id="metemod"></a-asset-item>
+            <a-asset-item id="great" src="../assets/Animales/Acuaticos/diferente.glb"></a-asset-item>
+            <a-asset-item id="manta" src="../assets/Juego/manta.glb"></a-asset-item>
+
         </a-assets>
 
 
-        <a-entity class="orbit" position="0 3 0" rotation="0 0 0"
+        <a-entity id="1" class="orbit" position="0 3 0" rotation="0 0 0"
             animation="property: rotation; to: 0 360 0; loop: true; dur: 40000;  easing: linear">
         </a-entity>
-        <a-entity class="orbit" position="0 0 0" rotation="0 180 0"
+        <a-entity id="2" class="orbit" position="0 0 0" rotation="0 180 0"
             animation="property: rotation; to: 0 -360 0; loop: true; dur: 30000; easing: linear">
         </a-entity>
-        
-        <a-entity class="orbit" position="0 -30 0" rotation="0 0 0"
+        <a-entity id="3" class="orbit" position="0 -30 0" rotation="0 0 0"
             animation="property: rotation; to: 0 360 0; loop: true; dur: 20000; easing: linear">
         </a-entity>
-        
-        <a-entity class="orbit" position="0 0 0" rotation="0 0 0"
+
+        <a-entity id="4" class="orbit" position="0 0 0" rotation="0 0 0"
             animation="property: rotation; to: 0 360 0; loop: true; dur: 50000; easing: linear">
         </a-entity>
 
+        <a-entity id="mantarraya" visible="true" position="0 0 0" rotation="0 90 0" scale="0.002 0.002 0.002" gltf-model="#manta" animation-mixer></a-entity>
+
+
         <a-entity camera look-controls>
 
-            <a-text value="0 pescados cazados" color="white" position="0 -0.1 -1" width="1" align="center"></a-text>
+            <a-text value="0 pescados devorados" color="white" position="0 -0.1 -1" width="1" align="center"></a-text>
 
-            <a-entity cursor="fuse: true; fuseTimeout: 100" position="0 0 -1" raycaster="objects: .meteor" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="shader: flat"></a-entity>
-            <a-entity id="tiburon" visible="true" position="-0.2 -0.1 -2" rotation="0 90 0" scale="0.001 0.001 0.001" gltf-model="#great" joystick-controls animation-mixer="clip: rig|Swim"></a-entity>
+            <a-entity cursor="fuse: true; fuseTimeout: 100" position="0 0 -1" raycaster="objects: .meteor"
+                geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="shader: flat"></a-entity>
+            <a-entity id="tiburon" visible="true" position="-0.2 -0.1 -2" rotation="0 90 0" scale="0.001 0.001 0.001"
+                gltf-model="#great" joystick-controls animation-mixer="clip: rig|Swim"></a-entity>
         </a-entity>
 
     </a-scene>
