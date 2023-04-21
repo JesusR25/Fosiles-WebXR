@@ -20,17 +20,34 @@
             { x: 0, y: 0, z: -30 },
             { x: 0, y: 0, z: 30 },
         ]
-
+        let vida = 0;
+        let contmant = 1;
         var nivel = 1;
         let meteor, score = 0
         let tiempor;
 
         function initScene() {
+            let contmant = 1;
             let contador = 1;
             let orbits = document.querySelectorAll('.orbit')
 
             orbits.forEach(orbit => {
-                meteors.forEach(pos => {
+                if(orbit.getAttribute('id') == 'mantas'){
+                    if(contmant<=nivel){
+                        meteor = document.createElement('a-entity')
+                        meteor.setAttribute('gltf-model', '#manta');
+                        meteor.setAttribute('id', 'malo');
+                        meteor.setAttribute('scale', '0.05 0.05 0.05');
+                        meteor.setAttribute('class', 'meteor')
+                        meteor.object3D.position.set(0, 0, -2)
+                        meteor.setAttribute('rotation', '0 -45 0')
+                        meteor.setAttribute('shootable', '')
+                        meteor.setAttribute('animation-mixer', '')
+                        orbit.appendChild(meteor)
+                        contmant++;
+                    }
+                }else{
+                    meteors.forEach(pos => {
                     if (contador == 2) {
                         meteor = document.createElement('a-entity')
                         meteor.setAttribute('gltf-model', '#metemod');
@@ -75,6 +92,7 @@
                         contador++;
                     }
                 })
+                }
                 contador = 1;
             })
             //playPause()
@@ -183,16 +201,19 @@
         AFRAME.registerComponent('shootable', {
             init: function () {
                 this.el.addEventListener('click', () => {
-                    let tibu = document.querySelector("#tiburon");
-                    tibu.removeAttribute("animation-mixer");
-                    tibu.setAttribute("animation-mixer", "clip: rig|Bite1; loop: once;");
-                    tibu.addEventListener('animation-finished', function () {
-                        console.log("Adios");
+                    console.log(this.el.getAttribute('id'));
+                    if (this.el.getAttribute('id') == 'malo') {
+                        vida++;
+                    } else {
+                        let tibu = document.querySelector("#tiburon");
                         tibu.removeAttribute("animation-mixer");
-                        tibu.setAttribute("animation-mixer", "clip: rig|Swim");
-                    }, { once: true });
-
-                    this.el.parentNode.removeChild(this.el)
+                        tibu.setAttribute("animation-mixer", "clip: rig|Bite1; loop: once;");
+                        tibu.addEventListener('animation-finished', function () {
+                            tibu.removeAttribute("animation-mixer");
+                            tibu.setAttribute("animation-mixer", "clip: rig|Swim");
+                        }, { once: true });
+                        this.el.parentNode.removeChild(this.el)
+                    }
 
                     document.querySelector('[text]').setAttribute('value', `${++score} pescados devorados`)
                     if (score == 8 && nivel == 1) {
@@ -275,6 +296,7 @@
             <a-asset-item src="../assets/Juego/fish_swimming.glb" id="metemod"></a-asset-item>
             <a-asset-item id="great" src="../assets/Animales/Acuaticos/diferente.glb"></a-asset-item>
             <a-asset-item id="manta" src="../assets/Juego/manta.glb"></a-asset-item>
+            <a-asset-item id="prueba" src="../assets/Otros/ammonite_cephalopod.glb"></a-asset-item>
 
         </a-assets>
 
@@ -293,7 +315,16 @@
             animation="property: rotation; to: 0 360 0; loop: true; dur: 50000; easing: linear">
         </a-entity>
 
-        <a-entity id="mantarraya" visible="true" position="0 0 0" rotation="0 90 0" scale="0.002 0.002 0.002" gltf-model="#manta" animation-mixer></a-entity>
+        <a-entity id="mantas" class="orbit" position="0 0 -0.05" rotation="0 0 0"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 50000; easing: linear">
+        </a-entity>
+
+        <a-entity id="mantas" class="orbit" position="2 1 -0.05" rotation="0 0 0"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 50000; easing: linear">
+        </a-entity>
+        <a-entity id="mantas" class="orbit" position="-1 -1 -0.05" rotation="0 0 0"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 50000; easing: linear">
+        </a-entity>
 
 
         <a-entity camera look-controls>
