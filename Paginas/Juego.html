@@ -24,15 +24,17 @@
         var nivel = 1;
         let meteor, score = 0
         let tiempor;
+        let contmant = 0;
+        let contador = 1;
 
         function initScene() {
-            let contmant = 0;
-            let contador = 1;
+            vida = 0;
+            score = 0;
             let orbits = document.querySelectorAll('.orbit')
 
             orbits.forEach(orbit => {
-                if(orbit.getAttribute('id') == 'mantas'){
-                    if(contmant<=nivel){
+                if (orbit.getAttribute('id') == 'mantas') {
+                    if (contmant <= nivel) {
                         console.log("Entre manta");
                         meteor = document.createElement('a-entity')
                         meteor.setAttribute('gltf-model', '#manta');
@@ -46,57 +48,58 @@
                         orbit.appendChild(meteor)
                         contmant++;
                     }
-                }else{
+                } else {
                     meteors.forEach(pos => {
-                    if (contador == 2) {
-                        meteor = document.createElement('a-entity')
-                        meteor.setAttribute('gltf-model', '#metemod');
-                        meteor.setAttribute('scale', '0.060 0.060 0.060');
-                        meteor.setAttribute('class', 'meteor')
-                        meteor.object3D.position.set(pos.x, pos.y, pos.z)
-                        meteor.setAttribute('shootable', '')
-                        meteor.setAttribute('animation-mixer', '')
-                        if (orbit.getAttribute('id') == 2) {
-                            console.log("Hola");
-                            meteor.setAttribute('rotation', '0 0 0');
+                        if (contador == 2) {
+                            meteor = document.createElement('a-entity')
+                            meteor.setAttribute('gltf-model', '#metemod');
+                            meteor.setAttribute('scale', '0.060 0.060 0.060');
+                            meteor.setAttribute('class', 'meteor')
+                            meteor.object3D.position.set(pos.x, pos.y, pos.z)
+                            meteor.setAttribute('shootable', '')
+                            meteor.setAttribute('animation-mixer', '')
+                            if (orbit.getAttribute('id') == 2) {
+                                console.log("Hola");
+                                meteor.setAttribute('rotation', '0 0 0');
+                            } else {
+                                meteor.setAttribute('rotation', '0 180 0');
+                            }
+                            orbit.appendChild(meteor)
+                            contador++;
                         } else {
-                            meteor.setAttribute('rotation', '0 180 0');
-                        }
-                        orbit.appendChild(meteor)
-                        contador++;
-                    } else {
-                        meteor = document.createElement('a-entity')
-                        meteor.setAttribute('gltf-model', '#metemod');
-                        meteor.setAttribute('scale', '0.060 0.060 0.060');
-                        meteor.setAttribute('class', 'meteor')
-                        meteor.object3D.position.set(pos.x, pos.y, pos.z)
-                        if (orbit.getAttribute('id') == 2 && contador == 3) {
-                            meteor.setAttribute('rotation', '0 90 0');
-                        } else if (orbit.getAttribute('id') == 2 && contador == 4) {
-                            meteor.setAttribute('rotation', '0 -90 0');
-                        } else if (orbit.getAttribute('id') == 2 && contador == 5) {
-                            meteor.setAttribute('rotation', '0 0 0');
-                        } else if (contador == 4) {
-                            meteor.setAttribute('rotation', '0 90 0');
-                        } else if (contador == 5) {
-                            meteor.setAttribute('rotation', '0 180 0');
-                        } else if (contador == 3) {
-                            meteor.setAttribute('rotation', '0 -90 0');
-                        } else if (orbit.getAttribute('id') == 2) {
-                            meteor.setAttribute('rotation', '0 180 0');
-                        }
-                        meteor.setAttribute('shootable', '')
-                        meteor.setAttribute('animation-mixer', '')
+                            meteor = document.createElement('a-entity')
+                            meteor.setAttribute('gltf-model', '#metemod');
+                            meteor.setAttribute('scale', '0.060 0.060 0.060');
+                            meteor.setAttribute('class', 'meteor')
+                            meteor.object3D.position.set(pos.x, pos.y, pos.z)
+                            if (orbit.getAttribute('id') == 2 && contador == 3) {
+                                meteor.setAttribute('rotation', '0 90 0');
+                            } else if (orbit.getAttribute('id') == 2 && contador == 4) {
+                                meteor.setAttribute('rotation', '0 -90 0');
+                            } else if (orbit.getAttribute('id') == 2 && contador == 5) {
+                                meteor.setAttribute('rotation', '0 0 0');
+                            } else if (contador == 4) {
+                                meteor.setAttribute('rotation', '0 90 0');
+                            } else if (contador == 5) {
+                                meteor.setAttribute('rotation', '0 180 0');
+                            } else if (contador == 3) {
+                                meteor.setAttribute('rotation', '0 -90 0');
+                            } else if (orbit.getAttribute('id') == 2) {
+                                meteor.setAttribute('rotation', '0 180 0');
+                            }
+                            meteor.setAttribute('shootable', '')
+                            meteor.setAttribute('animation-mixer', '')
 
-                        orbit.appendChild(meteor)
-                        contador++;
-                    }
-                })
+                            orbit.appendChild(meteor)
+                            contador++;
+                        }
+                    })
                 }
                 contador = 1;
             })
             //playPause()
         }
+    
 
         function segundonivel() {
             var tiempo = document.getElementById('stopwatch').innerHTML;
@@ -212,9 +215,22 @@
                             tibu.setAttribute("animation-mixer", "clip: rig|Swim");
                         }, { once: true });
                         this.el.parentNode.removeChild(this.el)
-                        if((vida > nivel)){
+                        if ((vida > nivel)) {
                             //Aqui deberia de terminar el juego
-                            alert("Juego terminado");
+                            swal({
+                                title: "¡Has perdido!",
+                                text: "¡Te gustaria intentarlo de nuevo?",
+                                icon: "success",
+                                buttons: true,
+                                dangerMode: true,
+                            })
+                                .then((willDelete) => {
+                                    if (willDelete) {
+                                        initScene();
+                                    } else {
+                                        window.location.href = "../Paginas/Menu.html";
+                                    }
+                                });
                         }
                     } else {
                         let tibu = document.querySelector("#tiburon");
@@ -275,7 +291,7 @@
                     if (willDelete) {
                         playPause()
                     } else {
-                        window.history.back();
+                        window.location.href = "../Paginas/Menu.html";
                     }
                 });
         }
