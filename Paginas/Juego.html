@@ -20,6 +20,7 @@
             { x: 0, y: 0, z: -30 },
             { x: 0, y: 0, z: 30 },
         ]
+        let peces = 0;
         let vida = 0;
         var nivel = 1;
         let meteor, score = 0
@@ -53,6 +54,7 @@
                         if (contador == 2) {
                             meteor = document.createElement('a-entity')
                             meteor.setAttribute('gltf-model', '#metemod');
+                            meteor.setAttribute('id', `${peces}`);
                             meteor.setAttribute('scale', '0.060 0.060 0.060');
                             meteor.setAttribute('class', 'meteor')
                             meteor.object3D.position.set(pos.x, pos.y, pos.z)
@@ -66,9 +68,11 @@
                             }
                             orbit.appendChild(meteor)
                             contador++;
+                            peces++;
                         } else {
                             meteor = document.createElement('a-entity')
                             meteor.setAttribute('gltf-model', '#metemod');
+                            meteor.setAttribute('id', `${peces}`);
                             meteor.setAttribute('scale', '0.060 0.060 0.060');
                             meteor.setAttribute('class', 'meteor')
                             meteor.object3D.position.set(pos.x, pos.y, pos.z)
@@ -89,7 +93,7 @@
                             }
                             meteor.setAttribute('shootable', '')
                             meteor.setAttribute('animation-mixer', '')
-
+                            peces++;
                             orbit.appendChild(meteor)
                             contador++;
                         }
@@ -99,7 +103,6 @@
             })
             //playPause()
         }
-    
 
         function segundonivel() {
             var tiempo = document.getElementById('stopwatch').innerHTML;
@@ -206,6 +209,7 @@
                 this.el.addEventListener('click', () => {
                     console.log(this.el.getAttribute('id'));
                     if (this.el.getAttribute('id') == 'malo') {
+                        borrar();
                         vida++;
                         let tibu = document.querySelector("#tiburon");
                         tibu.removeAttribute("animation-mixer");
@@ -277,6 +281,13 @@
                 })
             }
         })
+
+        function borrar(){
+            for(let i=1; i <= peces; i++){
+                let pescado = document.querySelector(`#${i}`);
+                pescado.parentNode.removeChild(pescado);
+            }
+        }
 
     </script>
     <script>
