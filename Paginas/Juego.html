@@ -54,7 +54,7 @@
                         if (contador == 2) {
                             meteor = document.createElement('a-entity')
                             meteor.setAttribute('gltf-model', '#metemod');
-                            meteor.setAttribute('id', `${peces}`);
+                            meteor.setAttribute('id','pez' + `${peces}`);
                             meteor.setAttribute('scale', '0.060 0.060 0.060');
                             meteor.setAttribute('class', 'meteor')
                             meteor.object3D.position.set(pos.x, pos.y, pos.z)
@@ -72,7 +72,7 @@
                         } else {
                             meteor = document.createElement('a-entity')
                             meteor.setAttribute('gltf-model', '#metemod');
-                            meteor.setAttribute('id', `${peces}`);
+                            meteor.setAttribute('id', 'pez' + `${peces}`);
                             meteor.setAttribute('scale', '0.060 0.060 0.060');
                             meteor.setAttribute('class', 'meteor')
                             meteor.object3D.position.set(pos.x, pos.y, pos.z)
@@ -283,9 +283,11 @@
         })
 
         function borrar(){
-            for(let i=1; i <= peces; i++){
-                let pescado = document.querySelector(`#${i}`);
-                pescado.parentNode.removeChild(pescado);
+            for(let i=0; i <= peces; i++){
+                let pescado = document.querySelector('#pez' + `${i}`);
+                if(pescado != null){
+                    pescado.parentNode.removeChild(pescado);
+                }
             }
         }
 
