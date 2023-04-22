@@ -21,19 +21,19 @@
             { x: 0, y: 0, z: 30 },
         ]
         let vida = 0;
-        let contmant = 1;
         var nivel = 1;
         let meteor, score = 0
         let tiempor;
 
         function initScene() {
-            let contmant = 1;
+            let contmant = 0;
             let contador = 1;
             let orbits = document.querySelectorAll('.orbit')
 
             orbits.forEach(orbit => {
                 if(orbit.getAttribute('id') == 'mantas'){
                     if(contmant<=nivel){
+                        console.log("Entre manta");
                         meteor = document.createElement('a-entity')
                         meteor.setAttribute('gltf-model', '#manta');
                         meteor.setAttribute('id', 'malo');
@@ -204,9 +204,17 @@
                     console.log(this.el.getAttribute('id'));
                     if (this.el.getAttribute('id') == 'malo') {
                         vida++;
+                        let tibu = document.querySelector("#tiburon");
+                        tibu.removeAttribute("animation-mixer");
+                        tibu.setAttribute("animation-mixer", "clip: rig|Bite1; loop: once;");
+                        tibu.addEventListener('animation-finished', function () {
+                            tibu.removeAttribute("animation-mixer");
+                            tibu.setAttribute("animation-mixer", "clip: rig|Swim");
+                        }, { once: true });
                         this.el.parentNode.removeChild(this.el)
                         if((vida > nivel)){
-                            
+                            //Aqui deberia de terminar el juego
+                            alert("Juego terminado");
                         }
                     } else {
                         let tibu = document.querySelector("#tiburon");
@@ -217,9 +225,9 @@
                             tibu.setAttribute("animation-mixer", "clip: rig|Swim");
                         }, { once: true });
                         this.el.parentNode.removeChild(this.el)
+                        document.querySelector('[text]').setAttribute('value', `${++score} pescados devorados`)
                     }
 
-                    document.querySelector('[text]').setAttribute('value', `${++score} pescados devorados`)
                     if (score == 8 && nivel == 1) {
                         nivel = nivel + 1;
                         segundonivel();
@@ -304,8 +312,6 @@
             <a-asset-item src="../assets/Juego/fish_swimming.glb" id="metemod"></a-asset-item>
             <a-asset-item id="great" src="../assets/Animales/Acuaticos/diferente.glb"></a-asset-item>
             <a-asset-item id="manta" src="../assets/Juego/manta.glb"></a-asset-item>
-            <a-asset-item id="prueba" src="../assets/Otros/ammonite_cephalopod.glb"></a-asset-item>
-
         </a-assets>
 
 
@@ -322,15 +328,23 @@
         <a-entity id="4" class="orbit" position="0 0 0" rotation="0 0 0"
             animation="property: rotation; to: 0 360 0; loop: true; dur: 50000; easing: linear">
         </a-entity>
-
+        <!-- Aqui estan los mantas -->
         <a-entity id="mantas" class="orbit" position="0 0 -0.05" rotation="0 0 0"
             animation="property: rotation; to: 0 360 0; loop: true; dur: 50000; easing: linear">
         </a-entity>
-
         <a-entity id="mantas" class="orbit" position="2 1 -0.05" rotation="0 0 0"
             animation="property: rotation; to: 0 360 0; loop: true; dur: 50000; easing: linear">
         </a-entity>
-        <a-entity id="mantas" class="orbit" position="-1 -1 -0.05" rotation="0 0 0"
+        <a-entity id="mantas" class="orbit" position="1 -1 -0.05" rotation="0 0 0"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 50000; easing: linear">
+        </a-entity>
+        <a-entity id="mantas" class="orbit" position="0.5 -0.5 -0.05" rotation="0 0 0"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 50000; easing: linear">
+        </a-entity>
+        <a-entity id="mantas" class="orbit" position="0.5 0 -0.05" rotation="0 0 0"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 50000; easing: linear">
+        </a-entity>
+        <a-entity id="mantas" class="orbit" position=" -0.7 -0.05" rotation="0 0 0"
             animation="property: rotation; to: 0 360 0; loop: true; dur: 50000; easing: linear">
         </a-entity>
 
