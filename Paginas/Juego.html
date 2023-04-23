@@ -27,6 +27,7 @@
         let tiempor;
         let contmant = 0;
         let contador = 1;
+        let tiemponivel;
 
         function initScene() {
             vida = 0;
@@ -36,10 +37,9 @@
             orbits.forEach(orbit => {
                 if (orbit.getAttribute('id') == 'mantas') {
                     if (contmant <= nivel) {
-                        console.log("Entre manta");
                         meteor = document.createElement('a-entity')
                         meteor.setAttribute('gltf-model', '#manta');
-                        meteor.setAttribute('id', 'malo');
+                        meteor.setAttribute('id', 'malo' + `${contmant}`);
                         meteor.setAttribute('scale', '0.05 0.05 0.05');
                         meteor.setAttribute('class', 'meteor')
                         meteor.object3D.position.set(0, 0, -2)
@@ -106,6 +106,7 @@
 
         function segundonivel() {
             var tiempo = document.getElementById('stopwatch').innerHTML;
+            tiemponivel = document.getElementById('stopwatch').innerHTML;
             playPause()
             tiempor = obtener();
             juego(nivel, tiempor);
@@ -128,6 +129,7 @@
         }
         function tercernivel() {
             var tiempo = document.getElementById('stopwatch').innerHTML;
+            tiemponivel = document.getElementById('stopwatch').innerHTML;
             playPause()
             tiempor = obtener();
             juego(nivel, tiempor);
@@ -150,6 +152,7 @@
 
         function cuartonivel() {
             var tiempo = document.getElementById('stopwatch').innerHTML;
+            tiemponivel = document.getElementById('stopwatch').innerHTML;
             playPause()
             tiempor = obtener();
             juego(nivel, tiempor);
@@ -172,6 +175,8 @@
 
         function quintonivel() {
             var tiempo = document.getElementById('stopwatch').innerHTML;
+            tiemponivel = document.getElementById('stopwatch').innerHTML;
+
             playPause()
             tiempor = obtener();
             juego(nivel, tiempor);
@@ -193,7 +198,7 @@
         }
 
         function final() {
-            tiempor = document.getElementById('stopwatch').innerHTML;;
+            tiempor = document.getElementById('stopwatch').innerHTML;
             juego(nivel, tiempor);
             swal({
                 title: "¡Felicidades!",
@@ -208,8 +213,7 @@
             init: function () {
                 this.el.addEventListener('click', () => {
                     console.log(this.el.getAttribute('id'));
-                    if (this.el.getAttribute('id') == 'malo') {
-                        borrar();
+                    if (this.el.getAttribute('id').includes('malo')) {
                         vida++;
                         let tibu = document.querySelector("#tiburon");
                         tibu.removeAttribute("animation-mixer");
@@ -230,6 +234,8 @@
                             })
                                 .then((willDelete) => {
                                     if (willDelete) {
+                                        contmant = 0;
+                                        borrar();
                                         initScene();
                                     } else {
                                         window.location.href = "../Paginas/Menu.html";
@@ -288,6 +294,20 @@
                 if(pescado != null){
                     pescado.parentNode.removeChild(pescado);
                 }
+            }
+            for(let j=0; j<=contmant; j++){
+                let man = document.querySelector('#malo' + `${j}`);
+                if(man != null){
+                    man.parentNode.removeChild(man);
+                }
+            }
+        }
+
+        function reiniciarTimpo(){
+            if(nivel == 1){
+                stopwatch.textContent = '00:00';
+            }else{
+                stopwatch.textContent = tiemponivel;
             }
         }
 
