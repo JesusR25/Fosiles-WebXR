@@ -237,6 +237,7 @@
                                         contmant = 0;
                                         borrar();
                                         initScene();
+                                        reiniciarTiempo();
                                     } else {
                                         window.location.href = "../Paginas/Menu.html";
                                     }
@@ -303,7 +304,7 @@
             }
         }
 
-        function reiniciarTimpo(){
+        function reiniciarTiempo(){
             if(nivel == 1){
                 stopwatch.textContent = '00:00';
             }else{
