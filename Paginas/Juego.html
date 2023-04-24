@@ -38,6 +38,7 @@
             orbits.forEach(orbit => {
                 if (orbit.getAttribute('id') == 'mantas') {
                     if (contmant <= nivel) {
+                        contmant++;
                         console.log("Respawn");
                         meteor = document.createElement('a-entity')
                         meteor.setAttribute('gltf-model', '#manta');
@@ -49,7 +50,6 @@
                         meteor.setAttribute('shootable', '')
                         meteor.setAttribute('animation-mixer', '')
                         orbit.appendChild(meteor)
-                        contmant++;
                     }
                 } else {
                     meteors.forEach(pos => {
@@ -113,6 +113,7 @@
             vida = 0;
             playPause()
             tiempor = obtener();
+            borrar();
             juego(nivel, tiempor);
             swal({
                 title: "¡Felicidades!",
@@ -139,6 +140,7 @@
             aux();
             playPause()
             tiempor = obtener();
+            borrar();
             juego(nivel, tiempor);
             swal({
                 title: "¡Felicidades!",
@@ -165,6 +167,7 @@
             aux();
             playPause()
             tiempor = obtener();
+            borrar();
             juego(nivel, tiempor);
             swal({
                 title: "¡Felicidades!",
@@ -191,6 +194,7 @@
             aux();
             playPause()
             tiempor = obtener();
+            borrar();
             juego(nivel, tiempor);
             swal({
                 title: "¡Felicidades!",
