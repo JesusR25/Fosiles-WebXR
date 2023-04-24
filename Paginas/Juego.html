@@ -61,7 +61,6 @@
                             meteor.setAttribute('shootable', '')
                             meteor.setAttribute('animation-mixer', '')
                             if (orbit.getAttribute('id') == 2) {
-                                console.log("Hola");
                                 meteor.setAttribute('rotation', '0 0 0');
                             } else {
                                 meteor.setAttribute('rotation', '0 180 0');
@@ -107,6 +106,9 @@
         function segundonivel() {
             var tiempo = document.getElementById('stopwatch').innerHTML;
             tiemponivel = document.getElementById('stopwatch').innerHTML;
+            aux();
+            contmant = 0;
+            vida = 0;
             playPause()
             tiempor = obtener();
             juego(nivel, tiempor);
@@ -130,6 +132,9 @@
         function tercernivel() {
             var tiempo = document.getElementById('stopwatch').innerHTML;
             tiemponivel = document.getElementById('stopwatch').innerHTML;
+            contmant = 0;
+            vida = 0;
+            aux();
             playPause()
             tiempor = obtener();
             juego(nivel, tiempor);
@@ -153,6 +158,9 @@
         function cuartonivel() {
             var tiempo = document.getElementById('stopwatch').innerHTML;
             tiemponivel = document.getElementById('stopwatch').innerHTML;
+            contmant = 0;
+            vida = 0;
+            aux();
             playPause()
             tiempor = obtener();
             juego(nivel, tiempor);
@@ -176,7 +184,9 @@
         function quintonivel() {
             var tiempo = document.getElementById('stopwatch').innerHTML;
             tiemponivel = document.getElementById('stopwatch').innerHTML;
-
+            contmant = 0;
+            vida = 0;
+            aux();
             playPause()
             tiempor = obtener();
             juego(nivel, tiempor);
@@ -212,8 +222,8 @@
         AFRAME.registerComponent('shootable', {
             init: function () {
                 this.el.addEventListener('click', () => {
-                    console.log(this.el.getAttribute('id'));
                     if (this.el.getAttribute('id').includes('malo')) {
+                        console.log("Mantarrayaa");
                         vida++;
                         let tibu = document.querySelector("#tiburon");
                         tibu.removeAttribute("animation-mixer");
@@ -237,12 +247,14 @@
                                         contmant = 0;
                                         borrar();
                                         initScene();
-                                        reiniciarTiempo();
+                                        let act = obtener();
+                                        stop(nivel, tiemponivel);
                                     } else {
                                         window.location.href = "../Paginas/Menu.html";
                                     }
                                 });
                         }
+
                     } else {
                         let tibu = document.querySelector("#tiburon");
                         tibu.removeAttribute("animation-mixer");
@@ -385,7 +397,7 @@
         <a-entity id="mantas" class="orbit" position="2 1 -0.05" rotation="0 0 0"
             animation="property: rotation; to: 0 360 0; loop: true; dur: 50000; easing: linear">
         </a-entity>
-        <a-entity id="mantas" class="orbit" position="1 -1 -0.05" rotation="0 0 0"
+        <a-entity id="mantas" class="orbit" position="1 1 -0.05" rotation="0 0 0"
             animation="property: rotation; to: 0 360 0; loop: true; dur: 50000; easing: linear">
         </a-entity>
         <a-entity id="mantas" class="orbit" position="0.5 -0.5 -0.05" rotation="0 0 0"

@@ -4,6 +4,7 @@ const secondsSphere = document.getElementById('seconds-sphere');
 
 let stopwatchInterval;
 let runningTime = 0;
+let auxiliar = 0;
 let nivel = 1;
 let segundos = 0;
 let minutos = 0;
@@ -29,13 +30,19 @@ const pause = () => {
     clearInterval(stopwatchInterval);
 }
 
-const stop = () => {
+const stop = (nivel,tiempo) => {
     secondsSphere.style.transform = 'rotate(-90deg) translateX(60px)';
-    secondsSphere.style.animation = 'none';
-    playPauseButton.classList.remove('running');
     runningTime = 0;
     clearInterval(stopwatchInterval);
-    stopwatch.textContent = '00:00';
+    if(nivel == 1 ){
+        stopwatch.textContent = '00:00';
+        runningTime = 0;
+    }else{
+        stopwatch.textContent = tiempo;
+        console.log(auxiliar);
+        runningTime = auxiliar;
+    }
+    start();
 }
 
 const start = () => {
@@ -66,9 +73,6 @@ function obtener(){
     }
 }
 
-function mejores (){
-    
-}
 
 const calculateTime = runningTime => {
     total_seconds = Math.floor(runningTime / 1000);
@@ -78,4 +82,9 @@ const calculateTime = runningTime => {
     display_minutes = total_minutes.toString().padStart(2, "0");
 
     return `${display_minutes}:${display_seconds}`
+}
+
+function aux(){
+    console.log(runningTime);
+    auxiliar = runningTime;
 }
