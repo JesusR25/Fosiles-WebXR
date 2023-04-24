@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Orbitron:700);
 .butt {
     background: #1fd1f9;
     border: none;
@@ -13,18 +14,21 @@
     border: 2px solid rgba(235, 152, 78);
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+body{
+    color: lime;
+}
 
 main {
-    font-family: 'Roboto Mono', monospace;
+    color: lime;
+    font-family: 'Orbitron', sans-serif;
     position: relative;
     z-index: 9999;
 }
 .circle {
-    
     border-radius: 50%;
     width: 120px;
     height: 120px;
-    color: #fff;
+    color: lime;
     margin: 50px auto;
     display: flex;
     justify-content: center;

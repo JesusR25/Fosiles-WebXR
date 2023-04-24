@@ -30,6 +30,7 @@
         let tiemponivel;
 
         function initScene() {
+            contmant = 0;
             vida = 0;
             score = 0;
             let orbits = document.querySelectorAll('.orbit')
@@ -37,6 +38,7 @@
             orbits.forEach(orbit => {
                 if (orbit.getAttribute('id') == 'mantas') {
                     if (contmant <= nivel) {
+                        console.log("Respawn");
                         meteor = document.createElement('a-entity')
                         meteor.setAttribute('gltf-model', '#manta');
                         meteor.setAttribute('id', 'malo' + `${contmant}`);
@@ -244,10 +246,8 @@
                             })
                                 .then((willDelete) => {
                                     if (willDelete) {
-                                        contmant = 0;
                                         borrar();
                                         initScene();
-                                        let act = obtener();
                                         stop(nivel, tiemponivel);
                                     } else {
                                         window.location.href = "../Paginas/Menu.html";
