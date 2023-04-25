@@ -791,13 +791,13 @@ function readDeviceOrientation() {
         document.querySelector("#aut").setAttribute("scale", "0.012 0.012 0.012");
         document.querySelector("#aut").setAttribute("position", "0 -1.3 -4");
         //Hoer
-        document.querySelector("#hoer").setAttribute("scale", "0.3 0.3 0.3");
+        document.querySelector("#hoer").setAttribute("scale", "0.35 0.35 0.35");
         document.querySelector("#hoer").setAttribute("position", "0 -1 -4");
         //Hoha
-        document.querySelector("#hoha").setAttribute("scale", "1 1 1");
+        document.querySelector("#hoha").setAttribute("scale", "0.9 0.9 0.9");
         document.querySelector("#hoha").setAttribute("position", "0 -1 -4");
         //Hosa
-        document.querySelector("#hosa").setAttribute("scale", "2 2 2");
+        document.querySelector("#hosa").setAttribute("scale", "1.8 1.8 1.8");
         document.querySelector("#hosa").setAttribute("position", "0 -1 -4");
         //Hone
         document.querySelector("#hone").setAttribute("scale", "0.050 0.050 0.050");
