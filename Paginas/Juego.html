@@ -20,6 +20,7 @@
             { x: 0, y: 0, z: -30 },
             { x: 0, y: 0, z: 30 },
         ]
+        let porcentaje = 100;
         let peces = 0;
         let vida = 0;
         var nivel = 1;
@@ -30,9 +31,12 @@
         let tiemponivel;
 
         function initScene() {
+            porcentaje = 100;
             contmant = 0;
             vida = 0;
             score = 0;
+            document.getElementById('porcentaje').innerHTML = `100%`;
+            document.getElementById('vida').style.width = `100%`;
             let orbits = document.querySelectorAll('.orbit')
 
             orbits.forEach(orbit => {
@@ -115,6 +119,8 @@
             tiempor = obtener();
             borrar();
             juego(nivel, tiempor);
+            document.getElementById('vida').style.width = `100%`;
+            document.getElementById('porcentaje').innerHTML = `100%`;
             swal({
                 title: "¡Felicidades!",
                 text: "Has devorado todos los peces en un tiempo de " + tiempo + ". ¿Te gustaria continuar con el segundo nivel?",
@@ -142,6 +148,8 @@
             tiempor = obtener();
             borrar();
             juego(nivel, tiempor);
+            document.getElementById('vida').style.width = `100%`;
+            document.getElementById('porcentaje').innerHTML = `100%`;
             swal({
                 title: "¡Felicidades!",
                 text: "Has devorado todos los peces en un tiempo de " + tiempo + ". ¿Te gustaria continuar con el tercer nivel?",
@@ -169,6 +177,8 @@
             tiempor = obtener();
             borrar();
             juego(nivel, tiempor);
+            document.getElementById('vida').style.width = `100%`;
+            document.getElementById('porcentaje').innerHTML = `100%`;
             swal({
                 title: "¡Felicidades!",
                 text: "Has devorado todos los peces en un tiempo de " + tiempo + ". ¿Te gustaria continuar con el tercer nivel?",
@@ -196,6 +206,8 @@
             tiempor = obtener();
             borrar();
             juego(nivel, tiempor);
+            document.getElementById('vida').style.width = `100%`;
+            document.getElementById('porcentaje').innerHTML = `100%`;
             swal({
                 title: "¡Felicidades!",
                 text: "Has devorado todos los peces en un tiempo de " + tiempo + ". ¿Te gustaria continuar con el tercer nivel?",
@@ -229,6 +241,7 @@
             init: function () {
                 this.el.addEventListener('click', () => {
                     if (this.el.getAttribute('id').includes('malo')) {
+                        actualizarVida();
                         console.log("Mantarrayaa");
                         vida++;
                         let tibu = document.querySelector("#tiburon");
@@ -328,6 +341,13 @@
             }
         }
 
+        function actualizarVida(){
+            let calculo = Math.round(100/(nivel + 1));
+            porcentaje = porcentaje - calculo;
+            document.getElementById('vida').style.width = `${porcentaje}%`;
+            document.getElementById('porcentaje').innerHTML = `${porcentaje}%`;
+        }
+
     </script>
     <script>
         function iniciar() {
@@ -360,8 +380,8 @@
         <div id="seconds-sphere" class="seconds-sphere"></div>
     </main>
     <div class="barrap">
-        <div class="barram" style="width:100%;">
-            <span class="texto">100%</span>
+        <div class="barram" id="vida" style="width:100%;">
+            <span class="texto" id="porcentaje">100%</span>
         </div>
     </div>
     <div id="botonesorigen" style='position: absolute; bottom: 2%; left: 1%; text-align: center; z-index: 1;'>
