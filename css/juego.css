@@ -14,14 +14,40 @@
     border: 2px solid rgba(235, 152, 78);
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+.barrap {
+    z-index: 10000;
+    height: 15px;
+    width: 10%;
+    border: 2px solid #008f39;
+    border-radius: 5px;
+    background-color: #e6f3fa;
+    margin-left: 45%;
+    margin-top: 3%;
+    position: fixed;
+}
+.barram {
+    z-index: 10000;
+    height: 100%;
+    background: #008f39;
+    display: flex;
+    align-items: center;
+    transition: width 0.25s;
+    border-radius: 5px;
+    position: relative;
+}
+.texto {
+    margin-left: 10px;
+    color: #cce7f5;
+}
 body{
     color: lime;
 }
 
 main {
+    margin-left: 45%;
     color: lime;
     font-family: 'Orbitron', sans-serif;
-    position: relative;
+    position: fixed;
     z-index: 9999;
 }
 .circle {
