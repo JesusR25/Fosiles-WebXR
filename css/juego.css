@@ -16,12 +16,12 @@
 }
 .barrap {
     z-index: 10000;
-    height: 15px;
-    width: 10%;
+    height: 10px;
+    width: 20%;
     border: 2px solid #008f39;
     border-radius: 5px;
     background-color: #e6f3fa;
-    margin-left: 45%;
+    margin-left: 35%;
     margin-top: 3%;
     position: fixed;
 }
