@@ -16,7 +16,7 @@ body{
 }
 
 .butt {
-  z-index: 5;
+  z-index: 4;
   background-color: #1fd1f9;
   background-image: linear-gradient(0deg, rgba(0,59,118,255) 0%, rgba(29,115,176,255) 100%);
   border: none;
