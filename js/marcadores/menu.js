@@ -92,6 +92,23 @@ function advertencia(){
     })
   }
 
+  function Dinosaurios(){
+    Swal.fire({
+      title: 'Dinosaurios',
+      html: '•	En esta escena se muestran algunos otros dinosaurios ya extintos.<br><br>	•	Presiona el botón anterior o siguiente para cambiar de dinosaurio.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Aceptar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "/Paginas/Dinosaurios.html";
+      }
+    })
+  }
+
   function Juego(){
     Swal.fire({
       title: 'Quiz',
