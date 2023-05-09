@@ -112,7 +112,7 @@ function advertencia(){
   function escenario(){
     Swal.fire({
       title: 'Dinosaurios',
-      html: '•	En esta escena podrás crear un escenario con los dinosaurios de tu elección.<br><br>	•	Presiona el botón para elegir el dinosaurio y da click sobre cualquier punto de la pantalla para colocar el dinosaurio.<br><br>	•	Presiona el botón "Captura" para capturar la pantalla de su celular y guardarla en su dispositivo.',
+      html: '•	En esta escena podrás crear un escenario con los dinosaurios de tu elección.<br><br>	•	Presiona el botón para elegir el dinosaurio y da click sobre cualquier punto de la pantalla para colocar el dinosaurio.<br><br>	•	Presiona el botón "Captura" para capturar la pantalla de su celular y guardarla en su dispositivo.<br><br>	•	Podras mover la posicion y la escala del modelo utilizando gestos en la pantalla.',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
