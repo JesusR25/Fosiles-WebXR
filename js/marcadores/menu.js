@@ -109,6 +109,23 @@ function advertencia(){
     })
   }
 
+  function escenario(){
+    Swal.fire({
+      title: 'Dinosaurios',
+      html: '•	En esta escena podrás crear un escenario con los dinosaurios de tu elección.<br><br>	•	Presiona el botón para elegir el dinosaurio y da click sobre cualquier punto de la pantalla para colocar el dinosaurio.<br><br>	•	Presiona el botón "Captura" para capturar la pantalla de su celular y guardarla en su dispositivo.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Aceptar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "/Paginas/Escenario.html";
+      }
+    })
+  }
+
   function Juego(){
     Swal.fire({
       title: 'Quiz',

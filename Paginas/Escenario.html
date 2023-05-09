@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Crea tu escenario</title>
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.js"></script>
+        <link rel="stylesheet" href="../css/style.css">
+        <script type="text/javascript" src="../js/jsqrscanner.nocache.js"></script>
+        <script type="text/javascript" src="../js/marcadores/camara.js"></script>
+        <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+        <script src="https://unpkg.com/merge-images"></script>
+        <script src="https://superal.github.io/canvas2image/canvas2image.js"></script>
+
+    </head>
+    <body id="todo">
+        <a id="download-link" style="display: none;">Soy un link</a>
+        <div class="qrscanner" id="scanner"></div>
+        <div id="captura">
+        <a-scene renderer="colorManagement: true" tap-place>
+            <a-assets>
+                <a-asset-items id="treeModel" src="../assets/tre.glb"></a-asset-items>
+                <a-asset-item id="tmod" src="../assets/Dinosaurios/animated_t-rex_dinosaur_biting_attack_loop.glb"></a-asset-item>
+                <a-asset-item id="bramod" src="../assets/Dinosaurios/brachiosaurus-jwe.glb"></a-asset-item>
+                <a-asset-item id="dinod" src="../assets/Dinosaurios/dinosaur_animation.glb"></a-asset-item>
+                <a-asset-item id="pte" src="../assets/Dinosaurios/my_flying_pterodactyl.glb"></a-asset-item>
+                <a-asset-iztem id="megat" src="../assets/Dinosaurios/megamod.glb"></a-asset-item>
+                <a-asset-item id="mosa" src="../assets/Dinosaurios/mosasaurus.glb"></a-asset-item>
+                <a-asset-item id="tri" src="../assets/Dinosaurios/triceratops.glb"></a-asset-item>
+                <a-asset-item id="velo" src="../assets/Dinosaurios/velociraptor.glb"></a-asset-item>
+            </a-assets>
+
+            <a-camera id="camera" position="0 5 8" raycaster="objects: .cantap" cursor="fuse: false; rayOrigin: mouse;" look-controls="mouseEnabled: false; touchEnabled: false;"></a-camera>
+            <a-box id="ground" class="cantap" scale="1000 2 1000" position="0 -0.99 0" material="shader: shadow; transparent: true; opacity: 0.4" shadow></a-box>
+        </a-scene>
+        <div id="botonesorigen" style='position: absolute; top: 2%; left: 1%; text-align: center; z-index: 2;'>
+            <button class="butt" id="btn1" onclick="tmod();">TRex</button>
+            <button class="butt" id="btn2" onclick="bramod();">Brachiosaurus</button>
+            <button class="butt" id="btn3" onclick="dinod();">Stegosaurus</button>
+            <button class="butt" id="btn4" onclick="pte();">Ptedoractylo</button>
+            <button class="butt" id="btn5" onclick="megat();">Megadolon</button>
+            <button class="butt" id="btn6" onclick="mosa();">Mosasaurus</button>
+            <button class="butt" id="btn7" onclick="tri();">Triceratops</button>
+            <button class="butt" id="btn8" onclick="velo();">Velociraptor</button>
+            <button class="butt" id="btn9" onclick="captura();">Captura</button>
+        </div>
+        </div>
+        <script type="text/javascript" src="../js/marcadores/captura.js"></script>
+    </body>
+</html>
