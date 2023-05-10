@@ -157,6 +157,14 @@ function modelom(index) {
       modbrachi.scale.multiplyScalar(0).addScalar(1);
       modbrachi.rotation.y = 0;
       modbrachi.rotation.x = 0;
+      document.getElementById("brach").play();
+      document.getElementById("meg").stop();
+      document.getElementById("morus").stop();
+      document.getElementById("dactyl").stop();
+      document.getElementById("stego").stop();
+      document.getElementById("rex").stop();
+      document.getElementById("tritops").stop();
+      document.getElementById("raptor").stop();
       break;
     case 1:
       brachi = false;
@@ -170,6 +178,14 @@ function modelom(index) {
       modmesa.scale.multiplyScalar(0).addScalar(1);
       modmesa.rotation.y = 0;
       modmesa.rotation.x = 0;
+      document.getElementById("brach").stop();
+      document.getElementById("meg").stop();
+      document.getElementById("morus").play();
+      document.getElementById("dactyl").stop();
+      document.getElementById("stego").stop();
+      document.getElementById("rex").stop();
+      document.getElementById("tritops").stop();
+      document.getElementById("raptor").stop();
       break;
     case 2:
       brachi = false;
@@ -183,6 +199,14 @@ function modelom(index) {
       modpte.scale.multiplyScalar(0).addScalar(1);
       modpte.rotation.y = 0;
       modpte.rotation.x = 0;
+      document.getElementById("brach").stop();
+      document.getElementById("meg").stop();
+      document.getElementById("morus").stop();
+      document.getElementById("dactyl").play();
+      document.getElementById("stego").stop();
+      document.getElementById("rex").stop();
+      document.getElementById("tritops").stop();
+      document.getElementById("raptor").stop();
       break;
     case 3:
       brachi = false;
@@ -195,7 +219,15 @@ function modelom(index) {
       mega = false;
       moddino.scale.multiplyScalar(0).addScalar(1);
       moddino.rotation.y = 0;
-      moddino.rotation.x = 0;
+      moddino.rotation.x = 0
+      document.getElementById("brach").stop();
+      document.getElementById("meg").stop();
+      document.getElementById("morus").stop();
+      document.getElementById("dactyl").stop();
+      document.getElementById("stego").play();
+      document.getElementById("rex").stop();
+      document.getElementById("tritops").stop();
+      document.getElementById("raptor").stop();
       break;
     case 4:
       brachi = false;
@@ -209,6 +241,14 @@ function modelom(index) {
       modtrex.scale.multiplyScalar(0).addScalar(1);
       modtrex.rotation.y = 0;
       modtrex.rotation.x = 0;
+      document.getElementById("brach").stop();
+      document.getElementById("meg").stop();
+      document.getElementById("morus").stop();
+      document.getElementById("dactyl").stop();
+      document.getElementById("stego").stop();
+      document.getElementById("rex").play();
+      document.getElementById("tritops").stop();
+      document.getElementById("raptor").stop();
       break;
     case 5:
       brachi = false;
@@ -222,6 +262,14 @@ function modelom(index) {
       modtri.scale.multiplyScalar(0).addScalar(1);
       modtri.rotation.y = 0;
       modtri.rotation.x = 0;
+      document.getElementById("brach").stop();
+      document.getElementById("meg").stop();
+      document.getElementById("morus").stop();
+      document.getElementById("dactyl").stop();
+      document.getElementById("stego").stop();
+      document.getElementById("rex").stop();
+      document.getElementById("tritops").play();
+      document.getElementById("raptor").stop();
       break;
     case 6:
       brachi = false;
@@ -235,6 +283,14 @@ function modelom(index) {
       modvelo.scale.multiplyScalar(0).addScalar(1);
       modvelo.rotation.y = 0;
       modvelo.rotation.x = 0;
+      document.getElementById("brach").stop();
+      document.getElementById("meg").stop();
+      document.getElementById("morus").stop();
+      document.getElementById("dactyl").stop();
+      document.getElementById("stego").stop();
+      document.getElementById("rex").stop();
+      document.getElementById("tritops").stop();
+      document.getElementById("raptor").play();
       break;
     case 7:
       brachi = false;
@@ -248,6 +304,14 @@ function modelom(index) {
       modmega.scale.multiplyScalar(0).addScalar(1);
       modmega.rotation.y = 0;
       modmega.rotation.x = 0;
+      document.getElementById("brach").stop();
+      document.getElementById("meg").play();
+      document.getElementById("morus").stop();
+      document.getElementById("dactyl").stop();
+      document.getElementById("stego").stop();
+      document.getElementById("rex").stop();
+      document.getElementById("tritops").stop();
+      document.getElementById("raptor").stop();
       break;
   }
 }
