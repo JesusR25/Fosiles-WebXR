@@ -2,67 +2,61 @@ import {quizdino} from '../firebase.js'
 
 const questions = [
     {
-      "question": "Depredador terrestre que no era muy grande, un carnívoro bípedo con garras y patas masivas, balanceadas por su pesada cola. Su cráneo curvo provisto de dientes aserrados poseía además unas crestas bajas irregulares, sobre y delante de los ojos",
-      "answer1": "Allosaurus",
-      "answer2": "Mammut",
-      "answer3": "T-Rex",
-      "answer4": "Perezoso",
+      "question": "¿Cuál de estos dinosaurios era herbívoro?",
+      "answer1": "Tyrannosaurus",
+      "answer2": "Velociraptor",
+      "answer3": "Stegosaurus",
+      "answer4": "Spinosaurus",
       "Correcta": "Allosaurus"
     },
     {
-      "question": "Fue el primer espécimen en la evolución del ser humano",
-      "answer1": "Homo Sapiens",
-      "answer2": "Australopithecus",
-      "answer3": "Neanderthal",
-      "answer4": "Homo Habilis",
+      "question": "¿En qué periodo vivió el Triceratops?",
+      "answer1": "Triásico",
+      "answer2": "Jurásico",
+      "answer3": "Cretácico",
+      "answer4": "Paleógeno",
       "Correcta": "Australopithecus"
     },
     {
       "question":
-        "Habitaban en todos los mares del mundo. Eran moluscos cefalópodos, similares a los calamares modernos.  Tenían un cono interno que les proporcionaba estabilidad y les permitía moverse por los mares con rapidez",
-        "answer1": "Trilobite",
-        "answer2": "Fósil Vegetal",
-        "answer3": "Ammonite",
-        "answer4": "Belemnite",
+        "¿Cuál de estos dinosaurios era el más grande?",
+        "answer1": "Brachiosaurus",
+        "answer2": "Allosaurus",
+        "answer3": "Triceratops",
+        "answer4": "Ankylosaurus",
         "Correcta": "Belemnite"
     },
     {
-      "question": "Se cubría con pieles de animales y fabricaba diversas herramientas de piedra. Domesticó el fuego, por lo que comía alimentos cocidos.  Es el primer homínido que tiene menos diferencias entre los sexos. Sufrió cambios profundos en su musculatura y su sistema digestivo.",
-      "answer1": "Homo Hábilis",
-      "answer2": "Homo Erectus",
-      "answer3": "Homo Sapiens",
-      "answer4": "Neanderthal",
+      "question": "¿Que dinosaurio tenía una placa en la cabeza y tres cuernos?.",
+      "answer1": "Stegosaurus",
+      "answer2": "Triceratops",
+      "answer3": "Parasaurolophus",
+      "answer4": "Archaeopteryx",
       "Correcta": "Homo Erectus"
     },
     {
       "question":
-        "Surgió en África, Europa y Asia. Migró a América hace 40,000 años. Es el ser humano como lo conocemos hoy, en la actualidad. Las hembras y los machos se distinguen por las características de sus cuerpos",
-        "answer1": "Homo Erectus",
-        "answer2": "Homo Hábilis",
-        "answer3": "Homo Sapiens",
-        "answer4": "Neanderthal",
+        "¿Qué dinosaurio es conocido por tener una gran vela ósea en su espalda?",
+        "answer1": "Diplodocus",
+        "answer2": "Spinosaurus",
+        "answer3": "Carnotaurus",
+        "answer4": "Stegosaurus",
         "Correcta": "Homo Sapiens"
     },
     {
-      "question": "Se caracterizaban por su cabeza abombada, probóscide musculosa y largos colmillos curvados. Sus colmillos solían medir unos 2 metros y medio, y pesar cerca de 50 kilos",
-      "answer1": "Allosaurus",
-      "answer2": "Rinoceronte",
-      "answer3": "Mammut",
-      "answer4": "Perezoso",
+      "question": "¿Cuál de estos en realidad era un reptil y no un dinosaurio?",
+      "answer1": "Pterodactyl",
+      "answer2": "Triceratops",
+      "answer3": "Stegosaurus",
+      "answer4": "Anklyosaurus",
       "Correcta": "Mammut"
     },
     {
-        "question": "El Megalodón es una criatura terrestre que se extinguió hace 100 millones de años",
-        "answer1": "Falso",
-        "answer2": "Verdadero",
-        "Correcta": "Falso"
-    },
-    {
-        "question": "Era un depredador muy feroz que vivió en el océano. Utilizaba su enorme cola y sus extremidades para nadar por el agua, alimentándose de todo tipo de presas (peces, tiburones, aves marinas) con su gran mandíbula y dientes afilados.",
-        "answer1": "Celacanto",
-        "answer2": "Tiburón",
-        "answer3": "Mosasaurus",
-        "answer4": "Ballena",
+        "question": "¿En qué período de la Era Mesozoica vivió el Tyrannosaurus rex?.",
+        "answer1": "Triásico",
+        "answer2": "Jurásico",
+        "answer3": "Cretácico",
+        "answer4": "Paleógeno",
         "Correcta": "Mosasaurus"
     },
     {

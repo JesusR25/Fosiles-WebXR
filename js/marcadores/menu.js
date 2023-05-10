@@ -142,3 +142,20 @@ function advertencia(){
       }
     })
   }
+
+  function dinoquiz(){
+    Swal.fire({
+      title: 'Quiz',
+      html: '•	En esta escena, deberás responder un examen que contempla los conocimientos adquiridos con la aplicación de realidad aumentada.<br><br>	•	Selecciona una de las respuestas disponibles y posteriormente, presiona el botón siguiente.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Aceptar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "/Paginas/QuizDino.html";
+      }
+    })
+  }
