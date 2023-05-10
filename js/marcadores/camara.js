@@ -93,6 +93,14 @@ AFRAME.registerComponent('tap-place', {
           newElement.setAttribute('animation-mixer', '')
           newElement.setAttribute('rotation', `0 0 0`)
           escala = '3 3 3'
+          document.getElementById("brach").pause();
+      document.getElementById("meg").pause();
+      document.getElementById("morus").pause();
+      document.getElementById("dactyl").pause();
+      document.getElementById("stego").pause();
+      document.getElementById("rex").play();
+      document.getElementById("tritops").pause();
+      document.getElementById("raptor").pause();
           break;
         case 2:
           newElement.setAttribute('id', 'brachi')
@@ -100,6 +108,14 @@ AFRAME.registerComponent('tap-place', {
           newElement.setAttribute('animation-mixer', '')
           newElement.setAttribute('rotation', `0 45 0`)
           escala = '0.040 0.040 0.040'
+          document.getElementById("brach").play();
+      document.getElementById("meg").pause();
+      document.getElementById("morus").pause();
+      document.getElementById("dactyl").pause();
+      document.getElementById("stego").pause();
+      document.getElementById("rex").pause();
+      document.getElementById("tritops").pause();
+      document.getElementById("raptor").pause();
           break;
         case 3:
           newElement.setAttribute('id', 'dinosaur')
@@ -107,6 +123,14 @@ AFRAME.registerComponent('tap-place', {
           newElement.setAttribute('animation-mixer', '')
           newElement.setAttribute('rotation', `0 25 0`)
           escala = '0.020 0.020 0.020'
+          document.getElementById("brach").pause();
+      document.getElementById("meg").pause();
+      document.getElementById("morus").pause();
+      document.getElementById("dactyl").pause();
+      document.getElementById("stego").play();
+      document.getElementById("rex").pause();
+      document.getElementById("tritops").pause();
+      document.getElementById("raptor").pause();
           break;
         case 4:
           newElement.setAttribute('id', 'ptero')
@@ -114,6 +138,14 @@ AFRAME.registerComponent('tap-place', {
           newElement.setAttribute('animation-mixer', 'clip: flying')
           newElement.setAttribute('rotation', `0 30 0`)
           escala = '5 5 5'
+          document.getElementById("brach").pause();
+      document.getElementById("meg").pause();
+      document.getElementById("morus").pause();
+      document.getElementById("dactyl").play();
+      document.getElementById("stego").pause();
+      document.getElementById("rex").pause();
+      document.getElementById("tritops").pause();
+      document.getElementById("raptor").pause();
           break;
         case 5:
           newElement.setAttribute('id', 'mega')
@@ -121,6 +153,14 @@ AFRAME.registerComponent('tap-place', {
           newElement.setAttribute('animation-mixer', 'clip: swimming_skeletal.3')
           newElement.setAttribute('rotation', `0 -20 0`)
           escala = '0.6 0.6 0.6'
+          document.getElementById("brach").pause();
+      document.getElementById("meg").play();
+      document.getElementById("morus").pause();
+      document.getElementById("dactyl").pause();
+      document.getElementById("stego").pause();
+      document.getElementById("rex").pause();
+      document.getElementById("tritops").pause();
+      document.getElementById("raptor").pause();
           break;
         case 6:
           newElement.setAttribute('id', 'mesasa')
@@ -128,6 +168,14 @@ AFRAME.registerComponent('tap-place', {
           newElement.setAttribute('animation-mixer', '')
           newElement.setAttribute('rotation', `0 -25 0`)
           escala = '0.020 0.020 0.020'
+          document.getElementById("brach").pause();
+      document.getElementById("meg").pause();
+      document.getElementById("morus").play();
+      document.getElementById("dactyl").pause();
+      document.getElementById("stego").pause();
+      document.getElementById("rex").pause();
+      document.getElementById("tritops").pause();
+      document.getElementById("raptor").pause();
           break;
         case 7:
           newElement.setAttribute('id', 'triceratops')
@@ -135,6 +183,14 @@ AFRAME.registerComponent('tap-place', {
           newElement.setAttribute('animation-mixer', '')
           newElement.setAttribute('rotation', `0 25 0`)
           escala = '0.7 0.7 0.7'
+          document.getElementById("brach").pause();
+      document.getElementById("meg").pause();
+      document.getElementById("morus").pause();
+      document.getElementById("dactyl").pause();
+      document.getElementById("stego").pause();
+      document.getElementById("rex").pause();
+      document.getElementById("tritops").play();
+      document.getElementById("raptor").pause();
           break;
         case 8:
           newElement.setAttribute('id', 'velociraptor')
@@ -142,6 +198,14 @@ AFRAME.registerComponent('tap-place', {
           newElement.setAttribute('animation-mixer', '')
           newElement.setAttribute('rotation', `0 -7 0`)
           escala = '5 5 5'
+          document.getElementById("brach").pause();
+      document.getElementById("meg").pause();
+      document.getElementById("morus").pause();
+      document.getElementById("dactyl").pause();
+      document.getElementById("stego").pause();
+      document.getElementById("rex").pause();
+      document.getElementById("tritops").pause();
+      document.getElementById("raptor").play();
           break;
       }
 
