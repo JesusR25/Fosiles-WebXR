@@ -310,3 +310,48 @@ export const marcador = async () => {
     });
 
 };
+
+
+//Quiz sobre dinosaurios
+export const quizdino = async (aciertos, desempeño, fecha, hora) => {
+  let vari = auth.currentUser;
+  if (vari == null) {
+    const i = collection(db, "usuarios");
+    const qe = query(i, where("invitadoID", "!=", null));
+    const consultai = await getDocs(qe);
+    let idv;
+    consultai.forEach((doc) => {
+      idv = doc.get("invitadoID");
+    });
+    idv = idv;
+    const veces = collection(db, "quizDino");
+    const consulta = query(veces, where("invitadoID", "==", idv));
+    const resul = await getDocs(consulta);
+    let conteo = 0;
+    resul.forEach((doc) => {
+      conteo++;
+    });
+    setDoc(doc(db, "quiz", idv + " " + conteo), {
+      aciertos: aciertos,
+      invitadoID: idv,
+      desempeño,
+      fecha: fecha,
+      hora: hora,
+    });
+  } else {
+    const inv = collection(db, "quizDino");
+    const q = query(inv, where("email", "==", auth.currentUser.email));
+    const consulta = await getDocs(q);
+    let final = 0;
+    consulta.forEach((doc) => {
+      final++;
+    });
+    setDoc(doc(db, "quizDino", auth.currentUser.email + " " + final), {
+      aciertos: aciertos,
+      email: auth.currentUser.email,
+      desempeño,
+      fecha: fecha,
+      hora: hora,
+    });
+  }
+};
