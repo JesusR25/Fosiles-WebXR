@@ -14,8 +14,7 @@ html {
     font-family: "Roboto", sans-serif;
     font-weight: 100;
     line-height: 1.7rem;
-    background: url(../assets/Imagenes/Fondo.jpg);
-    background-size: contain;
+    background: no-repeat linear-gradient(250deg, #008000, #00c040);
   }
   .quiz-container {
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
