@@ -7,7 +7,7 @@ const questions = [
       "answer2": "Velociraptor",
       "answer3": "Stegosaurus",
       "answer4": "Spinosaurus",
-      "Correcta": "Allosaurus"
+      "Correcta": "Stegosaurus"
     },
     {
       "question": "¿En qué periodo vivió el Triceratops?",
@@ -15,7 +15,7 @@ const questions = [
       "answer2": "Jurásico",
       "answer3": "Cretácico",
       "answer4": "Paleógeno",
-      "Correcta": "Australopithecus"
+      "Correcta": "Cretácico"
     },
     {
       "question":
@@ -24,7 +24,7 @@ const questions = [
         "answer2": "Allosaurus",
         "answer3": "Triceratops",
         "answer4": "Ankylosaurus",
-        "Correcta": "Belemnite"
+        "Correcta": "Brachiosaurus"
     },
     {
       "question": "¿Que dinosaurio tenía una placa en la cabeza y tres cuernos?.",
@@ -32,7 +32,7 @@ const questions = [
       "answer2": "Triceratops",
       "answer3": "Parasaurolophus",
       "answer4": "Archaeopteryx",
-      "Correcta": "Homo Erectus"
+      "Correcta": "Triceratops"
     },
     {
       "question":
@@ -41,7 +41,7 @@ const questions = [
         "answer2": "Spinosaurus",
         "answer3": "Carnotaurus",
         "answer4": "Stegosaurus",
-        "Correcta": "Homo Sapiens"
+        "Correcta": "Stegosaurus"
     },
     {
       "question": "¿Cuál de estos en realidad era un reptil y no un dinosaurio?",
@@ -49,7 +49,7 @@ const questions = [
       "answer2": "Triceratops",
       "answer3": "Stegosaurus",
       "answer4": "Anklyosaurus",
-      "Correcta": "Mammut"
+      "Correcta": "Pterodactyl"
     },
     {
         "question": "¿En qué período de la Era Mesozoica vivió el Tyrannosaurus rex?.",
@@ -57,7 +57,7 @@ const questions = [
         "answer2": "Jurásico",
         "answer3": "Cretácico",
         "answer4": "Paleógeno",
-        "Correcta": "Mosasaurus"
+        "Correcta": "Cretácico"
     }
   ]
   
@@ -145,7 +145,7 @@ const questions = [
         var hora =  date.toLocaleTimeString();
         quizdino(correctas, desempeño, fecha, hora );
         container.style.display = 'none';
-        if(correctas <= 5){
+        if(correctas <= 2){
           result.innerHTML =
            `<h1 class="final-score">Calificación: ${correctas} de 10 </h1>
            <div class="summary" style='display: flex;'>
@@ -154,7 +154,7 @@ const questions = [
           </div>
           <button class="restart">Reiniciar prueba</button>
            `;
-        }else if(correctas <=7){
+        }else if(correctas <=4){
           result.innerHTML =
            `<h1 class="final-score">Calificación obtenida: ${correctas} de 10 </h1>
            <div class="summary" style='display: flex;'>
@@ -163,7 +163,7 @@ const questions = [
           </div>
           <button class="restart">Reiniciar prueba</button>
            `;
-        }else if(correctas <= 9){
+        }else if(correctas <= 6){
           result.innerHTML =
            `<h1 class="final-score">Calificación obtenida: ${correctas} de 10 </h1>
            <div class="summary" style='display: flex;'>
