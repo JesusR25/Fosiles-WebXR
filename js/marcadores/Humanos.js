@@ -14,7 +14,7 @@ let modparan;
 
 function onQRCodeScanned(scannedText)
 {
-    alert(scannedText);
+    //alert(scannedText);
     switch (scannedText) {
         case 'Australopithecus':
             Australopithecus();
