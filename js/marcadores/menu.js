@@ -170,3 +170,4 @@ function Humanos2(){
       if (result.isConfirmed) {
       }
     })
+  }
