@@ -10,7 +10,7 @@ let modpere;
 
 function onQRCodeScanned(scannedText)
 {
-    alert(scannedText);
+    //alert(scannedText);
     switch (scannedText) {
         case 'Mammut':
             Mammuth();
