@@ -10,7 +10,7 @@ let modtrilo;
 
 function onQRCodeScanned(scannedText)
 {
-    alert(scannedText);
+    //alert(scannedText);
     switch (scannedText) {
         case 'Belemnites':
             Belemnite();
