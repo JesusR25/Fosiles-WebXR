@@ -40,7 +40,6 @@ function onQRCodeScanned(scannedText)
         case 'https://fosiles.vercel.app/Paginas/Animales%20Acuaticos.html':
             window.location.href = "../Paginas/Animales Acuaticos.html";
             break;
-        document.getElementById('mega').addEventListener('loaded', function() { alert('ok') })
       }
 }
 
@@ -547,6 +546,8 @@ AFRAME.registerComponent("tibu", {
   }
 })
 
+document.getElementById('mega').addEventListener('loaded', function() { alert('ok') })
+
 //Controlador para mcelacanto
 AFRAME.registerComponent("cela", {
   init: function () {
@@ -686,5 +687,6 @@ function readDeviceOrientation() {
         document.querySelector("#mesasa").setAttribute("scale", "0.037 0.037 0.037");
         document.querySelector("#mesasa").setAttribute("position", "-1 -3 -15");
     }
+    
 }
 screen.orientation.addEventListener("change", readDeviceOrientation);
