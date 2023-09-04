@@ -24,6 +24,18 @@ function onQRCodeScanned(scannedText)
         case 'Perezoso':
             Perezoso();
           break;
+          case 'https://fosiles.vercel.app/Paginas/Restos%20Fosiles.html':
+            window.location.href = "../Paginas/Restos Fosiles.html";
+            break;
+        case 'https://fosiles.vercel.app/Paginas/Humanos.html':
+            window.location.href = "../Paginas/Humanos.html";
+            break;
+        case 'https://fosiles.vercel.app/Paginas/Animales%20Terrestres.html':
+            window.location.href = "../Paginas/Animales Terrestres.html";
+             break;
+        case 'https://fosiles.vercel.app/Paginas/Animales%20Acuaticos.html':
+            window.location.href = "../Paginas/Animales Acuaticos.html";
+            break;
       }
 }
 
