@@ -40,6 +40,7 @@ function onQRCodeScanned(scannedText)
         case 'https://fosiles.vercel.app/Paginas/Animales%20Acuaticos.html':
             window.location.href = "../Paginas/Animales Acuaticos.html";
             break;
+        document.getElementById('mega').addEventListener('loaded', function() { alert('ok') })
       }
 }
 
